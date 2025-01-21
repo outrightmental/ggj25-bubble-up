@@ -7,7 +7,7 @@
 # Make sure your project is configured for Web export
 # to the path `build/web`.
 
-name: 'Publish to GitHub Pages'
+name: 'Web Distro'
 
 env:
   GODOT_VERSION: 4.3 # Remember to manually set image to this version below.
@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
