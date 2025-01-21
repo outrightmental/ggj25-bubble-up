@@ -4,9 +4,11 @@
 [ext_resource type="Script" path="res://models/board/board.gd" id="1_hdwxx"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
-mass = 100.0
-gravity_scale = 0.01
+mass = 10.0
+gravity_scale = 0.05
 freeze_mode = 1
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_hdwxx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

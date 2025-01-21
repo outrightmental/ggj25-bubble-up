@@ -16,9 +16,16 @@ offset_right = 116.0
 offset_bottom = 29.0
 text = "experiment 1"
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 299.0
+offset_top = 5.0
+offset_right = 411.0
+offset_bottom = 29.0
+text = "drag behavior:"
+
 [node name="board1" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(1044, 566)
-rotation = 0.173615
+position = Vector2(762, 562)
+rotation = -2.8345
 
 [node name="board2" parent="." instance=ExtResource("2_c1pti")]
 position = Vector2(455, 553)
@@ -29,36 +36,36 @@ position = Vector2(641, 579)
 rotation = 0.173615
 
 [node name="board4" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(514, 337)
+position = Vector2(513, 492)
 rotation = -0.181009
 
 [node name="board5" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(720, 264)
-rotation = 0.22029
+position = Vector2(669, 485)
+rotation = -0.467395
 
 [node name="board9" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(939, 121)
-rotation = -0.181009
+position = Vector2(526, 292)
+rotation = 0.201593
 
 [node name="board6" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(331, 253)
-rotation = -0.181009
+position = Vector2(353, 422)
+rotation = 2.52836
 
 [node name="board10" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(112, 177)
+position = Vector2(369, 334)
 rotation = -0.181009
 
 [node name="board11" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(326, 78)
+position = Vector2(302, 513)
 rotation = 0.184743
 
 [node name="board7" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(554, 160)
-rotation = -0.0262746
+position = Vector2(569, 390)
+rotation = 0.824361
 
 [node name="board8" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(718, 41)
-rotation = 0.281566
+position = Vector2(770, 419)
+rotation = 0.563207
 
 [node name="Bubble" parent="." instance=ExtResource("1_wrxr2")]
 position = Vector2(529, 624)
@@ -86,12 +93,28 @@ variant = 3
 position = Vector2(400, 629)
 variant = 3
 
-[node name="Button" type="Button" parent="."]
-offset_left = 1061.0
+[node name="Button Main" type="Button" parent="."]
+offset_left = 1078.0
 offset_top = 7.0
 offset_right = 1142.0
-offset_bottom = 49.0
+offset_bottom = 38.0
 theme = SubResource("Theme_yn7ku")
 text = "menu"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Button Reset" type="Button" parent="."]
+offset_left = 1077.0
+offset_top = 47.0
+offset_right = 1141.0
+offset_bottom = 78.0
+theme = SubResource("Theme_yn7ku")
+text = "reset"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 416.0
+offset_top = 5.0
+offset_right = 540.0
+offset_bottom = 32.0
+
+[connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
+[connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]

@@ -1,17 +1,20 @@
 extends RigidBody2D
 
-var dragging: bool = false
-var drag_touch_start: Vector2
+var drag_behavior: Global.DragBehavior = Global.DragBehavior.FREEZE_AND_REPOSITION
 var drag_pos_start: Vector2
-var water_resistance: float = 1 # Simulates drag in water
-var torque_factor: float = 0.5 # How much rotation is applied when dragging
+var drag_touch_start: Vector2
+var drag_touch_last: Vector2
+var dragging: bool                     = false
+var dragging_force_factor: float   = 10 # How much force is applied when dragging
 
 @onready var collision_polygon = $CollisionPolygon2D # Cache the reference
+
 
 func _ready() -> void:
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
 		return
+
 
 func _input(event) -> void:
 	if not collision_polygon:
@@ -29,18 +32,32 @@ func _input(event) -> void:
 		if dragging:
 			_drag(event.position)
 
+
 func _drag_start(touch_pos: Vector2):
+	drag_behavior = Global.get_drag_behavior()
 	dragging = true
-	freeze = true
-	lock_rotation = true
 	drag_touch_start = touch_pos
+	drag_touch_last = touch_pos
 	drag_pos_start = position
-	
+	match drag_behavior:
+		Global.DragBehavior.FREEZE_AND_REPOSITION:
+			freeze = true
+			lock_rotation = true
+			
+			
 func _drag_stop():
 	dragging = false
 	freeze = false
 	lock_rotation = false
-	
+
+
 func _drag(touch_pos: Vector2):
-	var touch_offset: Vector2 = touch_pos - drag_touch_start
-	position = drag_pos_start + touch_offset
+	match drag_behavior:
+		Global.DragBehavior.FREEZE_AND_REPOSITION:
+			var touch_offset_since_start: Vector2 = touch_pos - drag_touch_start
+			position = drag_pos_start + touch_offset_since_start
+		Global.DragBehavior.APPLY_DAMPENED_FORCE:
+			var touch_offset_since_last: Vector2 = touch_pos - drag_touch_last
+			var force: Vector2 = touch_offset_since_last * dragging_force_factor
+			apply_central_impulse(force)
+	drag_touch_last = touch_pos
