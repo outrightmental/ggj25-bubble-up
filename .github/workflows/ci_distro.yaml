@@ -17,6 +17,22 @@ jobs:
       image: barichello/godot-ci:4.3
     steps:
 
+      - name: Install sudo package
+        run: apt update && apt install sudo
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install awscli --upgrade --user
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -39,19 +55,6 @@ jobs:
         with:
           name: web
           path: build/web
-
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3-pip
-          pip3 install awscli --upgrade --user
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
 
       - name: Publish to AWS S3
         run: aws s3 cp --recursive ./build/web/ s3://${{ secrets.AWS_DISTRIBUTION_S3_BUCKET }}/
