@@ -2,7 +2,7 @@
 
 # Bubble Up!
 
-## [Play Bubble Up!](https://bubbleup.game.outright.io/)
+<font size="20">[Play Bubble Up!](https://bubbleup.game.outright.io/)</font>
 
 Made for the [Global Game Jam 2025](https://globalgamejam.org/)
 
