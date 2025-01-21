@@ -11,7 +11,7 @@ var dragging_force: float              = 10 # How much force is applied when dra
 
 
 func _ready() -> void:
-	dragging_force = Global.get_drag_factor() * Global.dragging_force_max
+	dragging_force = Global.get_drag_force()
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
 		return
@@ -36,7 +36,7 @@ func _input(event) -> void:
 
 func _drag_start(touch_pos: Vector2):
 	drag_behavior = Global.get_drag_behavior()
-	dragging_force = Global.get_drag_factor() * Global.dragging_force_max
+	dragging_force = Global.get_drag_force()
 	dragging = true
 	drag_touch_start = touch_pos
 	drag_touch_last = touch_pos

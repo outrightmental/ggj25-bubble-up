@@ -34,7 +34,7 @@ func _on_option_button_item_selected(index: int) -> void:
 
 
 func _update_force_value():
-	drag_force_amount_value.set("text", str(Global.get_drag_factor() * Global.dragging_force_max))
+	drag_force_amount_value.set("text", str(Global.get_drag_force()))
 
 
 func _on_v_slider_value_changed(value: float) -> void:

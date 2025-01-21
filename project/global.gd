@@ -3,7 +3,9 @@ extends Node
 enum DragBehavior { FREEZE_AND_REPOSITION, APPLY_DAMPENED_FORCE }
 var drag_behavior: DragBehavior = DragBehavior.APPLY_DAMPENED_FORCE
 var drag_factor: float          = 0.1
-var dragging_force_max: float          = 50 # How much force is applied when dragging
+var dragging_force_min: float   = 5 # How much force is applied when dragging
+var dragging_force_max: float   = 200 # How much force is applied when dragging
+
 
 func set_drag_behavior(value: DragBehavior):
 	drag_behavior = value
@@ -21,3 +23,7 @@ func set_drag_factor(value: float):
 
 func get_drag_factor() -> float:
 	return drag_factor
+
+
+func get_drag_force() -> float:
+	return lerp(dragging_force_min, dragging_force_max, drag_factor)
