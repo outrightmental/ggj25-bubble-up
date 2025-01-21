@@ -3,8 +3,8 @@
 [node name="Experiment 1 Scene 2D" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 226.0
-offset_top = 143.0
-offset_right = 429.0
-offset_bottom = 203.0
-text = "this is experiment 1"
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 29.0
+text = "experiment 1"
