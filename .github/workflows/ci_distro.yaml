@@ -17,6 +17,9 @@ jobs:
       image: barichello/godot-ci:4.3
     steps:
 
+      - name: Install sudo package
+        run: apt update && apt install sudo
+
       - name: Install AWS CLI
         uses: unfor19/install-aws-cli-action@v1
 
