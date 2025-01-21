@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccm6dn1ipaysr"]
+
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable.tscn" id="1_5j7qw"]
+[ext_resource type="PackedScene" uid="uid://bpm0ebbgn2yt0" path="res://models/bubble/bubble.tscn" id="2_yw3at"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_ex1rj"]
+[ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="4_ixh10"]
+
+[node name="Experiment 1 Scene 2D" type="Node2D"]
+
+[node name="board9" parent="." instance=ExtResource("1_5j7qw")]
+position = Vector2(127, 379)
+rotation = -0.379804
+
+[node name="board10" parent="." instance=ExtResource("1_5j7qw")]
+position = Vector2(961, 381)
+rotation = 1.83444
+
+[node name="board11" parent="." instance=ExtResource("1_5j7qw")]
+position = Vector2(1020, 161)
+rotation = -3.05074
+
+[node name="board12" parent="." instance=ExtResource("1_5j7qw")]
+position = Vector2(307, 88)
+rotation = -2.83332
+
+[node name="Bubble" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(561, 486)
+
+[node name="Bubble2" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(522, 486)
+
+[node name="Bubble3" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(602, 486)
+
+[node name="Bubble4" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(481, 487)
+
+[node name="Bubble5" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(642, 485)
+
+[node name="Bubble6" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(502, 520)
+
+[node name="Bubble7" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(541, 521)
+
+[node name="Bubble8" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(581, 520)
+
+[node name="Bubble9" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(622, 521)
+
+[node name="Bubble10" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(601, 554)
+
+[node name="Bubble11" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(562, 555)
+
+[node name="Bubble12" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(521, 556)
+
+[node name="Bubble13" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(543, 590)
+
+[node name="Bubble14" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(582, 589)
+
+[node name="Bubble26" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(683, 486)
+
+[node name="Bubble27" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(502, 450)
+
+[node name="Bubble28" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(583, 449)
+
+[node name="Bubble29" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(662, 448)
+
+[node name="Bubble34" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(663, 521)
+
+[node name="Bubble30" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(543, 450)
+
+[node name="Bubble31" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(583, 370)
+
+[node name="Bubble37" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(622, 371)
+
+[node name="Bubble32" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(622, 592)
+
+[node name="Bubble33" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(641, 557)
+
+[node name="Bubble15" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(541, 370)
+
+[node name="Bubble16" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(562, 412)
+
+[node name="Bubble35" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(604, 411)
+
+[node name="Bubble36" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(641, 410)
+
+[node name="Bubble17" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(523, 411)
+
+[node name="Bubble18" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(482, 414)
+
+[node name="Bubble19" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(440, 486)
+
+[node name="Bubble20" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(461, 525)
+
+[node name="Bubble21" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(463, 449)
+
+[node name="Bubble22" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(623, 449)
+
+[node name="Bubble23" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(500, 373)
+
+[node name="Bubble24" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(481, 559)
+
+[node name="Bubble25" parent="." instance=ExtResource("2_yw3at")]
+position = Vector2(503, 593)
+
+[node name="Controls" parent="." instance=ExtResource("3_ex1rj")]
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -462.5
+offset_top = -359.0
+offset_right = -350.5
+offset_bottom = -335.0
+text = "experiment 1"
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_ixh10")]
+position = Vector2(581, 240)
+mass = 1000.0

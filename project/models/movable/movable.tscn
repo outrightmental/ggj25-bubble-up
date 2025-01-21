@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4cmqk53ynl56"]
 
 [ext_resource type="Texture2D" uid="uid://do8ueajwct3ud" path="res://assets/board.png" id="1_hd0ap"]
-[ext_resource type="Script" path="res://models/board/board.gd" id="1_hdwxx"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_hdwxx"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
 mass = 25.0

@@ -23,5 +23,14 @@ offset_bottom = 215.0
 theme = SubResource("Theme_o41tl")
 text = "experiment 2"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 86.0
+offset_top = 236.0
+offset_right = 238.0
+offset_bottom = 293.0
+theme = SubResource("Theme_o41tl")
+text = "experiment 3"
+
 [connection signal="pressed" from="Button" to="." method="_on_navigate_experiment_1"]
 [connection signal="pressed" from="Button2" to="." method="_on_navigate_experiment_2"]
+[connection signal="pressed" from="Button3" to="." method="_on_navigate_experiment_3"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://boafpwglnsajw"]
 
 [ext_resource type="PackedScene" uid="uid://bpm0ebbgn2yt0" path="res://models/bubble/bubble.tscn" id="1_wrxr2"]
-[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/board/board.tscn" id="2_c1pti"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable.tscn" id="2_c1pti"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="4_ek408"]
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
