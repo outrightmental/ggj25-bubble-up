@@ -11,7 +11,7 @@ radius = 19.0263
 
 [node name="Bubble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_n8s3h")
-gravity_scale = -0.15
+gravity_scale = -0.25
 script = ExtResource("1_a2r14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

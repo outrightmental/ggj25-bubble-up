@@ -21,11 +21,11 @@ position = Vector2(1044, 566)
 rotation = 0.173615
 
 [node name="board2" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(828, 510)
-rotation = 0.173615
+position = Vector2(455, 553)
+rotation = -0.328467
 
 [node name="board3" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(617, 452)
+position = Vector2(641, 579)
 rotation = 0.173615
 
 [node name="board4" parent="." instance=ExtResource("2_c1pti")]
@@ -61,18 +61,29 @@ position = Vector2(718, 41)
 rotation = 0.281566
 
 [node name="Bubble" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(1081, 624)
+position = Vector2(529, 624)
+
+[node name="Bubble7" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(509, 589)
 
 [node name="Bubble2" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(1127, 625)
+position = Vector2(574, 625)
+variant = 1
+
+[node name="Bubble5" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(620, 626)
 variant = 1
 
 [node name="Bubble3" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(1035, 622)
+position = Vector2(486, 625)
 variant = 2
 
 [node name="Bubble4" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(988, 623)
+position = Vector2(441, 624)
+variant = 3
+
+[node name="Bubble6" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(400, 629)
 variant = 3
 
 [node name="Button" type="Button" parent="."]
