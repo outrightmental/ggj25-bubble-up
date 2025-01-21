@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://gl5hdp43qnoj"]
+
+[ext_resource type="Script" path="res://models/controls/controls.gd" id="1_4m1dt"]
+
+[sub_resource type="Theme" id="Theme_yn7ku"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(466.5, 364)
+script = ExtResource("1_4m1dt")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 457.5
+offset_top = 153.0
+offset_right = 569.5
+offset_bottom = 176.0
+text = "drag behavior:"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 458.5
+offset_top = 222.0
+offset_right = 607.5
+offset_bottom = 245.0
+text = "drag force amount:"
+
+[node name="Label Drag Force Amount Value" type="Label" parent="."]
+offset_left = 625.5
+offset_top = 222.0
+offset_right = 774.5
+offset_bottom = 245.0
+text = "X"
+
+[node name="Button Main" type="Button" parent="."]
+offset_left = 611.5
+offset_top = -357.0
+offset_right = 675.5
+offset_bottom = -326.0
+theme = SubResource("Theme_yn7ku")
+text = "menu"
+
+[node name="Button Reset" type="Button" parent="."]
+offset_left = 531.5
+offset_top = -357.0
+offset_right = 595.5
+offset_bottom = -326.0
+theme = SubResource("Theme_yn7ku")
+text = "reset"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 458.5
+offset_top = 180.0
+offset_right = 582.5
+offset_bottom = 207.0
+
+[node name="VSlider" type="HSlider" parent="."]
+offset_left = 455.5
+offset_top = 241.0
+offset_right = 677.5
+offset_bottom = 281.0
+max_value = 1.0
+step = 0.01
+
+[connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
+[connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="VSlider" to="." method="_on_v_slider_value_changed"]

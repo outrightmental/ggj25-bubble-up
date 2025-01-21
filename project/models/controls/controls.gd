@@ -15,12 +15,6 @@ func _ready() -> void:
 	_update_force_value()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# no op
-	pass
-
-
 func _on_navigate_main() -> void:
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
