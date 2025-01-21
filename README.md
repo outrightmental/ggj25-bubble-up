@@ -4,13 +4,17 @@
 
 [Play Bubble Up!](https://bubbleup.game.outright.io/)
 
-Built in [Godot Engine](https://godotengine.org/) for the [Global Game Jam 2025](https://globalgamejam.org/).
+Made for the [Global Game Jam 2025](https://globalgamejam.org/).
 
 ## Development
 
-_To streamline collaboration, whenever a commit arrives to the main branch of this repository, continuous integration (CI)
+Built in [Godot Engine](https://godotengine.org/).
+
+### Continuous Integration
+
+To streamline collaboration, whenever a commit arrives to the main branch of this repository, continuous integration (CI)
 will automatically build and deploy the game to the web. To further accelerate development and avoid caching issues,
-[that CI pipeline](.github/workflows/ci_distro.yaml) ships to AWS S3 with CloudFront CDN._
+[the CI distro pipeline](.github/workflows/ci_distro.yaml) ships to AWS S3 with CloudFront CDN.
 
 ## Planning
 
