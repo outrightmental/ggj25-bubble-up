@@ -13,8 +13,8 @@ Built in [Godot Engine](https://godotengine.org/) with [GDScript](https://docs.g
 ### Continuous Integration
 
 To streamline collaboration, whenever a commit arrives to the main branch of this repository, continuous integration (CI)
-will automatically build and deploy the game to the web. To further accelerate development and avoid caching issues,
-[the CI distro pipeline](.github/workflows/ci_distro.yaml) ships to AWS S3 with CloudFront CDN.
+will automatically [build and deploy](.github/workflows/ci_distro.yaml) the game to [web distro](https://bubbleup.game.outright.io/).
+To further accelerate development and avoid caching issues, web distro is on AWS S3 behind a CloudFront CDN.
 
 ## Planning
 
