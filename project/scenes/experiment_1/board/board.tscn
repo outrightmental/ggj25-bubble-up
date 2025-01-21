@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4cmqk53ynl56"]
+[gd_scene load_steps=3 format=3 uid="uid://d4cmqk53ynl56"]
 
 [ext_resource type="Texture2D" uid="uid://do8ueajwct3ud" path="res://assets/board.png" id="1_hd0ap"]
+[ext_resource type="Script" path="res://scenes/experiment_1/board/board.gd" id="1_hdwxx"]
 
-[node name="RigidBody2D" type="RigidBody2D"]
-mass = 1.087
-lock_rotation = true
-freeze = true
+[node name="RigidBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_hdwxx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.724915, 1.62982)
