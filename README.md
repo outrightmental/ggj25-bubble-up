@@ -4,11 +4,11 @@
 
 [Play Bubble Up!](https://bubbleup.game.outright.io/)
 
-Made for the [Global Game Jam 2025](https://globalgamejam.org/).
+Made for the [Global Game Jam 2025](https://globalgamejam.org/)
 
 ## Development
 
-Built in [Godot Engine](https://godotengine.org/).
+Built in [Godot Engine](https://godotengine.org/) with [GDScript](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html).
 
 ### Continuous Integration
 
