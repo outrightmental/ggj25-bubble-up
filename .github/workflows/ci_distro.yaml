@@ -1,4 +1,4 @@
-﻿name: "Distro"
+﻿name: "CI distro"
 on:
   push:
     branches:
