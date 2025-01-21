@@ -5,14 +5,14 @@
 
 [node name="RigidBody2D" type="RigidBody2D"]
 mass = 100.0
-gravity_scale = 0.0
+gravity_scale = 0.01
+freeze_mode = 1
 script = ExtResource("1_hdwxx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.724915, 1.62982)
 rotation = -0.00070262
-scale = Vector2(0.4, 0.4)
-polygon = PackedVector2Array(8, -48, 224, -48, 239, -44, 257.654, -15.9165, 275.129, 19.0958, 275.117, 36.5958, 260.112, 44.0853, -2, 46, -264.89, 46.2164, -277.381, 33.7076, -274.869, 16.2094, -254.85, -11.2766, -230, -40, -220, -44)
+polygon = PackedVector2Array(95.738, -18.5626, 110.72, 7.44798, 110.715, 13.448, 106.713, 17.4452, -104.287, 17.2969, -111.284, 13.292, -110.279, 5.2927, -89.2627, -17.6925)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-0.724792, 1.62988)
