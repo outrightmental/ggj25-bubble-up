@@ -1,16 +1,13 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_navigate_experiment_1() -> void:
+	_on_navigate_experiment(1)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	# no op
-	pass
+func _on_navigate_experiment_2() -> void:
+	_on_navigate_experiment(2)
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/experiment_1/experiment_1.tscn")
-	pass # Replace with function body.
+func _on_navigate_experiment(experiment_number: int) -> void:
+	get_tree().change_scene_to_file("res://scenes/experiment_" + str(experiment_number) + "/experiment_" + str(experiment_number) + ".tscn")
+	
