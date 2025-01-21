@@ -12,7 +12,7 @@ env:
 jobs:
   export-web:
     name: Web Export
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.3
     steps:
