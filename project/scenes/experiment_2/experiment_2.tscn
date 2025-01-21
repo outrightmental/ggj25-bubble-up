@@ -1,0 +1,97 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxy8a4o6w04q"]
+
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable.tscn" id="1_bnfqk"]
+[ext_resource type="PackedScene" uid="uid://bpm0ebbgn2yt0" path="res://models/bubble/bubble.tscn" id="2_6lwqn"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_3dinx"]
+
+[node name="Experiment 1 Scene 2D" type="Node2D"]
+
+[node name="board1" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(559, 448)
+
+[node name="board2" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(558, 410)
+
+[node name="board3" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(558, 371)
+
+[node name="board4" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(558, 333)
+
+[node name="board5" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(559, 296)
+
+[node name="board6" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(559, 258)
+
+[node name="board7" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(559, 221)
+
+[node name="board8" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(558, 184)
+
+[node name="board9" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(558, 147)
+
+[node name="board10" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(560, 110)
+
+[node name="board11" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(557, 72)
+
+[node name="board12" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(557, 34)
+
+[node name="Bubble" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(561, 486)
+
+[node name="Bubble2" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(522, 486)
+
+[node name="Bubble3" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(602, 486)
+
+[node name="Bubble4" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(481, 487)
+
+[node name="Bubble5" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(643, 487)
+
+[node name="Bubble6" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(502, 520)
+
+[node name="Bubble7" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(541, 521)
+
+[node name="Bubble8" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(581, 520)
+
+[node name="Bubble9" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(622, 521)
+
+[node name="Bubble10" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(601, 554)
+
+[node name="Bubble11" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(562, 555)
+
+[node name="Bubble12" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(521, 556)
+
+[node name="Bubble13" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(543, 590)
+
+[node name="Bubble14" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(582, 589)
+
+[node name="Bubble15" parent="." instance=ExtResource("2_6lwqn")]
+position = Vector2(563, 625)
+
+[node name="Controls" parent="." instance=ExtResource("3_3dinx")]
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -462.5
+offset_top = -359.0
+offset_right = -350.5
+offset_bottom = -335.0
+text = "experiment 1"
