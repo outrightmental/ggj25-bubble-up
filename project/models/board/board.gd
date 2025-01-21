@@ -5,12 +5,13 @@ var drag_pos_start: Vector2
 var drag_touch_start: Vector2
 var drag_touch_last: Vector2
 var dragging: bool                     = false
-var dragging_force_factor: float   = 10 # How much force is applied when dragging
+var dragging_force: float              = 10 # How much force is applied when dragging
 
 @onready var collision_polygon = $CollisionPolygon2D # Cache the reference
 
 
 func _ready() -> void:
+	dragging_force = Global.get_drag_factor() * Global.dragging_force_max
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
 		return
@@ -35,6 +36,7 @@ func _input(event) -> void:
 
 func _drag_start(touch_pos: Vector2):
 	drag_behavior = Global.get_drag_behavior()
+	dragging_force = Global.get_drag_factor() * Global.dragging_force_max
 	dragging = true
 	drag_touch_start = touch_pos
 	drag_touch_last = touch_pos
@@ -43,8 +45,8 @@ func _drag_start(touch_pos: Vector2):
 		Global.DragBehavior.FREEZE_AND_REPOSITION:
 			freeze = true
 			lock_rotation = true
-			
-			
+
+
 func _drag_stop():
 	dragging = false
 	freeze = false
@@ -58,6 +60,6 @@ func _drag(touch_pos: Vector2):
 			position = drag_pos_start + touch_offset_since_start
 		Global.DragBehavior.APPLY_DAMPENED_FORCE:
 			var touch_offset_since_last: Vector2 = touch_pos - drag_touch_last
-			var force: Vector2 = touch_offset_since_last * dragging_force_factor
+			var force: Vector2                   = touch_offset_since_last * dragging_force
 			apply_central_impulse(force)
 	drag_touch_last = touch_pos
