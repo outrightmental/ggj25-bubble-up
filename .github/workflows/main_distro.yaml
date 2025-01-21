@@ -1,7 +1,8 @@
-﻿name: "godot-ci export"
-on: push
-
-# NOTE: If your `project.godot` is at the repository root, set `PROJECT_PATH` below to ".".
+﻿name: "Distro"
+on:
+  push:
+    branches:
+    - main
 
 env:
   GODOT_VERSION: 4.3
