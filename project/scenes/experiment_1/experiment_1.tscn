@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://boafpwglnsajw"]
+[gd_scene load_steps=3 format=3 uid="uid://boafpwglnsajw"]
+
+[ext_resource type="PackedScene" uid="uid://bpm0ebbgn2yt0" path="res://scenes/experiment_1/bubble/bubble.tscn" id="1_wrxr2"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://scenes/experiment_1/board/board.tscn" id="2_c1pti"]
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
 
@@ -8,3 +11,62 @@ offset_top = 5.0
 offset_right = 116.0
 offset_bottom = 29.0
 text = "experiment 1"
+
+[node name="board1" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(1044, 566)
+rotation = 0.173615
+
+[node name="board2" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(828, 510)
+rotation = 0.173615
+
+[node name="board3" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(617, 452)
+rotation = 0.173615
+
+[node name="board4" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(514, 337)
+rotation = -0.181009
+
+[node name="board5" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(720, 264)
+rotation = 0.22029
+
+[node name="board9" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(939, 121)
+rotation = -0.181009
+
+[node name="board6" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(331, 253)
+rotation = -0.181009
+
+[node name="board10" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(112, 177)
+rotation = -0.181009
+
+[node name="board11" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(326, 78)
+rotation = 0.184743
+
+[node name="board7" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(554, 160)
+rotation = -0.0262746
+
+[node name="board8" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(718, 41)
+rotation = 0.281566
+
+[node name="Bubble" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(1081, 624)
+
+[node name="Bubble2" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(1127, 625)
+variant = 1
+
+[node name="Bubble3" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(1035, 622)
+variant = 2
+
+[node name="Bubble4" parent="." instance=ExtResource("1_wrxr2")]
+position = Vector2(988, 623)
+variant = 3
