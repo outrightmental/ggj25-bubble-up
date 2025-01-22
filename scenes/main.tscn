@@ -10,26 +10,26 @@ script = ExtResource("1_vaujs")
 [node name="Button" type="Button" parent="."]
 offset_left = 87.0
 offset_top = 82.0
-offset_right = 239.0
+offset_right = 391.0
 offset_bottom = 139.0
 theme = SubResource("Theme_o41tl")
-text = "experiment 1"
+text = "1 - planks block bubbles floating up"
 
 [node name="Button2" type="Button" parent="."]
 offset_left = 86.0
 offset_top = 158.0
-offset_right = 238.0
+offset_right = 408.0
 offset_bottom = 215.0
 theme = SubResource("Theme_o41tl")
-text = "experiment 2"
+text = "2 - stack of planks outweighs bubbles"
 
 [node name="Button3" type="Button" parent="."]
 offset_left = 86.0
 offset_top = 236.0
-offset_right = 238.0
+offset_right = 335.0
 offset_bottom = 293.0
 theme = SubResource("Theme_o41tl")
-text = "experiment 3"
+text = "3 - diving bell traps bubbles"
 
 [connection signal="pressed" from="Button" to="." method="_on_navigate_experiment_1"]
 [connection signal="pressed" from="Button2" to="." method="_on_navigate_experiment_2"]
