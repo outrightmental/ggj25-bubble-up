@@ -26,7 +26,7 @@ rotation = -2.83332
 [node name="Bubble Emitter" type="Node2D" parent="."]
 position = Vector2(546, 280)
 script = ExtResource("2_d5wi0")
-spawn_rate = 100.0
+spawn_rate = 1000.0
 max_bubbles = 100
 
 [node name="Controls" parent="." instance=ExtResource("3_ex1rj")]
