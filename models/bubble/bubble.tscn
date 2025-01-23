@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cj1uy"]
-radius = 19.0263
+radius = 13.0384
 
 [node name="Bubble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_n8s3h")
@@ -19,5 +19,5 @@ script = ExtResource("1_a2r14")
 shape = SubResource("CircleShape2D_cj1uy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_7lin3")

@@ -12,12 +12,12 @@ angular_damp = 5.0
 script = ExtResource("1_hdwxx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-0.724915, 1.62982)
+position = Vector2(-1.72492, 1.62982)
 rotation = -0.00070262
-polygon = PackedVector2Array(95.738, -18.5626, 110.72, 7.44798, 110.715, 13.448, 106.713, 17.4452, -104.287, 17.2969, -111.284, 13.292, -110.279, 5.2927, -89.2627, -17.6925)
+polygon = PackedVector2Array(48.3706, -9.02517, 56.204, 3.53617, 55.993, 7.03998, 53.5723, 8.87368, -51.5046, 8.84156, -54.173, 7.046, -54.0669, 3.27956, -44.1091, -8.54788)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-0.724792, 1.62988)
 rotation = -0.00070262
-scale = Vector2(0.400852, 0.378443)
+scale = Vector2(0.2, 0.189)
 texture = ExtResource("1_hd0ap")

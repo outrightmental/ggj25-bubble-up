@@ -6,8 +6,9 @@ extends RigidBody2D
 # Static variable to hold the number counter
 static var _numberCounter: int = 0
 
-# Scale factor for the sprite
-@export var sprite_scale_factor: float = 0.15
+# Scale factor for the sprite and collision area
+@export var sprite_scale_factor: float = 0.07
+@export var collision_scale_factor: float = 0.5
 
 # Velocity last seen and delta when it was sampled
 var last_velocity: Vector2 = Vector2.ZERO
@@ -112,4 +113,4 @@ func update_mass(new_mass: float):
 	mass = new_mass
 	var scale_factor = pow(mass, 0.333)
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
-	collision.scale = Vector2(scale_factor, scale_factor)
+	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor

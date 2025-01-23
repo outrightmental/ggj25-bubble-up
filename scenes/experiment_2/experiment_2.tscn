@@ -6,47 +6,47 @@
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
 
-[node name="board1" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(559, 448)
-
-[node name="board2" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(558, 410)
-
-[node name="board3" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(558, 371)
-
-[node name="board4" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(558, 333)
-
-[node name="board5" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(559, 296)
-
-[node name="board6" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(559, 258)
-
-[node name="board7" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(559, 221)
-
-[node name="board8" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(558, 184)
-
-[node name="board9" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(558, 147)
-
-[node name="board10" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(560, 110)
-
-[node name="board11" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(557, 72)
-
-[node name="board12" parent="." instance=ExtResource("1_bnfqk")]
-position = Vector2(557, 34)
-
 [node name="Bubble Emitter" type="Node2D" parent="."]
-position = Vector2(561, 555)
+position = Vector2(322, 309)
 script = ExtResource("2_tmyns")
 spawn_rate = 100.0
 max_bubbles = 100
+
+[node name="board1" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(323, 53)
+
+[node name="board2" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(322, 166)
+
+[node name="board3" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(322, 128)
+
+[node name="board4" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(322, 91)
+
+[node name="board5" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(323, 203)
+
+[node name="board6" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(323, 15)
+
+[node name="board7" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(323, 221)
+
+[node name="board8" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(322, 184)
+
+[node name="board9" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(322, 147)
+
+[node name="board10" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(324, 110)
+
+[node name="board11" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(321, 72)
+
+[node name="board12" parent="." instance=ExtResource("1_bnfqk")]
+position = Vector2(321, 34)
 
 [node name="Controls" parent="." instance=ExtResource("3_3dinx")]
 

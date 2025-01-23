@@ -4,7 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_p8522"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_scdhr"]
 
-[node name="Experiment 1 Scene 2D" type="Node2D"]
+[node name="Experiment 1 Scene 2D2" type="Node2D"]
+
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(325, 286)
+script = ExtResource("2_4oogt")
+spawn_rate = 2.0
+max_bubbles = 3
+spread_x = 0
+spread_y = 0
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_p8522")]
+position = Vector2(324, 43)
 
 [node name="Controls" parent="." instance=ExtResource("3_scdhr")]
 
@@ -14,14 +25,3 @@ offset_top = -359.0
 offset_right = -350.5
 offset_bottom = -335.0
 text = "experiment 4"
-
-[node name="Bubble Emitter" type="Node2D" parent="."]
-position = Vector2(586, 517)
-script = ExtResource("2_4oogt")
-spawn_rate = 2.0
-max_bubbles = 3
-spread_x = 0
-spread_y = 0
-
-[node name="RigidBody2D" parent="." instance=ExtResource("3_p8522")]
-position = Vector2(591, 98)
