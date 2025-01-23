@@ -18,8 +18,10 @@ text = "experiment 4"
 [node name="Bubble Emitter" type="Node2D" parent="."]
 position = Vector2(586, 517)
 script = ExtResource("2_4oogt")
-spawn_rate = 100.0
-max_bubbles = 100
+spawn_rate = 2.0
+max_bubbles = 2
+spread_x = 0
+spread_y = 0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_p8522")]
 position = Vector2(591, 98)
