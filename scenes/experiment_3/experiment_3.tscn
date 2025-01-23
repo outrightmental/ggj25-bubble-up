@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_ex1rj"]
 [ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="4_ixh10"]
 
-[node name="Experiment 1 Scene 2D" type="Node2D"]
+[node name="Experiment 3" type="Node2D"]
 
 [node name="BackgroundTest" type="Sprite2D" parent="."]
 position = Vector2(320, 180)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_p8522"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_scdhr"]
 
-[node name="Experiment 1 Scene 2D2" type="Node2D"]
+[node name="Experiment 4" type="Node2D"]
 
 [node name="BackgroundTest" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
