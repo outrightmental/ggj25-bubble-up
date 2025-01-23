@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpm0ebbgn2yt0"]
 
-[ext_resource type="Texture2D" uid="uid://cj0tydyib5277" path="res://assets/bubble1.png" id="1_7lin3"]
 [ext_resource type="Script" path="res://models/bubble/bubble.gd" id="1_a2r14"]
+[ext_resource type="Texture2D" uid="uid://bt0c28kkpxuv" path="res://assets/bubble_test.png" id="2_aojhw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n8s3h"]
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cj1uy"]
-radius = 19.0263
+radius = 13.0384
 
 [node name="Bubble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_n8s3h")
 gravity_scale = -1.0
-linear_damp = 5.0
+linear_damp = 10.0
 script = ExtResource("1_a2r14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cj1uy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_7lin3")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_aojhw")

@@ -1,33 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccm6dn1ipaysr"]
+[gd_scene load_steps=6 format=3 uid="uid://ccm6dn1ipaysr"]
 
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_5du5x"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="1_5j7qw"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_d5wi0"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_ex1rj"]
 [ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="4_ixh10"]
 
-[node name="Experiment 1 Scene 2D" type="Node2D"]
+[node name="Experiment 3" type="Node2D"]
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_5du5x")
+
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(327, 313)
+script = ExtResource("2_d5wi0")
+spawn_rate = 1000.0
+max_bubbles = 100
 
 [node name="board9" parent="." instance=ExtResource("1_5j7qw")]
-position = Vector2(127, 379)
+position = Vector2(97, 247)
 rotation = -0.379804
 
 [node name="board10" parent="." instance=ExtResource("1_5j7qw")]
-position = Vector2(961, 381)
+position = Vector2(532, 222)
 rotation = 1.83444
 
 [node name="board11" parent="." instance=ExtResource("1_5j7qw")]
-position = Vector2(1020, 161)
+position = Vector2(556, 55)
 rotation = -3.05074
 
 [node name="board12" parent="." instance=ExtResource("1_5j7qw")]
-position = Vector2(307, 88)
+position = Vector2(117, 65)
 rotation = -2.83332
 
-[node name="Bubble Emitter" type="Node2D" parent="."]
-position = Vector2(546, 280)
-script = ExtResource("2_d5wi0")
-spawn_rate = 100.0
-max_bubbles = 100
+[node name="RigidBody2D" parent="." instance=ExtResource("4_ixh10")]
+position = Vector2(338, 132)
+mass = 1000.0
 
 [node name="Controls" parent="." instance=ExtResource("3_ex1rj")]
 
@@ -37,7 +46,3 @@ offset_top = -359.0
 offset_right = -350.5
 offset_bottom = -335.0
 text = "experiment 3"
-
-[node name="RigidBody2D" parent="." instance=ExtResource("4_ixh10")]
-position = Vector2(581, 240)
-mass = 1000.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1uakiuyug2m6"
-path="res://.godot/imported/bubble2.png-afec15b6e676e3e10056d29f27617b68.ctex"
+uid="uid://ps1uyekg8t6l"
+path="res://.godot/imported/diving_bell_test.png-6ddad5bd130a06936bc7d4bca4dce8e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubble2.png"
-dest_files=["res://.godot/imported/bubble2.png-afec15b6e676e3e10056d29f27617b68.ctex"]
+source_file="res://assets/diving_bell_test.png"
+dest_files=["res://.godot/imported/diving_bell_test.png-6ddad5bd130a06936bc7d4bca4dce8e1.ctex"]
 
 [params]
 
