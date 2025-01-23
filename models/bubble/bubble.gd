@@ -27,25 +27,9 @@ var last_delta: float = 0.0
 @onready var sprite: Sprite2D = $Sprite2D
 
 
-# Called when the bubble is instantiated
-func _init():
-	_numberCounter += 1
-	number = _numberCounter
- 
- 
-# Called when the scene is added to the tree
-# Load the sprite and connect the signal
-func _ready():
-	contact_monitor = true
-	max_contacts_reported = 1
-	set_variant(variant)
-	connect("body_entered", Callable(self, "_on_body_entered"))
-	
-	
-# Called every frame
-func _process(delta):
-	last_velocity = linear_velocity
-	last_delta = delta
+# Get the acceleration between the last processed frame and now
+func acceleration() -> Vector2:
+	return (linear_velocity - last_velocity) / last_delta;
 
 
 # Setter function to update the sprite based on variant
@@ -54,37 +38,70 @@ func set_variant(value: int):
 	sprite.texture = bubble_sprites[variant]
 
 
+# Called when the bubble is instantiated
+func _init():
+	_numberCounter += 1
+	number = _numberCounter
+	name = "Bubble #" + str(number)
+ 
+ 
+# Called when the scene is added to the tree
+# Load the sprite and connect the signal
+func _ready():
+	contact_monitor = true
+	max_contacts_reported = 1
+	set_variant(variant)
+	name = "Bubble"
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	
+	
+# Called every frame
+func _process(delta):
+	last_velocity = linear_velocity
+	last_delta = delta
+	_update_scale()
+
+
 # Called when another body enters the collision area
 func _on_body_entered(body):
-	if body is RigidBody2D and body.name == "Bubble":
+	if body is RigidBody2D and body.name.begins_with("Bubble"):
 		_on_collision_with_bubble(body)
 
 
 # Function to handle collision with another bubble
 func _on_collision_with_bubble(other_bubble):
-	var impulse = _get_impulse(other_bubble).length()
-	if impulse > Global.bubble_collision_merge_accel_threshold:
-		print("Bubble merge #", number, " -> #", other_bubble.number)
+	if _get_impulse_magnitude(other_bubble) > Global.bubble_collision_merge_accel_threshold:
 		_merge_with(other_bubble)
+	else:
+		print("Bubble-Bubble collision #", number, " -> #", other_bubble.number)
 		
 		
 # Function to merge two bubbles
 func _merge_with(other_bubble):
+	freeze= true
 	var new_volume = volume + other_bubble.volume
 	var new_position = (global_position * volume + other_bubble.global_position * other_bubble.volume) / new_volume
 	var new_velocity = (linear_velocity * volume + other_bubble.linear_velocity * other_bubble.volume) / new_volume
 	
 	# Destroy the other bubble
-	other_bubble.queue_free()
+	other_bubble.free()
 	
 	# Update the current bubble
 	volume = new_volume
 	global_position = new_position
 	linear_velocity = new_velocity
+	
+
+# Function to update the scale of the bubble based on its volume
+func _update_scale():
+	var scale_factor = pow(volume, 0.5)
+	self.scale = Vector2(scale_factor, scale_factor)
+
 
 # Function to compute the impulse between two bubbles
 # Acceleration = Change in velocity / time between samples
 # Last delta is just an approximation of the current frame rate
 # Because it was from the last processed frame, but it will work for our purposes.
-func _get_impulse(other_bubble):
-	return (linear_velocity - last_velocity) / last_delta
+func _get_impulse_magnitude(other_bubble) -> float:
+	return abs(acceleration().length())
+	#return max(abs(acceleration().length()), abs(other_bubble.acceleration().length()))

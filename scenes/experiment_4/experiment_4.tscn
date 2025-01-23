@@ -19,7 +19,7 @@ text = "experiment 4"
 position = Vector2(586, 517)
 script = ExtResource("2_4oogt")
 spawn_rate = 2.0
-max_bubbles = 2
+max_bubbles = 3
 spread_x = 0
 spread_y = 0
 
