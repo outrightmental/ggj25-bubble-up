@@ -17,6 +17,9 @@ static var _numberCounter: int = 0
 var last_velocity: Vector2 = Vector2.ZERO
 var last_delta: float = 0.0
 
+# Time created
+var created_at: float = 0.0
+
 # Load the bubble textures
 @export var variant: int = 0
 @onready var bubble_sprites = [
@@ -38,6 +41,11 @@ func acceleration() -> Vector2:
 	return (linear_velocity - last_velocity) / last_delta;
 
 
+# Function to get the age of the bubble in milliseconds 
+func age() -> float:
+	return Time.get_ticks_msec() - created_at
+
+ 
 # Setter function to update the sprite based on variant
 func set_variant(value: int):
 	variant = clamp(value, 0, bubble_sprites.size() - 1)
@@ -50,10 +58,11 @@ func _init():
 	number = _numberCounter
 	name = "Bubble #" + str(number)
  
- 
+
 # Called when the scene is added to the tree
 # Load the sprite and connect the signal
 func _ready():
+	created_at = Time.get_ticks_msec()
 	contact_monitor = true
 	max_contacts_reported = 1
 	set_variant(variant)
@@ -76,6 +85,8 @@ func _on_body_entered(body):
 
 # Function to handle collision with another bubble
 func _on_collision_with_bubble(other_bubble):
+	if min(age(), other_bubble.age()) < Global.bubble_collision_cooldown_millis:
+		return
 	if _get_impulse_magnitude(other_bubble) > Global.bubble_collision_merge_accel_threshold:
 		_merge_with(other_bubble)
 	else:
