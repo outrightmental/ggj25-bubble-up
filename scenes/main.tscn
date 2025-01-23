@@ -34,10 +34,10 @@ text = "3 - diving bell traps bubbles"
 [node name="Button4" type="Button" parent="."]
 offset_left = 86.0
 offset_top = 314.0
-offset_right = 487.0
+offset_right = 399.0
 offset_bottom = 371.0
 theme = SubResource("Theme_o41tl")
-text = "4 - bubble lifecycle:spawn-merge-split-despawn"
+text = "4 - bubble lifecycle:emit-merge-split"
 
 [connection signal="pressed" from="Button" to="." method="_on_navigate_experiment_1"]
 [connection signal="pressed" from="Button2" to="." method="_on_navigate_experiment_2"]
