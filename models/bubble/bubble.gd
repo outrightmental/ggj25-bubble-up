@@ -64,8 +64,23 @@ func _on_body_entered(body):
 func _on_collision_with_bubble(other_bubble):
 	var impulse = _get_impulse(other_bubble).length()
 	if impulse > Global.bubble_collision_merge_accel_threshold:
-		print("Bubble collision #", number, " -> #", other_bubble.number, ", impulseLength=", _get_impulse(other_bubble).length())
+		print("Bubble merge #", number, " -> #", other_bubble.number)
+		_merge_with(other_bubble)
 		
+		
+# Function to merge two bubbles
+func _merge_with(other_bubble):
+	var new_volume = volume + other_bubble.volume
+	var new_position = (global_position * volume + other_bubble.global_position * other_bubble.volume) / new_volume
+	var new_velocity = (linear_velocity * volume + other_bubble.linear_velocity * other_bubble.volume) / new_volume
+	
+	# Destroy the other bubble
+	other_bubble.queue_free()
+	
+	# Update the current bubble
+	volume = new_volume
+	global_position = new_position
+	linear_velocity = new_velocity
 
 # Function to compute the impulse between two bubbles
 # Acceleration = Change in velocity / time between samples
