@@ -10,6 +10,9 @@ static var _numberCounter: int = 0
 # measured in a totally arbitrary unit
 @export var volume: float = 1.0
 
+# Scale factor for the sprite
+@export var sprite_scale_factor: float = 0.2
+
 # Velocity last seen and delta when it was sampled
 var last_velocity: Vector2 = Vector2.ZERO
 var last_delta: float = 0.0
@@ -25,6 +28,9 @@ var last_delta: float = 0.0
 
 # Reference to the Sprite node
 @onready var sprite: Sprite2D = $Sprite2D
+
+# Refernece to the Collision node
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
 
 # Get the acceleration between the last processed frame and now
@@ -53,13 +59,13 @@ func _ready():
 	set_variant(variant)
 	name = "Bubble"
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	_update_scale()
 	
 	
 # Called every frame
 func _process(delta):
 	last_velocity = linear_velocity
 	last_delta = delta
-	_update_scale()
 
 
 # Called when another body enters the collision area
@@ -90,12 +96,14 @@ func _merge_with(other_bubble):
 	volume = new_volume
 	global_position = new_position
 	linear_velocity = new_velocity
+	_update_scale()
 	
 
 # Function to update the scale of the bubble based on its volume
 func _update_scale():
 	var scale_factor = pow(volume, 0.5)
-	self.scale = Vector2(scale_factor, scale_factor)
+	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
+	collision.scale = Vector2(scale_factor, scale_factor)
 
 
 # Function to compute the impulse between two bubbles
@@ -104,4 +112,3 @@ func _update_scale():
 # Because it was from the last processed frame, but it will work for our purposes.
 func _get_impulse_magnitude(other_bubble) -> float:
 	return abs(acceleration().length())
-	#return max(abs(acceleration().length()), abs(other_bubble.acceleration().length()))
