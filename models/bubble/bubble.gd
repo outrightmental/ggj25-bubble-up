@@ -6,12 +6,8 @@ extends RigidBody2D
 # Static variable to hold the number counter
 static var _numberCounter: int = 0
 
-# Volume of air contained in this bubble,
-# measured in a totally arbitrary unit
-@export var volume: float = 1.0
-
 # Scale factor for the sprite
-@export var sprite_scale_factor: float = 0.2
+@export var sprite_scale_factor: float = 0.15
 
 # Velocity last seen and delta when it was sampled
 var last_velocity: Vector2 = Vector2.ZERO
@@ -87,32 +83,37 @@ func _on_body_entered(body):
 func _on_collision_with_bubble(other_bubble):
 	if min(age(), other_bubble.age()) < Global.bubble_collision_cooldown_millis:
 		return
-	if _get_impulse_magnitude(other_bubble) > Global.bubble_collision_merge_accel_threshold:
+	if _get_impulse_magnitude(other_bubble) / mass > Global.bubble_collision_merge_accel_threshold:
 		_merge_with(other_bubble)
 	else:
-		print("Bubble-Bubble collision #", number, " -> #", other_bubble.number)
+		# TODO collide with non-bubble
+		pass
 		
 		
 # Function to merge two bubbles
 func _merge_with(other_bubble):
 	freeze= true
-	var new_volume = volume + other_bubble.volume
-	var new_position = (global_position * volume + other_bubble.global_position * other_bubble.volume) / new_volume
-	var new_velocity = (linear_velocity * volume + other_bubble.linear_velocity * other_bubble.volume) / new_volume
+	var new_mass = mass + other_bubble.mass
+	var new_position = (global_position * mass + other_bubble.global_position * other_bubble.mass) / new_mass
+	var new_velocity = (linear_velocity * mass + other_bubble.linear_velocity * other_bubble.mass) / new_mass
+	
+	# Use the variant of the bubble with the highest mass
+	if mass < other_bubble.mass:
+		set_variant(other_bubble.variant)
 	
 	# Destroy the other bubble
 	other_bubble.free()
 	
 	# Update the current bubble
-	volume = new_volume
+	mass = new_mass
 	global_position = new_position
 	linear_velocity = new_velocity
 	_update_scale()
 	
 
-# Function to update the scale of the bubble based on its volume
+# Function to update the scale of the bubble based on its mass
 func _update_scale():
-	var scale_factor = pow(volume, 0.5)
+	var scale_factor = pow(mass, 0.333)
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
 	collision.scale = Vector2(scale_factor, scale_factor)
 
