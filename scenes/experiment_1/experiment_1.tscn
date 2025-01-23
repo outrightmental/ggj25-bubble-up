@@ -6,55 +6,55 @@
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
 
-[node name="board1" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(794, 424)
-rotation = -2.8345
-
-[node name="board2" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(487, 415)
-rotation = -0.328467
-
-[node name="board3" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(673, 441)
-rotation = 0.173615
-
-[node name="board4" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(545, 354)
-rotation = -0.181009
-
-[node name="board5" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(701, 347)
-rotation = -0.467395
-
-[node name="board9" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(558, 154)
-rotation = 0.201593
-
-[node name="board6" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(385, 284)
-rotation = 2.52836
-
-[node name="board10" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(401, 196)
-rotation = -0.181009
-
-[node name="board11" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(334, 375)
-rotation = 0.184743
-
-[node name="board7" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(601, 252)
-rotation = 0.824361
-
-[node name="board8" parent="." instance=ExtResource("2_c1pti")]
-position = Vector2(802, 281)
-rotation = 0.563207
-
 [node name="Bubble Emitter" type="Node2D" parent="."]
-position = Vector2(571, 584)
+position = Vector2(323, 280)
 script = ExtResource("2_pu2sl")
 spawn_rate = 100.0
 max_bubbles = 100
+
+[node name="board1" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(546, 289)
+rotation = -2.8345
+
+[node name="board2" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(239, 280)
+rotation = -0.328467
+
+[node name="board3" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(425, 306)
+rotation = 0.173615
+
+[node name="board4" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(297, 219)
+rotation = -0.181009
+
+[node name="board5" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(453, 212)
+rotation = -0.467395
+
+[node name="board9" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(310, 19)
+rotation = 0.201593
+
+[node name="board6" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(137, 149)
+rotation = 2.52836
+
+[node name="board10" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(153, 61)
+rotation = -0.181009
+
+[node name="board11" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(86, 240)
+rotation = 0.184743
+
+[node name="board7" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(353, 117)
+rotation = 0.824361
+
+[node name="board8" parent="." instance=ExtResource("2_c1pti")]
+position = Vector2(554, 146)
+rotation = 0.563207
 
 [node name="Controls" parent="." instance=ExtResource("4_ek408")]
 

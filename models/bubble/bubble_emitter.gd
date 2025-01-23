@@ -2,8 +2,8 @@ extends Node2D
 
 @export var spawn_rate: float = 1.0  # Time between bubble spawns
 @export var max_bubbles: int = 10    # Maximum number of bubbles to spawn
-@export var spread_x: int = 100      # Maximum horizontal distance from the emitter
-@export var spread_y: int = 50       # Maximum vertical distance from the emitter
+@export var spread_x: int = 40      # Maximum horizontal distance from the emitter
+@export var spread_y: int = 20       # Maximum vertical distance from the emitter
 var current_bubbles: int = 0
 
 var timer: Timer
