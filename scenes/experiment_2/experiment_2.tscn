@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_tmyns"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_3dinx"]
 
-[node name="Experiment 1 Scene 2D" type="Node2D"]
+[node name="Experiment 2" type="Node2D"]
 
 [node name="BackgroundTest" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
