@@ -1,7 +1,7 @@
 extends Area2D
 
 const DECAY_FACTOR = 200.0
-const CURRENT_STRENGTH = 2.0
+const CURRENT_STRENGTH = 5.0
 
 var direction := Vector2.ZERO
 @onready var force_emitted = $ForceEmitter
@@ -19,5 +19,5 @@ func _process(delta):
 		queue_free()
 
 func _on_force_emitter_body_entered(body:Node2D) -> void:
-	if body.has_method('apply_force'):
+	if body.has_method('apply_central_impulse'):
 		body.apply_central_impulse(direction * CURRENT_STRENGTH)
