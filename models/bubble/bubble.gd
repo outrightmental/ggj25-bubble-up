@@ -33,6 +33,9 @@ var created_at: float = 0.0
 
 
 # Get the acceleration between the last processed frame and now
+# Acceleration = Change in velocity / time between samples
+# Last delta is just an approximation of the current frame rate
+# Because it was from the last processed frame, but it will work for our purposes.
 func acceleration() -> Vector2:
 	return (linear_velocity - last_velocity) / last_delta;
 
@@ -64,7 +67,7 @@ func _ready():
 	set_variant(variant)
 	name = "Bubble"
 	connect("body_entered", Callable(self, "_on_body_entered"))
-	_update_scale()
+	update_mass(mass)
 	
 	
 # Called every frame
@@ -80,47 +83,33 @@ func _on_body_entered(body):
 
 
 # Function to handle collision with another bubble
-func _on_collision_with_bubble(other_bubble):
-	if min(age(), other_bubble.age()) < Global.bubble_collision_cooldown_millis:
+func _on_collision_with_bubble(other):
+	if min(age(), other.age()) < Global.bubble_collision_cooldown_millis:
 		return
-	if _get_impulse_magnitude(other_bubble) / mass > Global.bubble_collision_merge_accel_threshold:
-		_merge_with(other_bubble)
+	if abs(acceleration().length()) / mass > Global.bubble_collision_merge_accel_threshold:
+		_merge_with(other)
 	else:
 		# TODO collide with non-bubble
 		pass
 		
 		
 # Function to merge two bubbles
-func _merge_with(other_bubble):
-	freeze= true
-	var new_mass = mass + other_bubble.mass
-	var new_position = (global_position * mass + other_bubble.global_position * other_bubble.mass) / new_mass
-	var new_velocity = (linear_velocity * mass + other_bubble.linear_velocity * other_bubble.mass) / new_mass
+func _merge_with(other):
+	freeze = true
 	
 	# Use the variant of the bubble with the highest mass
-	if mass < other_bubble.mass:
-		set_variant(other_bubble.variant)
-	
-	# Destroy the other bubble
-	other_bubble.free()
+	if mass > other.mass:
+		other.set_variant(variant)
 	
 	# Update the current bubble
-	mass = new_mass
-	global_position = new_position
-	linear_velocity = new_velocity
-	_update_scale()
+	other.update_mass(mass + other.mass)
 	
+	# Destroy this bubble
+	queue_free()	
 
 # Function to update the scale of the bubble based on its mass
-func _update_scale():
+func update_mass(new_mass: float):
+	mass = new_mass
 	var scale_factor = pow(mass, 0.333)
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
 	collision.scale = Vector2(scale_factor, scale_factor)
-
-
-# Function to compute the impulse between two bubbles
-# Acceleration = Change in velocity / time between samples
-# Last delta is just an approximation of the current frame rate
-# Because it was from the last processed frame, but it will work for our purposes.
-func _get_impulse_magnitude(other_bubble) -> float:
-	return abs(acceleration().length())
