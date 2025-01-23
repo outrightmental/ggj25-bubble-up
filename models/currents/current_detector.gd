@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		var current = CurrentScene.instantiate().init_with(mouse_pos)
 		current_current = current
 		add_child(current_current)
-	if Input.is_action_just_released('touch'):
+	if Input.is_action_just_released('touch') and current_current:
 		complete_current()
 
 func complete_current():
