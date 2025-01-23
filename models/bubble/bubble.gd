@@ -96,6 +96,9 @@ func _on_collision_with_bubble(other):
 		
 # Function to merge two bubbles
 func _merge_with(other):
+	if other.freeze:
+		return
+		
 	freeze = true
 	
 	# Use the variant of the bubble with the highest mass
