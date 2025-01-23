@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://boafpwglnsajw"]
 
-[ext_resource type="PackedScene" uid="uid://bpm0ebbgn2yt0" path="res://models/bubble/bubble.tscn" id="1_wrxr2"]
-[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable.tscn" id="2_c1pti"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="2_c1pti"]
+[ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_pu2sl"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="4_ek408"]
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
@@ -50,31 +50,11 @@ rotation = 0.824361
 position = Vector2(802, 281)
 rotation = 0.563207
 
-[node name="Bubble" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(561, 486)
-
-[node name="Bubble7" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(541, 451)
-
-[node name="Bubble2" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(606, 487)
-variant = 1
-
-[node name="Bubble5" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(652, 488)
-variant = 1
-
-[node name="Bubble3" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(518, 487)
-variant = 2
-
-[node name="Bubble4" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(473, 486)
-variant = 3
-
-[node name="Bubble6" parent="." instance=ExtResource("1_wrxr2")]
-position = Vector2(432, 491)
-variant = 3
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(571, 584)
+script = ExtResource("2_pu2sl")
+spawn_rate = 100.0
+max_bubbles = 100
 
 [node name="Controls" parent="." instance=ExtResource("4_ek408")]
 
