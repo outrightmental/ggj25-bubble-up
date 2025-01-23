@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dic112bb06qtg"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_3af8x"]
-[ext_resource type="Texture2D" uid="uid://ps1uyekg8t6l" path="res://assets/diving-bell.png" id="2_ujb2m"]
+[ext_resource type="Texture2D" uid="uid://ps1uyekg8t6l" path="res://assets/diving_bell_test.png" id="2_ujb2m"]
 
 [node name="RigidBody2D" type="RigidBody2D"]
 mass = 25.0

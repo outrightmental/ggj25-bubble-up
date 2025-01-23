@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccm6dn1ipaysr"]
+[gd_scene load_steps=6 format=3 uid="uid://ccm6dn1ipaysr"]
 
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_5du5x"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="1_5j7qw"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_d5wi0"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="3_ex1rj"]
 [ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="4_ixh10"]
 
 [node name="Experiment 1 Scene 2D" type="Node2D"]
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_5du5x")
 
 [node name="Bubble Emitter" type="Node2D" parent="."]
 position = Vector2(327, 313)

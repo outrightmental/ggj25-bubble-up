@@ -1,5 +1,10 @@
 extends RigidBody2D
 
+# Constants
+var _collision_merge_accel_threshold: int = 2000
+var _collision_cooldown_millis: int       = 100
+var _max_scale_factor: int                = 10
+
 # Unique identifier for the bubble
 @export var number: int = 0
 
@@ -7,7 +12,7 @@ extends RigidBody2D
 static var _numberCounter: int = 0
 
 # Scale factor for the sprite and collision area
-@export var sprite_scale_factor: float = 0.07
+@export var sprite_scale_factor: float = 0.8
 @export var collision_scale_factor: float = 0.5
 
 # Velocity last seen and delta when it was sampled
@@ -18,12 +23,12 @@ var last_delta: float = 0.0
 var created_at: float = 0.0
 
 # Load the bubble textures
-@export var variant: int = 0
-@onready var bubble_sprites = [
-	preload("res://assets/bubble1.png"),
-	preload("res://assets/bubble2.png"),
-	preload("res://assets/bubble3.png"),
-	preload("res://assets/bubble4.png")
+@onready var bubble_sprites: Array[Variant] = [
+	preload("res://assets/bubble_test.png"),
+#	preload("res://assets/bubble1.png"),
+#	preload("res://assets/bubble2.png"),
+#	preload("res://assets/bubble3.png"),
+#	preload("res://assets/bubble4.png")
 ]
 
 # Reference to the Sprite node
@@ -46,12 +51,6 @@ func age() -> float:
 	return Time.get_ticks_msec() - created_at
 
  
-# Setter function to update the sprite based on variant
-func set_variant(value: int):
-	variant = clamp(value, 0, bubble_sprites.size() - 1)
-	sprite.texture = bubble_sprites[variant]
-
-
 # Called when the bubble is instantiated
 func _init():
 	_numberCounter += 1
@@ -65,7 +64,6 @@ func _ready():
 	created_at = Time.get_ticks_msec()
 	contact_monitor = true
 	max_contacts_reported = 1
-	set_variant(variant)
 	name = "Bubble"
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
@@ -84,10 +82,10 @@ func _on_body_entered(body):
 
 
 # Function to handle collision with another bubble
-func _on_collision_with_bubble(other):
-	if min(age(), other.age()) < Global.bubble_collision_cooldown_millis:
+func _on_collision_with_bubble(other) -> void:
+	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	if abs(acceleration().length()) / mass > Global.bubble_collision_merge_accel_threshold:
+	if abs(acceleration().length()) / mass > _collision_merge_accel_threshold:
 		_merge_with(other)
 	else:
 		# TODO collide with non-bubble
@@ -95,15 +93,11 @@ func _on_collision_with_bubble(other):
 		
 		
 # Function to merge two bubbles
-func _merge_with(other):
+func _merge_with(other) -> void:
 	if other.freeze:
 		return
 		
 	freeze = true
-	
-	# Use the variant of the bubble with the highest mass
-	if mass > other.mass:
-		other.set_variant(variant)
 	
 	# Update the current bubble
 	other.update_mass(mass + other.mass)
@@ -114,6 +108,8 @@ func _merge_with(other):
 # Function to update the scale of the bubble based on its mass
 func update_mass(new_mass: float):
 	mass = new_mass
-	var scale_factor = pow(mass, 0.333)
+	var scale_factor: float = pow(mass, 0.333)
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
 	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
+	sprite.texture = bubble_sprites[0]
+	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
