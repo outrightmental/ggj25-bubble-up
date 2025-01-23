@@ -24,6 +24,5 @@ func _on_Timer_timeout():
 func _spawn_bubble():
 	var new_bubble = preload("res://models/bubble/bubble.tscn").instantiate()
 	var spread = Vector2(randf_range(-spread_x, spread_x), randf_range(-spread_y, spread_y))
-	new_bubble.variant = randi() % 4
 	new_bubble.position = spread
 	self.add_child(new_bubble)
