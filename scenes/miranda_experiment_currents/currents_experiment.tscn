@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccxygjcelwpxa"]
+
+[ext_resource type="PackedScene" uid="uid://cdwvrae81naga" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="1_i2aw0"]
+
+[node name="CurrentsExperiment" type="Node2D"]
+
+[node name="BubbleEmitter" parent="." instance=ExtResource("1_akn24")]
+position = Vector2(559, 418)
+spawn_rate = 3.0
+
+[node name="Controls" parent="." instance=ExtResource("1_i2aw0")]
