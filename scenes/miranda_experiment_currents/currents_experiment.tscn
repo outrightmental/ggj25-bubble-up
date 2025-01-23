@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccxygjcelwpxa"]
+[gd_scene load_steps=5 format=3 uid="uid://ccxygjcelwpxa"]
 
 [ext_resource type="PackedScene" uid="uid://cdwvrae81naga" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
-[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="1_i2aw0"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="1_lvb3o"]
+[ext_resource type="Script" path="res://scenes/miranda_experiment_currents/physics_selector.gd" id="3_7jgml"]
+[ext_resource type="Script" path="res://scenes/miranda_experiment_currents/param_sliders.gd" id="4_4tnk3"]
 
 [node name="CurrentsExperiment" type="Node2D"]
 
@@ -13,4 +14,149 @@ position = Vector2(306, 175)
 spawn_rate = 3.0
 max_bubbles = 500
 
-[node name="Controls" parent="." instance=ExtResource("1_i2aw0")]
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="PhysicsSelector" type="OptionButton" parent="Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+item_count = 4
+popup/item_0/text = "Gravity + Forward Force"
+popup/item_1/text = "Nearest Point + Forward Force"
+popup/item_1/id = 1
+popup/item_2/text = "Forward Force Only"
+popup/item_2/id = 2
+popup/item_3/text = "Path Follow"
+popup/item_3/id = 3
+script = ExtResource("3_7jgml")
+
+[node name="Sliders" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+mouse_filter = 0
+script = ExtResource("4_4tnk3")
+
+[node name="GravityStrength" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gravity Strength"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+min_value = -4096.0
+max_value = 4096.0
+value = -200.0
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.0"
+
+[node name="GravitySize" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gravity Size"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+max_value = 200.0
+step = 0.1
+value = 30.0
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.0"
+
+[node name="ForceStrength" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Force Strength"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+max_value = 20.0
+step = 0.1
+value = 5.0
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.0"
+
+[node name="ForceSize" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceSize"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Force Size"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceSize"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+max_value = 200.0
+step = 0.1
+value = 20.0
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/ForceSize"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.0"
+
+[connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_strength_slider_value_changed"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_size_slider_value_changed"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_f_strength_slider_value_changed"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/ForceSize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_f_size_slider_value_changed"]

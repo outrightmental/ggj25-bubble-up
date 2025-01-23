@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi5jd8phit4cn"]
+[gd_scene load_steps=3 format=3 uid="uid://bi5jd8phit4cn"]
 
 [ext_resource type="Script" path="res://models/currents/current.gd" id="1_vbsca"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tcv4g"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [node name="Current" type="Node2D"]
 script = ExtResource("1_vbsca")
 
 [node name="Line2D" type="Line2D" parent="."]
+joint_mode = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Line2D"]
+process_material = SubResource("ParticleProcessMaterial_tcv4g")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

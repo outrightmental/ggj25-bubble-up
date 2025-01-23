@@ -6,7 +6,6 @@ var drag_factor: float          = 0.1
 var dragging_force_min: float   = 5 # How much force is applied when dragging
 var dragging_force_max: float   = 200 # How much force is applied when dragging
 
-
 func set_drag_behavior(value: DragBehavior):
 	drag_behavior = value
 	emit_signal("drag_behavior_changed", value)
@@ -27,3 +26,36 @@ func get_drag_factor() -> float:
 
 func get_drag_force() -> float:
 	return lerp(dragging_force_min, dragging_force_max, drag_factor)
+
+# Currents stuff
+
+signal currents_behavior_changed(value: CurrentBehavior)
+signal current_param_changed(name: String, value: float)
+
+enum CurrentBehavior {
+	GRAVITY_FORWARD_FORCE = 0,
+	NEAREST_POINT_FORWARD_FORCE = 1,
+	FORWARD_FORCE_ONLY = 2,
+	PATH_FOLLOW = 3
+}
+var currents_behavior: CurrentBehavior = CurrentBehavior.FORWARD_FORCE_ONLY
+var current_g_strength := 0.0:
+	set(v):
+		current_g_strength = v
+		emit_signal('current_param_changed', 'current_g_strength', v)
+var current_g_size := 0.0:
+	set(v):
+		current_g_size = v
+		emit_signal('current_param_changed', 'current_g_size', v)
+var current_f_strength := 0.0:
+	set(v):
+		current_f_strength = v
+		emit_signal('current_param_changed', 'current_f_strength', v)
+var current_f_size := 0.0:
+	set(v):
+		current_f_size = v
+		emit_signal('current_param_changed', 'current_f_size', v)
+
+func set_currents_behavior(value: CurrentBehavior):
+	currents_behavior = value
+	emit_signal('currents_behavior_changed', value)

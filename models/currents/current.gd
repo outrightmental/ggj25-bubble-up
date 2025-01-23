@@ -7,11 +7,21 @@ var CurrentPointScene: PackedScene = preload('res://models/currents/current_poin
 @onready var curve = $Line2D
 @onready var timer = $Timer
 
+enum ForceDirectionMode {
+	PREV_TO_CURRENT = 0,
+	CURRENT_TO_NEXT = 1
+}
+
+@export var force_direction_mode = ForceDirectionMode.CURRENT_TO_NEXT
+
 # var POINT_DRAW_TIMEOUT = 0.0005
 # var point_draw_counter = 0
 
 var initial_point: Vector2 = Vector2.ZERO
+
 var previous_point_coords := Vector2.ZERO
+var previous_point: CurrentPoint = null
+
 var is_active := false
 
 func _ready():	
@@ -28,10 +38,20 @@ func create_point(pos: Vector2):
 	curve.add_point(pos)
 
 	# Calculate force
-	var directional = pos - previous_point_coords
-	var new_current_point = CurrentPointScene.instantiate().init_with(pos, directional)
-	add_child(new_current_point)
-	previous_point_coords = pos
+	if force_direction_mode == ForceDirectionMode.PREV_TO_CURRENT:
+		var directional = pos - previous_point_coords
+		var new_current_point = CurrentPointScene.instantiate().init_with(pos, directional)
+		add_child(new_current_point)
+		previous_point_coords = pos
+		previous_point = new_current_point
+	else: 
+		var directional = pos - previous_point_coords
+		var new_current_point = CurrentPointScene.instantiate().init_with(pos, Vector2.ZERO)
+		add_child(new_current_point)
+		if previous_point != null:
+			previous_point.update_direction(directional)
+		previous_point_coords = pos
+		previous_point = new_current_point
 
 func draw_point():
 	create_point(get_global_mouse_position())
