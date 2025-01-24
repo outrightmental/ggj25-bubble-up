@@ -1,8 +1,8 @@
 extends "res://models/collidable/collidable.gd"
 
 # Constants
-var _collision_merge_accel_threshold: int = 1000
-var _collision_split_accel_threshold: int = 2000
+var _collision_merge_accel_threshold: int = 3
+var _collision_split_accel_threshold: int = 4
 var _split_mass_vanish_threshold: float = 0.5
 # var _max_scale_factor: int				= 10
 
@@ -31,19 +31,6 @@ var _split_mass_vanish_threshold: float = 0.5
 # Reference to the vanish particle emitter node
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
-# Get the acceleration between the last processed frame and now
-# Acceleration = Change in velocity / time between samples
-# Last delta is just an approximation of the current frame rate
-# Because it was from the last processed frame, but it will work for our purposes.
-func acceleration() -> Vector2:
-	return (linear_velocity - last_velocity) / last_delta;
-
-
-# Function to get the age of the bubble in milliseconds 
-func age() -> float:
-	return Time.get_ticks_msec() - created_at
-
- 
 # Called when the bubble is instantiated
 func _init():
 	super._init()
@@ -58,12 +45,6 @@ func _ready():
 	update_mass(mass)
 	
 	
-# Called every frame
-func _process(delta):
-	last_velocity = linear_velocity
-	last_delta = delta
-
-
 # Called when another body enters the collision area
 func _on_body_entered(other):
 	if other is RigidBody2D:

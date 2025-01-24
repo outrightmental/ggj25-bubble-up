@@ -11,7 +11,6 @@ static var _numberCounter: int = 0
 
 # Velocity last seen and delta when it was sampled
 var last_velocity: Vector2 = Vector2.ZERO
-var last_delta: float = 0.0
 
 # Time created
 var created_at: float = 0.0
@@ -21,7 +20,7 @@ var created_at: float = 0.0
 # Last delta is just an approximation of the current frame rate
 # Because it was from the last processed frame, but it will work for our purposes.
 func acceleration() -> Vector2:
-	return (linear_velocity - last_velocity) / last_delta;
+	return (linear_velocity - last_velocity);
 
 
 # Function to get the age of the bubble in milliseconds 
@@ -44,6 +43,5 @@ func _ready():
 	
 	
 # Called every frame
-func _process(delta):
+func _process(_delta):
 	last_velocity = linear_velocity
-	last_delta = delta
