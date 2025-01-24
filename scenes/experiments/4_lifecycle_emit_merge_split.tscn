@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://djsk56db14mx0"]
+[gd_scene load_steps=6 format=3 uid="uid://djsk56db14mx0"]
 
 [ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_s60kq"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_ew5xc"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_ytqld"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="4_6v60j"]
+[ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="5_r1g3f"]
 
 [node name="Experiment 4" type="Node2D"]
 
@@ -21,7 +22,7 @@ spread_y = 0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_ytqld")]
 position = Vector2(323, 255)
-rotation = -0.0927751
+rotation = -0.0422603
 
 [node name="Controls" parent="." instance=ExtResource("4_6v60j")]
 
@@ -31,3 +32,7 @@ offset_top = -359.0
 offset_right = -350.5
 offset_bottom = -335.0
 text = "experiment 4"
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_r1g3f")]
+position = Vector2(394, -12)
+mass = 400.0
