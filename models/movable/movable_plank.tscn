@@ -10,6 +10,7 @@ freeze_mode = 1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_hdwxx")
+bubble_split_factor = 0.01
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1.72492, 1.62982)

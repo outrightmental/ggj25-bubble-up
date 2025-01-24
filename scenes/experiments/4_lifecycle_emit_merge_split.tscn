@@ -22,7 +22,7 @@ spread_y = 0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_ytqld")]
 position = Vector2(323, 255)
-rotation = -0.0927751
+rotation = -0.0422603
 
 [node name="Controls" parent="." instance=ExtResource("4_6v60j")]
 

@@ -3,7 +3,8 @@ extends "res://models/collidable/collidable.gd"
 # Constants
 var _collision_merge_accel_threshold: int = 2000
 var _collision_split_accel_threshold: int = 2000
-var _max_scale_factor: int                = 10
+var _split_mass_vanish_threshold: float = 0.5
+var _max_scale_factor: int				= 10
 
 # Scale factor for the sprite and collision area
 @export var sprite_scale_factor: float = 0.8
@@ -17,6 +18,9 @@ var _max_scale_factor: int                = 10
 #	preload("res://assets/bubble3.png"),
 #	preload("res://assets/bubble4.png")
 ]
+
+# Export the vanish particle effect resource so you can set it in the inspector
+@export var vanish_particle_effect: PackedScene
 
 # Reference to the Sprite node
 @onready var sprite: Sprite2D = $Sprite2D
@@ -74,22 +78,25 @@ func _on_collision_with_bubble(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
 	if abs(acceleration().length()) / mass > _collision_merge_accel_threshold:
-		_merge_into(other)
+		merge_into(other)
 
 
 # Function to handle collision with a movable object
 func _on_collision_with_movable(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	if abs(acceleration().length()) / mass > _collision_split_accel_threshold:
-		_split()
+	var effective_force = other.bubble_split_factor * abs(acceleration().length()) / mass
+	if  effective_force > _collision_split_accel_threshold:
+		split()
+	else:
+		print("Bubble collision with movable object: " + other.name + " at " + str(position) + " with effective force " + str(effective_force))
 		
 		
 # Function to merge two bubbles
-func _merge_into(other) -> void:
+func merge_into(other) -> void:
 	# If the other bubble is smaller or faster, call the function to merge that into this instead
 	if mass > other.mass:
-		other._merge_into(self)
+		other.merge_into(self)
 		return
 	
 	# Lock the other bubble to prevent further collisions
@@ -108,7 +115,7 @@ func _merge_into(other) -> void:
 # Function to split a bubble: remove the current bubble and spawn two new bubbles with half the mass. Position the two
 # new bubbles on opposite sides of the center of the original bubble, halfway between the center and the outside. New
 # bubbles inherit the acceleration of the original bubble
-func _split() -> void:
+func split() -> void:
 	# Lock the other bubble to prevent further collisions
 	if freeze:
 		return
@@ -117,6 +124,11 @@ func _split() -> void:
 
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
+
+	# If mass is below threshold, this is a vanish action, not split
+	if new_mass < _split_mass_vanish_threshold:
+		vanish()
+		return
 
 	# Calculate the new position for the two bubbles
 	var r: float = sprite.get_rect().size.length() / 4
@@ -136,6 +148,25 @@ func _split() -> void:
 	get_parent().add_child(b2)
 	
 	# Destroy this bubble
+	queue_free()
+
+
+# Function to destroy the bubble and spawn the vanish particle effect
+func vanish():
+	# Check if a particle effect is assigned
+	if vanish_particle_effect:
+		# Instance the particle effect
+		var particles = vanish_particle_effect.instance()
+		# Add it as a child of the bubble's parent so it's positioned correctly
+		get_parent().add_child(particles)
+		# Set the position of the particles to the bubble's position
+		particles.global_position = global_position
+		
+		# Optional: Start the particle effect
+		if particles.has_method("restart"):
+			particles.restart()
+
+	# Remove the bubble
 	queue_free()
 	
 
