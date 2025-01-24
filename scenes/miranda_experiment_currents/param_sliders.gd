@@ -5,6 +5,7 @@ extends VBoxContainer
 @onready var f_size_label = $ForceSize
 @onready var f_strength_label = $ForceStrength
 @onready var n_point_label = $NearestPointInfluence
+@onready var point_freq_label = $PointFrequency
 
 func get_value_label_node(label: Node):
 	return label.get_node('Value')
@@ -20,6 +21,7 @@ func _ready() -> void:
 	Global.current_f_size = get_current_value(f_size_label)
 	Global.current_f_strength = get_current_value(f_strength_label)
 	Global.current_n_influence = get_current_value(n_point_label)
+	Global.point_freq = get_current_value(point_freq_label)
 	update_labels()
 	_on_currents_behavior_changed(Global.currents_behavior)
 
@@ -29,6 +31,7 @@ func update_labels():
 	get_value_label_node(f_size_label).text = str(Global.current_f_size).pad_decimals(1)
 	get_value_label_node(f_strength_label).text = str(Global.current_f_strength).pad_decimals(1)
 	get_value_label_node(n_point_label).text = str(Global.current_n_influence).pad_decimals(1)
+	get_value_label_node(point_freq_label).text = str(Global.point_freq).pad_decimals(3)
 
 func _on_f_strength_slider_value_changed(value:float) -> void:
 	Global.current_f_strength = value
@@ -48,6 +51,10 @@ func _on_f_size_slider_value_changed(value:float) -> void:
 
 func _on_n_point_slider_value_changed(value:float) -> void:
 	Global.current_n_influence = value
+	update_labels()
+
+func _on_point_freq_slider_value_changed(value: float) -> void:
+	Global.point_freq = value
 	update_labels()
 
 func _on_currents_behavior_changed(value: Global.CurrentBehavior):

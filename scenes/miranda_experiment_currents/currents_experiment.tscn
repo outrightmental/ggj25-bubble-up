@@ -52,6 +52,32 @@ size_flags_vertical = 10
 mouse_filter = 0
 script = ExtResource("4_4tnk3")
 
+[node name="PointFrequency" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Point Drawing Frequency"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+max_value = 0.05
+step = 0.001
+value = 0.004
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.000"
+
 [node name="GravityStrength" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -182,10 +208,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "0.0"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+
 [node name="RigidBody2D2" parent="." instance=ExtResource("5_kfx50")]
 position = Vector2(224, 95)
 
 [connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_point_freq_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_strength_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_size_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_f_strength_slider_value_changed"]

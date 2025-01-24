@@ -59,6 +59,10 @@ var current_n_influence := 0.0:
 	set(v):
 		current_n_influence = v
 		emit_signal('current_param_changed', 'current_n_influence', v)
+var point_freq := 0.0:
+	set(v):
+		point_freq = v
+		emit_signal('current_param_changed', 'point_freq', v)
 
 func set_currents_behavior(value: CurrentBehavior):
 	currents_behavior = value

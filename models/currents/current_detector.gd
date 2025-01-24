@@ -6,7 +6,6 @@ var current_current: Current = null
 
 var CurrentScene: PackedScene = preload('res://models/currents/current.tscn')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('touch') and mouse_detection_active:
 		var mouse_pos = get_global_mouse_position()

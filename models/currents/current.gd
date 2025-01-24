@@ -15,7 +15,7 @@ enum ForceDirectionMode {
 
 @export var force_direction_mode = ForceDirectionMode.CURRENT_TO_NEXT
 
-var POINT_DRAW_TIMEOUT = 0.004
+var point_draw_timeout = 0.0
 var point_draw_counter = 0
 
 var initial_point: Vector2 = Vector2.ZERO
@@ -28,10 +28,12 @@ var is_active := false
 var curve: Curve2D = Curve2D.new()
 
 func _ready():	
+	Global.connect('current_param_changed', _on_current_param_changed)
 	create_point(initial_point)
 	timer.wait_time = lifetime
 	path.curve = curve
 	is_active = true
+	point_draw_timeout = Global.point_freq
 
 func init_with(mouse_pos: Vector2):
 	initial_point = mouse_pos
@@ -76,18 +78,22 @@ func cleanup():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_active:
-		draw_point()
-#		if point_draw_counter >= POINT_DRAW_TIMEOUT:
-#			draw_point()
-#			point_draw_counter = 0
-#		else:
-#			point_draw_counter += delta
+		if point_draw_counter >= point_draw_timeout:
+			draw_point()
+			point_draw_counter = 0
+		else:
+			point_draw_counter += delta
 
 func _on_timer_timeout() -> void:
 	cleanup()
 
-func _on_path_follower_added(follower: Node2D, path_follow_node: PathFollow2D):
+func _on_path_follower_added(_follower: Node2D, path_follow_node: PathFollow2D):
+	path_follow_node.init_with(self)
 	path.add_child(path_follow_node)
+
+func _on_current_param_changed(param_name: String, value: float):
+	if param_name == 'point_freq':
+		point_draw_timeout = value
 
 func get_object_nearest_point_offset(object: Node2D):
 	var obj_pos = to_local(object.global_position)

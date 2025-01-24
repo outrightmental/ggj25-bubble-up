@@ -47,7 +47,7 @@ func _process(delta):
 func _on_force_emitter_body_entered(body:Node2D) -> void:
 	if Global.currents_behavior == Global.CurrentBehavior.PATH_FOLLOW:
 		var new_path_follow = CurrentPathFollowScene.instantiate()
-		new_path_follow.set_follower(body.get_path())
+		new_path_follow.set_follower(body)
 		emit_signal('path_follower_added', body, new_path_follow)
 	elif Global.currents_behavior == Global.CurrentBehavior.NEAREST_POINT_FORWARD_FORCE:
 		if body.has_method('apply_central_impulse'):
