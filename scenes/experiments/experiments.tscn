@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://s8dtixq1tspv"]
+
+[ext_resource type="Script" path="res://scenes/experiments/experiments.gd" id="1_hc6n4"]
+
+[sub_resource type="Theme" id="Theme_o41tl"]
+
+[node name="Start Scene 2D" type="Node2D"]
+script = ExtResource("1_hc6n4")
+
+[node name="1_planks_block_bubbles" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 316.0
+offset_bottom = 47.0
+theme = SubResource("Theme_o41tl")
+text = "1 - planks block bubbles floating up"
+
+[node name="2_stack_of_planks" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 54.0
+offset_right = 333.0
+offset_bottom = 85.0
+theme = SubResource("Theme_o41tl")
+text = "2 - stack of planks outweighs bubbles"
+
+[node name="3_diving_bell_traps" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 92.0
+offset_right = 260.0
+offset_bottom = 123.0
+theme = SubResource("Theme_o41tl")
+text = "3 - diving bell traps bubbles"
+
+[node name="4_lifecycle_emit_merge_split" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 130.0
+offset_right = 324.0
+offset_bottom = 161.0
+theme = SubResource("Theme_o41tl")
+text = "4 - bubble lifecycle:emit-merge-split"
+
+[connection signal="pressed" from="1_planks_block_bubbles" to="." method="_on_navigate_experiment" binds= ["1_planks_block_bubbles"]]
+[connection signal="pressed" from="2_stack_of_planks" to="." method="_on_navigate_experiment" binds= ["2_stack_of_planks"]]
+[connection signal="pressed" from="3_diving_bell_traps" to="." method="_on_navigate_experiment" binds= ["3_diving_bell_traps"]]
+[connection signal="pressed" from="4_lifecycle_emit_merge_split" to="." method="_on_navigate_experiment" binds= ["4_lifecycle_emit_merge_split"]]

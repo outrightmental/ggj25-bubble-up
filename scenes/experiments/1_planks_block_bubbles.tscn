@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_v8k0f"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="2_c1pti"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_pu2sl"]
-[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://models/controls/controls.tscn" id="4_ek408"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="4_ek408"]
 
 [node name="Experiment 1" type="Node2D"]
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://djsk56db14mx0"]
+
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_s60kq"]
+[ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_ew5xc"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_ytqld"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="4_6v60j"]
+
+[node name="Experiment 4" type="Node2D"]
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_s60kq")
+
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(325, 286)
+script = ExtResource("2_ew5xc")
+spawn_rate = 2.0
+max_bubbles = 3
+spread_x = 0
+spread_y = 0
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_ytqld")]
+position = Vector2(324, 43)
+
+[node name="Controls" parent="." instance=ExtResource("4_6v60j")]
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -462.5
+offset_top = -359.0
+offset_right = -350.5
+offset_bottom = -335.0
+text = "experiment 4"
