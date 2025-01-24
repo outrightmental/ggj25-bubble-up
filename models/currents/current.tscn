@@ -1,8 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi5jd8phit4cn"]
+[gd_scene load_steps=6 format=3 uid="uid://bi5jd8phit4cn"]
 
 [ext_resource type="Script" path="res://models/currents/current.gd" id="1_vbsca"]
 
 [sub_resource type="Curve2D" id="Curve2D_y5l4c"]
+
+[sub_resource type="Curve" id="Curve_b8r3p"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.50437, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6ujw"]
+
+[sub_resource type="Curve" id="Curve_8vaph"]
+_data = [Vector2(0.496879, 0), 0.0, 0.0, 0, 0, Vector2(0.499376, 0.0982659), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [node name="Current" type="Node2D"]
 script = ExtResource("1_vbsca")
@@ -10,9 +20,30 @@ script = ExtResource("1_vbsca")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_y5l4c")
 
-[node name="Line2D" type="Line2D" parent="."]
-visible = false
+[node name="Line2DVisual" type="Line2D" parent="."]
+z_index = 1
+width = 6.0
+width_curve = SubResource("Curve_b8r3p")
+default_color = Color(0.658824, 0.807843, 0.831373, 1)
 joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 16.0
+round_precision = 16
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+self_modulate = Color(1, 1, 1, 0.34902)
+
+[node name="Line2D" type="Line2D" parent="CanvasGroup"]
+material = SubResource("ShaderMaterial_l6ujw")
+width = 40.0
+width_curve = SubResource("Curve_8vaph")
+default_color = Color(0.658824, 0.807843, 0.831373, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+sharp_limit = 32.0
+round_precision = 16
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

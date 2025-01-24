@@ -74,18 +74,13 @@ func set_current_behavior(value: Global.CurrentBehavior):
 func _on_current_param_changed(param_name: String, value: float):
 	match param_name:
 		'current_g_strength':
-			prints('changing gravity to', value)
 			gravity_detector.gravity = value
 		'current_g_size':
-			prints('changing gravity size to', value)
 			gravity_shape.shape.radius = value
 		'current_f_strength':
-			prints('changing force strength to', value)
 			force_strength = value
 		'current_f_size':
-			prints('changing force size to', value)
 			force_shape.shape.radius = value
 		'current_n_influence':
-			prints('changing nearest point influence to', value)
 			nearest_point_influence = value
 
