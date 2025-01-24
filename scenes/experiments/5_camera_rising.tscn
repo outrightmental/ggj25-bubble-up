@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2xtv52c0i30w"]
+
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_iorfn"]
+[ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_fx2xn"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_xolve"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="4_q3ywi"]
+
+[node name="Experiment 4" type="Node2D"]
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_iorfn")
+
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(322, 375)
+script = ExtResource("2_fx2xn")
+spawn_rate = 2.5
+max_bubbles = 25
+spread_x = 0
+spread_y = 0
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(292, 280)
+rotation = -0.0422603
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(384, 191)
+rotation = 0.0419972
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(292, 103)
+rotation = -0.0422603
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(384, 14)
+rotation = 0.0419972
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(339, 260)
+rotation = -0.0422603
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(339, 171)
+rotation = 0.0419972
+
+[node name="RigidBody2D7" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(336, 85)
+rotation = -0.0422603
+
+[node name="RigidBody2D8" parent="." instance=ExtResource("3_xolve")]
+position = Vector2(337, -4)
+rotation = 0.0419972
+
+[node name="Controls" parent="." instance=ExtResource("4_q3ywi")]
+position = Vector2(470, 361)
+show_drag_controls = false
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -462.5
+offset_top = -359.0
+offset_right = -350.5
+offset_bottom = -335.0
+text = "experiment 5"

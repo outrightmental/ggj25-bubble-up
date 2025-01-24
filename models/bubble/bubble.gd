@@ -1,7 +1,7 @@
 extends "res://models/collidable/collidable.gd"
 
 # Constants
-var _collision_merge_accel_threshold: int = 3
+var _collision_merge_accel_threshold: int = 1
 var _collision_split_accel_threshold: int = 4
 var _split_mass_vanish_threshold: float = 0.5
 # var _max_scale_factor: int				= 10
