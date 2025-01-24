@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gl5hdp43qnoj"]
 
-[ext_resource type="Script" path="res://models/controls/controls.gd" id="1_4m1dt"]
+[ext_resource type="Script" path="res://scenes/experiments/controls/controls.gd" id="1_4m1dt"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 

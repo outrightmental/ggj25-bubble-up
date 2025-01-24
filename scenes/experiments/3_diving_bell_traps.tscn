@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccm6dn1ipaysr"]
+
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_aj44t"]
+[ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_pom34"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_7fhgf"]
+[ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="4_d1fha"]
+[ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="5_mqp1v"]
+
+[node name="Experiment 3" type="Node2D"]
+
+[node name="BackgroundTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("1_aj44t")
+
+[node name="Bubble Emitter" type="Node2D" parent="."]
+position = Vector2(327, 313)
+script = ExtResource("2_pom34")
+spawn_rate = 1000.0
+max_bubbles = 100
+
+[node name="board9" parent="." instance=ExtResource("3_7fhgf")]
+position = Vector2(97, 247)
+rotation = -0.379804
+
+[node name="board10" parent="." instance=ExtResource("3_7fhgf")]
+position = Vector2(532, 222)
+rotation = 1.83444
+
+[node name="board11" parent="." instance=ExtResource("3_7fhgf")]
+position = Vector2(556, 55)
+rotation = -3.05074
+
+[node name="board12" parent="." instance=ExtResource("3_7fhgf")]
+position = Vector2(117, 65)
+rotation = -2.83332
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_d1fha")]
+position = Vector2(338, 132)
+mass = 1000.0
+
+[node name="Controls" parent="." instance=ExtResource("5_mqp1v")]
+
+[node name="Label" type="Label" parent="Controls"]
+offset_left = -462.5
+offset_top = -359.0
+offset_right = -350.5
+offset_bottom = -335.0
+text = "experiment 3"

@@ -15,6 +15,16 @@ gravity_scale = -1.0
 linear_damp = 10.0
 script = ExtResource("1_a2r14")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 0.81
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, -50)
+initial_velocity_max = 93.16
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cj1uy")
 

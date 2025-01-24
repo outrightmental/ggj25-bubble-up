@@ -1,45 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d26wbec30ix57"]
+[gd_scene load_steps=2 format=3 uid="uid://d26wbec30ix57"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_vaujs"]
 
-[sub_resource type="Theme" id="Theme_o41tl"]
-
-[node name="Start Scene 2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_vaujs")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 12.0
-offset_top = 16.0
-offset_right = 316.0
-offset_bottom = 47.0
-theme = SubResource("Theme_o41tl")
-text = "1 - planks block bubbles floating up"
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 54.0
-offset_right = 333.0
-offset_bottom = 85.0
-theme = SubResource("Theme_o41tl")
-text = "2 - stack of planks outweighs bubbles"
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 92.0
-offset_right = 260.0
-offset_bottom = 123.0
-theme = SubResource("Theme_o41tl")
-text = "3 - diving bell traps bubbles"
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 11.0
-offset_top = 130.0
-offset_right = 324.0
-offset_bottom = 161.0
-theme = SubResource("Theme_o41tl")
-text = "4 - bubble lifecycle:emit-merge-split"
-
-[connection signal="pressed" from="Button" to="." method="_on_navigate_experiment_1"]
-[connection signal="pressed" from="Button2" to="." method="_on_navigate_experiment_2"]
-[connection signal="pressed" from="Button3" to="." method="_on_navigate_experiment_3"]
-[connection signal="pressed" from="Button4" to="." method="_on_navigate_experiment_4"]
