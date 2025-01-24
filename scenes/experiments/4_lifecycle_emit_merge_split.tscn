@@ -12,15 +12,16 @@ position = Vector2(320, 180)
 texture = ExtResource("1_s60kq")
 
 [node name="Bubble Emitter" type="Node2D" parent="."]
-position = Vector2(325, 286)
+position = Vector2(322, 375)
 script = ExtResource("2_ew5xc")
-spawn_rate = 2.0
-max_bubbles = 3
+spawn_rate = 2.5
+max_bubbles = 5
 spread_x = 0
 spread_y = 0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("3_ytqld")]
-position = Vector2(324, 43)
+position = Vector2(323, 255)
+rotation = -0.0927751
 
 [node name="Controls" parent="." instance=ExtResource("4_6v60j")]
 
