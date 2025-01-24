@@ -1,4 +1,6 @@
-extends RigidBody2D
+extends "res://models/collidable/collidable.gd"
+
+@export var bubble_split_factor: float = 0.38
 
 var drag_behavior: Global.DragBehavior = Global.DragBehavior.FREEZE_AND_REPOSITION
 var drag_pos_start: Vector2
@@ -11,6 +13,8 @@ var dragging_force: float              = 10 # How much force is applied when dra
 
 
 func _ready() -> void:
+	super._ready()
+	name = "Movable #" + str(number)
 	dragging_force = Global.get_drag_force()
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
