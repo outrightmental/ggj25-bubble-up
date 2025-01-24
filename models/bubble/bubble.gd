@@ -1,10 +1,10 @@
 extends "res://models/collidable/collidable.gd"
 
 # Constants
-var _collision_merge_accel_threshold: int = 2000
+var _collision_merge_accel_threshold: int = 1000
 var _collision_split_accel_threshold: int = 2000
 var _split_mass_vanish_threshold: float = 0.5
-var _max_scale_factor: int				= 10
+# var _max_scale_factor: int				= 10
 
 # Scale factor for the sprite and collision area
 @export var sprite_scale_factor: float = 0.8
@@ -25,9 +25,11 @@ var _max_scale_factor: int				= 10
 # Reference to the Sprite node
 @onready var sprite: Sprite2D = $Sprite2D
 
-# Refernece to the Collision node
+# Reference to the Collision node
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
+# Reference to the vanish particle emitter node
+@onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
 # Get the acceleration between the last processed frame and now
 # Acceleration = Change in velocity / time between samples
@@ -88,8 +90,6 @@ func _on_collision_with_movable(other) -> void:
 	var effective_force = other.bubble_split_factor * abs(acceleration().length()) / mass
 	if  effective_force > _collision_split_accel_threshold:
 		split()
-	else:
-		print("Bubble collision with movable object: " + other.name + " at " + str(position) + " with effective force " + str(effective_force))
 		
 		
 # Function to merge two bubbles
@@ -166,9 +166,14 @@ func vanish():
 		if particles.has_method("restart"):
 			particles.restart()
 
-	# Remove the bubble
+	# Activate the particle emitter
+	vanish_particle_emitter.emitting = true
+
+	# Hide the sprite, disable the collision shape, wait 1 second, then queue free
+	sprite.hide()
+	collision.disabled = true	
+	await get_tree().create_timer(1).timeout
 	queue_free()
-	
 
 # Function to update the scale of the bubble based on its mass
 func update_mass(new_mass: float):
