@@ -3,7 +3,8 @@ extends "res://models/collidable/collidable.gd"
 # Constants
 var _collision_merge_accel_threshold: int = 3
 var _collision_split_accel_threshold: int = 4
-var _split_mass_vanish_threshold: float = 0.5
+var _split_mass_vanish_threshold: float   = 0.5
+
 # var _max_scale_factor: int				= 10
 
 # Scale factor for the sprite and collision area
@@ -12,30 +13,33 @@ var _split_mass_vanish_threshold: float = 0.5
 
 # Load the bubble textures
 @onready var bubble_sprites: Array[Variant] = [
-	preload("res://assets/bubble_test.png"),
-#	preload("res://assets/bubble1.png"),
-#	preload("res://assets/bubble2.png"),
-#	preload("res://assets/bubble3.png"),
-#	preload("res://assets/bubble4.png")
-]
+											  preload("res://assets/bubble_test.png"),
+											  #	preload("res://assets/bubble1.png"),
+											  #	preload("res://assets/bubble2.png"),
+											  #	preload("res://assets/bubble3.png"),
+											  #	preload("res://assets/bubble4.png")
+											  ]
 
 # Export the vanish particle effect resource so you can set it in the inspector
 @export var vanish_particle_effect: PackedScene
 
 # Reference to the Sprite node
 @onready var sprite: Sprite2D = $Sprite2D
-
 # Reference to the Collision node
 @onready var collision: CollisionShape2D = $CollisionShape2D
-
 # Reference to the vanish particle emitter node
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
+
+
+# Method reports that this is a bubble
+func is_bubble() -> bool:
+	return true
+
 
 # Called when the bubble is instantiated
 func _init():
 	super._init()
-	name = "Bubble #" + str(number)
- 
+
 
 # Called when the scene is added to the tree
 # Load the sprite and connect the signal
@@ -43,55 +47,59 @@ func _ready():
 	super._ready()
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
-	
-	
+
+
 # Called when another body enters the collision area
 func _on_body_entered(other):
 	if other is RigidBody2D:
-		if other.name.begins_with("Bubble"):
+		if other.has_method("is_bubble") and other.is_bubble():
 			_on_collision_with_bubble(other)
-			return
-		if other.name.begins_with("Movable"):
+		elif other.has_method("is_movable") and other.is_movable():
 			_on_collision_with_movable(other)
-			return
+		else:
+			print("Unknown collision: " + name + " → " + other.name)
 
 
 # Function to handle collision with another bubble
 func _on_collision_with_bubble(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	if abs(acceleration().length()) / mass > _collision_merge_accel_threshold:
+	var a = acceleration()
+	var b = a.length()
+	if abs(b) > _collision_merge_accel_threshold:
 		merge_into(other)
+	else:
+		var do_nothing = 123
 
 
 # Function to handle collision with a movable object
 func _on_collision_with_movable(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	var effective_force = other.bubble_split_factor * abs(acceleration().length()) / mass
+	var effective_force = other.bubble_split_factor * abs(acceleration().length())
 	if  effective_force > _collision_split_accel_threshold:
 		split()
-		
-		
+
+
 # Function to merge two bubbles
 func merge_into(other) -> void:
 	# If the other bubble is smaller or faster, call the function to merge that into this instead
-	if mass > other.mass:
+	if mass > other.mass or (mass == other.mass and linear_velocity.length() < other.linear_velocity.length()):
 		other.merge_into(self)
 		return
-	
+
 	# Lock the other bubble to prevent further collisions
-	if freeze or other.freeze:
+	if is_freeze_enabled() or other.is_freeze_enabled():
 		return
 	else:
 		freeze = true
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
-	
+
 	# Destroy this bubble
-	queue_free()	
-	
+	queue_free()
+
 
 # Function to split a bubble: remove the current bubble and spawn two new bubbles with half the mass. Position the two
 # new bubbles on opposite sides of the center of the original bubble, halfway between the center and the outside. New
@@ -112,8 +120,8 @@ func split() -> void:
 		return
 
 	# Calculate the new position for the two bubbles
-	var r: float = sprite.get_rect().size.length() / 4
-	var a: float = linear_velocity.angle()
+	var r: float   = sprite.get_rect().size.length() / 4
+	var a: float   = linear_velocity.angle()
 	var v: Vector2 = Vector2(cos(a), sin(a)) * r
 
 	# Create the new bubble 1
@@ -121,13 +129,13 @@ func split() -> void:
 	b1.position = position + v
 	b1.mass = new_mass
 	get_parent().add_child(b1)
-	
+
 	# Create the new bubble 2
 	var b2 = preload("res://models/bubble/bubble.tscn").instantiate()
 	b2.position = position - v
 	b2.mass = new_mass
 	get_parent().add_child(b2)
-	
+
 	# Destroy this bubble
 	queue_free()
 
@@ -142,7 +150,7 @@ func vanish():
 		get_parent().add_child(particles)
 		# Set the position of the particles to the bubble's position
 		particles.global_position = global_position
-		
+
 		# Optional: Start the particle effect
 		if particles.has_method("restart"):
 			particles.restart()
@@ -152,9 +160,10 @@ func vanish():
 
 	# Hide the sprite, disable the collision shape, wait 1 second, then queue free
 	sprite.hide()
-	collision.disabled = true	
+	collision.disabled = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
+
 
 # Function to update the scale of the bubble based on its mass
 func update_mass(new_mass: float):
