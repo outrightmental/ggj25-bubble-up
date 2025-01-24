@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccxygjcelwpxa"]
+[gd_scene load_steps=6 format=3 uid="uid://ccxygjcelwpxa"]
 
-[ext_resource type="PackedScene" uid="uid://cdwvrae81naga" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
+[ext_resource type="PackedScene" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="1_lvb3o"]
 [ext_resource type="Script" path="res://scenes/miranda_experiment_currents/physics_selector.gd" id="3_7jgml"]
 [ext_resource type="Script" path="res://scenes/miranda_experiment_currents/param_sliders.gd" id="4_4tnk3"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_kfx50"]
 
 [node name="CurrentsExperiment" type="Node2D"]
 
@@ -155,8 +156,38 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "0.0"
 
+[node name="NearestPointInfluence" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer/Sliders"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/NearestPointInfluence"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Nearest Point Influence"
+
+[node name="Slider" type="HSlider" parent="Controls/MarginContainer/VBoxContainer/Sliders/NearestPointInfluence"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+max_value = 20.0
+step = 0.1
+value = 1.0
+
+[node name="Value" type="Label" parent="Controls/MarginContainer/VBoxContainer/Sliders/NearestPointInfluence"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0.0"
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("5_kfx50")]
+position = Vector2(224, 95)
+
 [connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_strength_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_size_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/ForceStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_f_strength_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/ForceSize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_f_size_slider_value_changed"]
+[connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/NearestPointInfluence/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_n_point_slider_value_changed"]
