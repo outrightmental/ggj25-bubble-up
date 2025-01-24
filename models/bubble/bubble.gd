@@ -94,16 +94,22 @@ func _on_collision_with_bubble(other) -> void:
 		
 # Function to merge two bubbles
 func _merge_with(other) -> void:
-	if other.freeze:
+	# If the other bubble is larger, call the merge function on it
+	if other.mass > mass:
+		other._merge_with(self)
 		return
-		
-	freeze = true
 	
+	# Lock the other bubble to prevent further collisions
+	if freeze or other.freeze:
+		return
+	else:
+		other.freeze = true
+
 	# Update the current bubble
-	other.update_mass(mass + other.mass)
+	update_mass(mass + other.mass)
 	
-	# Destroy this bubble
-	queue_free()	
+	# Destroy the other bubble
+	other.queue_free()	
 
 # Function to update the scale of the bubble based on its mass
 func update_mass(new_mass: float):
