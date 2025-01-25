@@ -12,13 +12,9 @@ var dragging_force: float              = 10 # How much force is applied when dra
 @onready var collision_polygon = $CollisionPolygon2D # Cache the reference
 
 
-# Method reports that this is a movable object
-func is_movable() -> bool:
-	return true
-
-
 func _ready() -> void:
 	super._ready()
+	add_to_group(Global.GROUP_MOVABLES)
 	dragging_force = Global.get_drag_force()
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
@@ -51,14 +47,14 @@ func _drag_start(touch_pos: Vector2):
 	drag_pos_start = position
 	match drag_behavior:
 		Global.DragBehavior.FREEZE_AND_REPOSITION:
-			freeze = true
-			lock_rotation = true
+			set_freeze_enabled(true)
+			set_lock_rotation_enabled(true)
 
 
 func _drag_stop():
 	dragging = false
-	freeze = false
-	lock_rotation = false
+	set_freeze_enabled(false)
+	set_lock_rotation_enabled(false)
 
 
 func _drag(touch_pos: Vector2):
