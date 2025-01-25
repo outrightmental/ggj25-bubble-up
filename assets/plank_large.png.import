@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n61hq6wp3c3t"
-path="res://.godot/imported/gradient.png-d202e9d2061bad1e62c61a0d531cfdd0.ctex"
+uid="uid://dqam6qdjhueyv"
+path="res://.godot/imported/plank_large.png-47620f8c5af1517ab356991815a3ae67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gradient.png"
-dest_files=["res://.godot/imported/gradient.png-d202e9d2061bad1e62c61a0d531cfdd0.ctex"]
+source_file="res://assets/plank_large.png"
+dest_files=["res://.godot/imported/plank_large.png-47620f8c5af1517ab356991815a3ae67.ctex"]
 
 [params]
 

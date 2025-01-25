@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n61hq6wp3c3t"
-path="res://.godot/imported/gradient.png-d202e9d2061bad1e62c61a0d531cfdd0.ctex"
+uid="uid://nhekarmwgme4"
+path="res://.godot/imported/wheel.png-b48455c42a7be6c2920727e7cf23792d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gradient.png"
-dest_files=["res://.godot/imported/gradient.png-d202e9d2061bad1e62c61a0d531cfdd0.ctex"]
+source_file="res://assets/wheel.png"
+dest_files=["res://.godot/imported/wheel.png-b48455c42a7be6c2920727e7cf23792d.ctex"]
 
 [params]
 
