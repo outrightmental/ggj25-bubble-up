@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wwn3w1xcwn2s"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_smgma"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_smgma")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]

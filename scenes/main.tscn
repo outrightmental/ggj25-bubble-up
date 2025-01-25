@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://d26wbec30ix57"]
+[gd_scene load_steps=3 format=3 uid="uid://d26wbec30ix57"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_vaujs"]
+[ext_resource type="Texture2D" uid="uid://bgjijta8wiqkq" path="res://assets/draft/start_screen_bg_test.jpg" id="2_5slox"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vaujs")
+
+[node name="StartScreenBgTest" type="Sprite2D" parent="."]
+position = Vector2(320, 180)
+texture = ExtResource("2_5slox")
+
+[node name="Button" type="Button" parent="StartScreenBgTest"]
+offset_left = -28.0
+offset_top = -17.0
+offset_right = 28.0
+offset_bottom = 14.0
+text = "START"
+
+[connection signal="pressed" from="StartScreenBgTest/Button" to="." method="_on_start_game"]
