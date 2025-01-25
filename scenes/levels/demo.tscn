@@ -1,33 +1,98 @@
-[gd_scene load_steps=5 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=10 format=3 uid="uid://wwn3w1xcwn2s"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="Texture2D" uid="uid://b4mxdek0ds4e" path="res://assets/deep_background_test.jpg" id="2_l7h20"]
+[ext_resource type="Texture2D" uid="uid://tp4u1bxf8sac" path="res://assets/kelp_test.png" id="3_li4dl"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="3_t4t02"]
 [ext_resource type="PackedScene" uid="uid://bdyj503wctuof" path="res://models/hud/hud.tscn" id="4_2udma"]
+[ext_resource type="Texture2D" uid="uid://y0e0a62hso3x" path="res://assets/leaf_test.png" id="4_nrgwe"]
+[ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_2r7qs"]
+[ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="6_ee8b1"]
+[ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="7_gf4m4"]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 180)
+position = Vector2(320, 3200)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="DeepBackground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
+position = Vector2(0, 25)
+motion_scale = Vector2(0.26, 0.26)
 
 [node name="DeepBackgroundTest" type="Sprite2D" parent="ParallaxBackground/DeepBackground"]
-position = Vector2(320, 541)
+position = Vector2(320, 645)
 texture = ExtResource("2_l7h20")
 
 [node name="NearBackground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
 
-[node name="Playground" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="KelpTest" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(202, 1541)
+texture = ExtResource("3_li4dl")
 
-[node name="Playground" type="Node2D" parent="."]
+[node name="KelpTest2" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(493, 1274)
+texture = ExtResource("3_li4dl")
 
-[node name="BubbleEmitter" type="Node2D" parent="Playground"]
+[node name="KelpTest3" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(213, 957)
+texture = ExtResource("3_li4dl")
+
+[node name="KelpTest4" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(482, 573)
+texture = ExtResource("3_li4dl")
+
+[node name="LeafTest" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(447, 1595)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest2" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(303, 1382)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest3" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(151, 1243)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest4" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(372, 1131)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest5" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(513, 870)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest6" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(361, 790)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest7" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(286, 598)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest8" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(417, 427)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest9" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(206, 227)
+texture = ExtResource("4_nrgwe")
+
+[node name="LeafTest10" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
+position = Vector2(480, 90)
+texture = ExtResource("4_nrgwe")
+
+[node name="HUDCanvas" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="HUDCanvas" instance=ExtResource("4_2udma")]
+top_level = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="BubbleEmitter" type="Node2D" parent="."]
 position = Vector2(307, 3407)
 script = ExtResource("3_t4t02")
 spawn_rate = 20.0
@@ -35,9 +100,49 @@ max_bubbles = 50
 spread_x = 50
 spread_y = 50
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Obstacles" type="Node2D" parent="."]
 
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_2udma")]
-top_level = true
+[node name="plank1" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(277, 3181)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="plank2" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(379, 3045)
+
+[node name="plank3" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(306, 2840)
+
+[node name="plank5" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(342, 2152)
+
+[node name="plank6" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(314, 1812)
+
+[node name="plank7" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(354, 1492)
+
+[node name="plank8" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(314, 1288)
+
+[node name="plank9" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(358, 1016)
+
+[node name="plank4" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(294, 2392)
+
+[node name="plank10" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(366, 710)
+
+[node name="plank11" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(340, 280)
+
+[node name="plank12" parent="Obstacles" instance=ExtResource("5_2r7qs")]
+position = Vector2(366, 137)
+
+[node name="mine1" parent="Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(167, 787)
+
+[node name="mine2" parent="Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(536, 458)
+
+[node name="bell1" parent="Obstacles" instance=ExtResource("7_gf4m4")]
+position = Vector2(490, 2578)

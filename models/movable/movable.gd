@@ -47,14 +47,14 @@ func _drag_start(touch_pos: Vector2):
 	drag_pos_start = position
 	match drag_behavior:
 		Global.DragBehavior.FREEZE_AND_REPOSITION:
-			freeze = true
-			lock_rotation = true
+			set_freeze_enabled(true)
+			set_lock_rotation_enabled(true)
 
 
 func _drag_stop():
 	dragging = false
-	freeze = false
-	lock_rotation = false
+	set_freeze_enabled(false)
+	set_lock_rotation_enabled(false)
 
 
 func _drag(touch_pos: Vector2):

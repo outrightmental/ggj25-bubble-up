@@ -34,6 +34,13 @@ var _split_mass_vanish_threshold: float   = 0.5
 # Called when the bubble is instantiated
 func _init():
 	super._init()
+	
+	
+# Called every frame to check if the bubble has risen to the surface
+func _process(_delta) -> void:
+	if global_position.y < 0:
+		# TODO score the bubble by mass
+		vanish()
 
 
 # Called when the scene is added to the tree
@@ -60,8 +67,8 @@ func _on_body_entered(other):
 func _on_collision_with_bubble(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	var a = acceleration()
-	var b = a.length()
+	var a: Vector2 = acceleration()
+	var b: float   = a.length()
 	if abs(b) > _collision_merge_accel_threshold:
 		merge_into(other)
 
@@ -86,7 +93,7 @@ func merge_into(other) -> void:
 	if is_freeze_enabled() or other.is_freeze_enabled():
 		return
 	else:
-		freeze = true
+		set_deferred("freeze", true)
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
@@ -100,10 +107,10 @@ func merge_into(other) -> void:
 # bubbles inherit the acceleration of the original bubble
 func split() -> void:
 	# Lock the other bubble to prevent further collisions
-	if freeze:
+	if is_freeze_enabled():
 		return
 	else:
-		freeze = true
+		set_deferred("freeze", true)
 
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
