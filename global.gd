@@ -26,3 +26,7 @@ func get_drag_factor() -> float:
 
 func get_drag_force() -> float:
 	return lerp(dragging_force_min, dragging_force_max, drag_factor)
+
+
+static var GROUP_BUBBLES = "bubbles"
+static var GROUP_MOVABLES = "movables"

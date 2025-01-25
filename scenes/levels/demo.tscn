@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://wwn3w1xcwn2s"]
+
+[ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
+[ext_resource type="Texture2D" uid="uid://b4mxdek0ds4e" path="res://assets/deep_background_test.jpg" id="2_l7h20"]
+[ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="3_t4t02"]
+[ext_resource type="PackedScene" uid="uid://bdyj503wctuof" path="res://models/hud/hud.tscn" id="4_2udma"]
+
+[node name="Demo Level" type="Node2D"]
+script = ExtResource("1_57u5x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="DeepBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="DeepBackgroundTest" type="Sprite2D" parent="ParallaxBackground/DeepBackground"]
+position = Vector2(320, 541)
+texture = ExtResource("2_l7h20")
+
+[node name="NearBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="Playground" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Playground" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Playground"]
+position = Vector2(307, 981)
+script = ExtResource("3_t4t02")
+spawn_rate = 10.0
+spread_x = 0
+spread_y = 0
+
+[node name="HUD" parent="." instance=ExtResource("4_2udma")]
+top_level = true

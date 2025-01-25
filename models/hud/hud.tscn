@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://gl5hdp43qnoj"]
+[gd_scene load_steps=3 format=3 uid="uid://bdyj503wctuof"]
 
-[ext_resource type="Script" path="res://scenes/experiments/controls/controls.gd" id="1_4m1dt"]
+[ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(466.5, 364)
-script = ExtResource("1_4m1dt")
+script = ExtResource("1_rlli4")
 
 [node name="Button Main" type="Button" parent="."]
 offset_left = 112.0
@@ -24,22 +24,6 @@ offset_bottom = -340.0
 theme = SubResource("Theme_yn7ku")
 text = "reset"
 
-[node name="Button Main" type="Button" parent="Button Reset"]
-offset_left = 112.0
-offset_top = -371.0
-offset_right = 165.0
-offset_bottom = -340.0
-theme = SubResource("Theme_yn7ku")
-text = "menu"
-
-[node name="Button Reset" type="Button" parent="Button Reset"]
-offset_left = 56.0
-offset_top = -371.0
-offset_right = 104.0
-offset_bottom = -340.0
-theme = SubResource("Theme_yn7ku")
-text = "reset"
-
 [node name="Drag Controls" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -47,8 +31,7 @@ offset_left = -467.5
 offset_top = -37.0
 offset_right = -427.5
 offset_bottom = 3.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
 [connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
-[connection signal="pressed" from="Button Reset/Button Main" to="." method="_on_navigate_main"]
-[connection signal="pressed" from="Button Reset/Button Reset" to="." method="_on_navigate_reset"]

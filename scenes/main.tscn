@@ -11,10 +11,28 @@ position = Vector2(320, 180)
 texture = ExtResource("2_5slox")
 
 [node name="Button" type="Button" parent="StartScreenBgTest"]
-offset_left = -28.0
-offset_top = -17.0
-offset_right = 28.0
-offset_bottom = 14.0
+offset_left = -40.0
+offset_top = 22.0
+offset_right = 50.0
+offset_bottom = 59.0
 text = "START"
 
+[node name="Button2" type="Button" parent="StartScreenBgTest"]
+offset_left = 238.0
+offset_top = 149.0
+offset_right = 313.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 10
+text = "EXPERIMENTS"
+
+[node name="Label" type="Label" parent="StartScreenBgTest"]
+offset_left = -100.0
+offset_top = -46.0
+offset_right = 112.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 40
+text = "Bubble Up!"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="StartScreenBgTest/Button" to="." method="_on_start_game"]
+[connection signal="pressed" from="StartScreenBgTest/Button2" to="." method="_on_goto_experiments"]

@@ -12,13 +12,9 @@ var dragging_force: float              = 10 # How much force is applied when dra
 @onready var collision_polygon = $CollisionPolygon2D # Cache the reference
 
 
-# Method reports that this is a movable object
-func is_movable() -> bool:
-	return true
-
-
 func _ready() -> void:
 	super._ready()
+	add_to_group(Global.GROUP_MOVABLES)
 	dragging_force = Global.get_drag_force()
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")

@@ -31,11 +31,6 @@ var _split_mass_vanish_threshold: float   = 0.5
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
 
-# Method reports that this is a bubble
-func is_bubble() -> bool:
-	return true
-
-
 # Called when the bubble is instantiated
 func _init():
 	super._init()
@@ -45,6 +40,7 @@ func _init():
 # Load the sprite and connect the signal
 func _ready():
 	super._ready()
+	add_to_group(Global.GROUP_BUBBLES)
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
 
@@ -52,9 +48,9 @@ func _ready():
 # Called when another body enters the collision area
 func _on_body_entered(other):
 	if other is RigidBody2D:
-		if other.has_method("is_bubble") and other.is_bubble():
+		if other.is_in_group(Global.GROUP_BUBBLES):
 			_on_collision_with_bubble(other)
-		elif other.has_method("is_movable") and other.is_movable():
+		elif other.is_in_group(Global.GROUP_MOVABLES):
 			_on_collision_with_movable(other)
 		else:
 			print("Unknown collision: " + name + " → " + other.name)
@@ -68,8 +64,6 @@ func _on_collision_with_bubble(other) -> void:
 	var b = a.length()
 	if abs(b) > _collision_merge_accel_threshold:
 		merge_into(other)
-	else:
-		var do_nothing = 123
 
 
 # Function to handle collision with a movable object
