@@ -39,7 +39,16 @@ offset_bottom = 161.0
 theme = SubResource("Theme_o41tl")
 text = "4 - bubble lifecycle:emit-merge-split"
 
+[node name="5_camera_rising" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 168.0
+offset_right = 175.0
+offset_bottom = 199.0
+theme = SubResource("Theme_o41tl")
+text = "5 - camera rising"
+
 [connection signal="pressed" from="1_planks_block_bubbles" to="." method="_on_navigate_experiment" binds= ["1_planks_block_bubbles"]]
 [connection signal="pressed" from="2_stack_of_planks" to="." method="_on_navigate_experiment" binds= ["2_stack_of_planks"]]
 [connection signal="pressed" from="3_diving_bell_traps" to="." method="_on_navigate_experiment" binds= ["3_diving_bell_traps"]]
 [connection signal="pressed" from="4_lifecycle_emit_merge_split" to="." method="_on_navigate_experiment" binds= ["4_lifecycle_emit_merge_split"]]
+[connection signal="pressed" from="5_camera_rising" to="." method="_on_navigate_experiment" binds= ["5_camera_rising"]]
