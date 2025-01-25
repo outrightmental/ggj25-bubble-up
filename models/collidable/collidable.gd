@@ -1,8 +1,5 @@
 extends RigidBody2D
 
-# Constants
-var _collision_cooldown_millis: int       = 100
-
 # Unique identifier for the collidable object
 @export var number: int = 0
 

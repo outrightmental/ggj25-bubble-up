@@ -32,7 +32,5 @@ movables="Movables are everything else underwater that isn't a bubble"
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_2d=2
 2d/snap/snap_2d_transforms_to_pixel=true
