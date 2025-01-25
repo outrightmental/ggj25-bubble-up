@@ -6,7 +6,7 @@
 
 [sub_resource type="Theme" id="Theme_c4fsq"]
 
-[node name="Start Scene 2D" type="Node2D"]
+[node name="Experiments" type="Node2D"]
 script = ExtResource("1_hc6n4")
 
 [node name="1_planks_block_bubbles" type="Button" parent="."]

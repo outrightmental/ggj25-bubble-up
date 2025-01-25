@@ -1,18 +1,29 @@
 extends Node2D
 
-@onready var camera : Camera2D = $Camera2D
+@export var camera_position_recompute_interval: float = 1
 
-# Called every frame
-# Find all bubble nodes and get the average position weighted by bubble mass
-func _process(_delta):
-	var bubbles = get_tree().get_nodes_in_group(Global.GROUP_BUBBLES)
-	var total_mass = 0
-	var total_position_y = 0
-	# TODO consider some better algorithm here that uses sampling/interpolation/tweening instead of recomputing the average every frame 
+@onready var camera: Camera2D = $Camera2D
+@onready var timer: Timer = $Timer
+@onready var bubble_emitter: Node2D = $"Playground/BubbleEmitter"
+
+var target_y: float = 0
+
+
+func _ready():
+	timer.wait_time = camera_position_recompute_interval
+	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
+	timer.start()
+
+
+func _on_timer_timeout():
+	var bubbles: Array[Node]           = get_tree().get_nodes_in_group(Global.GROUP_BUBBLES)
+	var total_mass: float = 0
+	var total_y: float    = 0
 	for bubble in bubbles:
-		total_mass += bubble.mass
-		total_position_y += bubble.position.y * bubble.mass
-	var scroll_offset_y = -total_position_y / total_mass if total_mass > 0 else 0
-	if total_mass > 0:
-		camera.global_position.y = scroll_offset_y
-		print("Scroll offset: " + str(camera.position.y))
+		var y: float = bubble.global_position.y
+		var m: float = bubble.mass
+		total_mass += m
+		total_y += y * m
+	var target_y = total_y / total_mass if total_mass > 0 else 0
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property(camera, "position:y", target_y, camera_position_recompute_interval)

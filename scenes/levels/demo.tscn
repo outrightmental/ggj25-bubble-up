@@ -27,12 +27,17 @@ motion_scale = Vector2(0.4, 0.4)
 
 [node name="Playground" type="Node2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="Playground"]
-position = Vector2(307, 981)
+[node name="BubbleEmitter" type="Node2D" parent="Playground"]
+position = Vector2(307, 3407)
 script = ExtResource("3_t4t02")
-spawn_rate = 10.0
-spread_x = 0
-spread_y = 0
+spawn_rate = 20.0
+max_bubbles = 50
+spread_x = 50
+spread_y = 50
 
-[node name="HUD" parent="." instance=ExtResource("4_2udma")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("4_2udma")]
 top_level = true
+
+[node name="Timer" type="Timer" parent="."]

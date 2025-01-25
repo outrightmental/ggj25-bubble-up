@@ -25,6 +25,7 @@ theme = SubResource("Theme_yn7ku")
 text = "reset"
 
 [node name="Button Main" type="Button" parent="Button Reset"]
+layout_mode = 0
 offset_left = 112.0
 offset_top = -371.0
 offset_right = 165.0
@@ -33,6 +34,7 @@ theme = SubResource("Theme_yn7ku")
 text = "menu"
 
 [node name="Button Reset" type="Button" parent="Button Reset"]
+layout_mode = 0
 offset_left = 56.0
 offset_top = -371.0
 offset_right = 104.0
