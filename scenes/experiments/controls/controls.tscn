@@ -24,33 +24,46 @@ offset_bottom = -340.0
 theme = SubResource("Theme_yn7ku")
 text = "reset"
 
-[node name="Button Main" type="Button" parent="Button Reset"]
-layout_mode = 0
-offset_left = 112.0
-offset_top = -371.0
-offset_right = 165.0
-offset_bottom = -340.0
-theme = SubResource("Theme_yn7ku")
-text = "menu"
+[node name="Drag Label" type="Label" parent="."]
+offset_left = -461.5
+offset_top = -29.0
+offset_right = -349.5
+offset_bottom = -6.0
+text = "drag:"
 
-[node name="Button Reset" type="Button" parent="Button Reset"]
-layout_mode = 0
-offset_left = 56.0
-offset_top = -371.0
-offset_right = 104.0
-offset_bottom = -340.0
-theme = SubResource("Theme_yn7ku")
-text = "reset"
+[node name="Amount Label" type="Label" parent="."]
+offset_left = -168.5
+offset_top = -27.0
+offset_right = -19.5
+offset_bottom = -4.0
+text = "amount:"
+metadata/_edit_use_anchors_ = true
 
-[node name="Drag Controls" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -467.5
-offset_top = -37.0
-offset_right = -427.5
-offset_bottom = 3.0
+[node name="Drag Controls" type="Node2D" parent="."]
+
+[node name="OptionButton" type="OptionButton" parent="Drag Controls"]
+offset_left = -409.5
+offset_top = -33.0
+offset_right = -285.5
+offset_bottom = -6.0
+
+[node name="VSlider" type="HSlider" parent="Drag Controls"]
+offset_left = -92.5
+offset_top = -36.0
+offset_right = 129.5
+offset_bottom = 4.0
+max_value = 1.0
+step = 0.01
+metadata/_edit_use_anchors_ = true
+
+[node name="Label Drag Force Amount Value" type="Label" parent="Drag Controls"]
+offset_left = 144.5
+offset_top = -27.0
+offset_right = 293.5
+offset_bottom = -4.0
+text = "X"
 
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
 [connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
-[connection signal="pressed" from="Button Reset/Button Main" to="." method="_on_navigate_main"]
-[connection signal="pressed" from="Button Reset/Button Reset" to="." method="_on_navigate_reset"]
+[connection signal="item_selected" from="Drag Controls/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="Drag Controls/VSlider" to="." method="_on_v_slider_value_changed"]
