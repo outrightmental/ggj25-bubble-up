@@ -1,9 +1,10 @@
 extends "res://models/collidable/collidable.gd"
 
 # Constants
-var _collision_merge_accel_threshold: int = 3
+var _collision_merge_accel_threshold: int = 1
 var _collision_split_accel_threshold: int = 4
 var _split_mass_vanish_threshold: float   = 0.5
+var _collision_cooldown_millis: int       = 100
 
 # var _max_scale_factor: int				= 10
 
@@ -31,20 +32,23 @@ var _split_mass_vanish_threshold: float   = 0.5
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
 
-# Method reports that this is a bubble
-func is_bubble() -> bool:
-	return true
-
-
 # Called when the bubble is instantiated
 func _init():
 	super._init()
+	
+	
+# Called every frame to check if the bubble has risen to the surface
+func _process(_delta) -> void:
+	if global_position.y < 0:
+		# TODO score the bubble by mass
+		vanish()
 
 
 # Called when the scene is added to the tree
 # Load the sprite and connect the signal
 func _ready():
 	super._ready()
+	add_to_group(Global.GROUP_BUBBLES)
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
 
@@ -52,9 +56,9 @@ func _ready():
 # Called when another body enters the collision area
 func _on_body_entered(other):
 	if other is RigidBody2D:
-		if other.has_method("is_bubble") and other.is_bubble():
+		if other.is_in_group(Global.GROUP_BUBBLES):
 			_on_collision_with_bubble(other)
-		elif other.has_method("is_movable") and other.is_movable():
+		elif other.is_in_group(Global.GROUP_MOVABLES):
 			_on_collision_with_movable(other)
 		else:
 			print("Unknown collision: " + name + " → " + other.name)
@@ -64,12 +68,10 @@ func _on_body_entered(other):
 func _on_collision_with_bubble(other) -> void:
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
-	var a = acceleration()
-	var b = a.length()
+	var a: Vector2 = acceleration()
+	var b: float   = a.length()
 	if abs(b) > _collision_merge_accel_threshold:
 		merge_into(other)
-	else:
-		var do_nothing = 123
 
 
 # Function to handle collision with a movable object
@@ -92,7 +94,7 @@ func merge_into(other) -> void:
 	if is_freeze_enabled() or other.is_freeze_enabled():
 		return
 	else:
-		freeze = true
+		set_deferred("freeze", true)
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
@@ -106,10 +108,10 @@ func merge_into(other) -> void:
 # bubbles inherit the acceleration of the original bubble
 func split() -> void:
 	# Lock the other bubble to prevent further collisions
-	if freeze:
+	if is_freeze_enabled():
 		return
 	else:
-		freeze = true
+		set_deferred("freeze", true)
 
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2

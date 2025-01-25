@@ -1,18 +1,26 @@
 extends Node2D
 
-@onready var dropdown = $OptionButton
+@onready var dropdown = $"Drag Controls/OptionButton"
 
-@onready var slider = $VSlider
+@onready var slider = $"Drag Controls/VSlider"
 
-@onready var drag_force_amount_value = $"Label Drag Force Amount Value"
+@onready var drag_force_amount_value = $"Drag Controls/Label Drag Force Amount Value"
+
+@onready var drag_controls = $"Drag Controls"
+
+@export var show_drag_controls : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for behavior in Global.DragBehavior:
-		dropdown.add_item(behavior)
-	dropdown.select(Global.get_drag_behavior())
-	slider.set_value_no_signal(Global.get_drag_factor())
-	_update_force_value()
+	if (show_drag_controls):
+		drag_controls.show()
+		for behavior in Global.DragBehavior:
+			dropdown.add_item(behavior)
+		dropdown.select(Global.get_drag_behavior())
+		slider.set_value_no_signal(Global.get_drag_factor())
+		_update_force_value()
+	else:
+		drag_controls.hide()	
 
 
 func _on_navigate_main() -> void:

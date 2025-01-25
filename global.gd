@@ -3,8 +3,9 @@ extends Node
 enum DragBehavior { FREEZE_AND_REPOSITION, APPLY_DAMPENED_FORCE }
 var drag_behavior: DragBehavior = DragBehavior.APPLY_DAMPENED_FORCE
 var drag_factor: float          = 0.9
-var dragging_force_min: float                   = 5 # How much force is applied when dragging
-var dragging_force_max: float                   = 200 # How much force is applied when dragging
+var dragging_force_min: float   = 5 # How much force is applied when dragging
+var dragging_force_max: float   = 200 # How much force is applied when dragging
+
 
 func set_drag_behavior(value: DragBehavior):
 	drag_behavior = value
@@ -67,3 +68,6 @@ var point_freq := 0.0:
 func set_currents_behavior(value: CurrentBehavior):
 	currents_behavior = value
 	emit_signal('currents_behavior_changed', value)
+
+static var GROUP_BUBBLES: String  = "bubbles"
+static var GROUP_MOVABLES: String = "movables"
