@@ -33,6 +33,7 @@ offset_right = -427.5
 offset_bottom = 3.0
 
 [node name="VSlider" type="HSlider" parent="Drag Controls"]
+layout_mode = 0
 offset_left = 416.0
 offset_top = 1.0
 offset_right = 638.0
@@ -42,12 +43,14 @@ max_value = 1.0
 step = 0.01
 
 [node name="OptionButton" type="OptionButton" parent="Drag Controls"]
+layout_mode = 0
 offset_left = 58.0
 offset_top = 4.0
 offset_right = 182.0
 offset_bottom = 31.0
 
 [node name="Label2" type="Label" parent="Drag Controls"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 8.0
 offset_right = 118.0
@@ -55,6 +58,7 @@ offset_bottom = 31.0
 text = "drag:"
 
 [node name="Label3" type="Label" parent="Drag Controls"]
+layout_mode = 0
 offset_left = 340.0
 offset_top = 10.0
 offset_right = 489.0
@@ -62,6 +66,7 @@ offset_bottom = 33.0
 text = "amount:"
 
 [node name="Label Drag Force Amount Value" type="Label" parent="Drag Controls"]
+layout_mode = 0
 offset_left = 611.0
 offset_top = 12.0
 offset_right = 760.0
