@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm6m7gkslxoco"]
+[gd_scene load_steps=13 format=3 uid="uid://dfe5vx8l7u7nq"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_fu35c"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="2_mjat6"]
@@ -75,7 +75,7 @@ texture_filter = 1
 position = Vector2(1, 1)
 rotation = 0.0116274
 collision_mask = 3
-mass = 5.0
+mass = 15.0
 gravity_scale = 0.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 10)

@@ -53,3 +53,4 @@ shape = SubResource("CapsuleShape2D_uauxw")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_87foh")
+autoplay = "default"

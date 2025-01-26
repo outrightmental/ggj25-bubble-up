@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" path="res://assets/button_style.tres" id="4_8qp7o"]
 [ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="4_k30n6"]
 [ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="5_o5orc"]
-[ext_resource type="StyleBox" path="res://assets/button_style_pressed.tres" id="5_txcna"]
+[ext_resource type="StyleBox" uid="uid://c6voixto0coym" path="res://assets/button_style_pressed.tres" id="5_txcna"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tms0t"]
 particle_flag_disable_z = true

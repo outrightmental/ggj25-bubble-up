@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://m6ti4nrv7erd"]
+[gd_scene load_steps=3 format=3 uid="uid://co1x1r30vr4if"]
 
 [ext_resource type="Texture2D" uid="uid://48qnsmxbyerq" path="res://assets/coral_A.png" id="1_csial"]
 [ext_resource type="Script" path="res://models/movable/movable_static.gd" id="1_qyku0"]

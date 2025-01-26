@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c68e6qfvrrdl6"]
+[gd_scene load_steps=8 format=3 uid="uid://c0u8tuetebpvx"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_lm5na"]
 [ext_resource type="Texture2D" uid="uid://botvde3lkgemk" path="res://assets/anglerfish_animation.png" id="2_6gj4p"]
@@ -44,7 +44,7 @@ texture_filter = 1
 position = Vector2(1, 1)
 rotation = 0.0116274
 collision_mask = 3
-mass = 20.0
+mass = 30.0
 gravity_scale = 0.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 10)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dagww6odvtyda"]
+[gd_scene load_steps=2 format=3 uid="uid://fbrnskyn67e5"]
 
 [ext_resource type="Texture2D" uid="uid://bbgttvuy12cts" path="res://assets/plastic_bag.png" id="1_ej8ih"]
 
 [node name="PlasticBag" type="RigidBody2D"]
 texture_filter = 1
+mass = 10.0
 gravity_scale = 0.05
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
