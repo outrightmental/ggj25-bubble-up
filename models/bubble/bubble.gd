@@ -32,57 +32,6 @@ var _collision_cooldown_millis: int       = 100
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
 
-# Called when the bubble is instantiated
-func _init():
-	super._init()
-	
-	
-# Called every frame to check if the bubble has risen to the surface
-func _process(_delta) -> void:
-	if global_position.y < 0:
-		# TODO score the bubble by mass
-		vanish()
-
-
-# Called when the scene is added to the tree
-# Load the sprite and connect the signal
-func _ready():
-	super._ready()
-	add_to_group(Global.GROUP_BUBBLES)
-	connect("body_entered", Callable(self, "_on_body_entered"))
-	update_mass(mass)
-
-
-# Called when another body enters the collision area
-func _on_body_entered(other):
-	if other is RigidBody2D:
-		if other.is_in_group(Global.GROUP_BUBBLES):
-			_on_collision_with_bubble(other)
-		elif other.is_in_group(Global.GROUP_MOVABLES):
-			_on_collision_with_movable(other)
-		else:
-			print("Unknown collision: " + name + " → " + other.name)
-
-
-# Function to handle collision with another bubble
-func _on_collision_with_bubble(other) -> void:
-	if min(age(), other.age()) < _collision_cooldown_millis:
-		return
-	var a: Vector2 = acceleration()
-	var b: float   = a.length()
-	if abs(b) > _collision_merge_accel_threshold:
-		merge_into(other)
-
-
-# Function to handle collision with a movable object
-func _on_collision_with_movable(other) -> void:
-	if min(age(), other.age()) < _collision_cooldown_millis:
-		return
-	var effective_force = other.bubble_split_factor * abs(acceleration().length())
-	if  effective_force > _collision_split_accel_threshold:
-		split()
-
-
 # Function to merge two bubbles
 func merge_into(other) -> void:
 	# If the other bubble is smaller or faster, call the function to merge that into this instead
@@ -144,6 +93,79 @@ func split() -> void:
 
 # Function to destroy the bubble and spawn the vanish particle effect
 func vanish():
+	Signals.bubble_vanish(mass)
+	_destroy()
+
+
+# Function to exit the bubble and vanish it
+func exit():
+	Signals.bubble_exit(mass)
+	_destroy()
+
+
+# Function to update the scale of the bubble based on its mass
+func update_mass(new_mass: float):
+	mass = new_mass
+	var scale_factor: float = pow(mass, 0.333)
+	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
+	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
+	sprite.texture = bubble_sprites[0]
+	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
+
+
+# Called when the bubble is instantiated
+func _init():
+	super._init()
+	
+	
+# Called every frame to check if the bubble has risen to the surface
+func _process(_delta) -> void:
+	if global_position.y < 0:
+		exit()
+
+
+# Called when the scene is added to the tree
+# Load the sprite and connect the signal
+func _ready():
+	super._ready()
+	add_to_group(Global.GROUP_BUBBLES)
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	update_mass(mass)
+	Signals.bubble_spawn(mass)
+
+
+# Called when another body enters the collision area
+func _on_body_entered(other):
+	if other is RigidBody2D:
+		if other.is_in_group(Global.GROUP_BUBBLES):
+			_on_collision_with_bubble(other)
+		elif other.is_in_group(Global.GROUP_MOVABLES):
+			_on_collision_with_movable(other)
+		else:
+			print("Unknown collision: " + name + " → " + other.name)
+
+
+# Function to handle collision with another bubble
+func _on_collision_with_bubble(other) -> void:
+	if min(age(), other.age()) < _collision_cooldown_millis:
+		return
+	var a: Vector2 = acceleration()
+	var b: float   = a.length()
+	if abs(b) > _collision_merge_accel_threshold:
+		merge_into(other)
+
+
+# Function to handle collision with a movable object
+func _on_collision_with_movable(other) -> void:
+	if min(age(), other.age()) < _collision_cooldown_millis:
+		return
+	var effective_force = other.bubble_split_factor * abs(acceleration().length())
+	if  effective_force > _collision_split_accel_threshold:
+		split()
+
+
+# Function to destroy the bubble with an effect
+func _destroy():
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
 		# Instance the particle effect
@@ -165,13 +187,4 @@ func vanish():
 	collision.disabled = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
-
-
-# Function to update the scale of the bubble based on its mass
-func update_mass(new_mass: float):
-	mass = new_mass
-	var scale_factor: float = pow(mass, 0.333)
-	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
-	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
-	sprite.texture = bubble_sprites[0]
-	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
+	

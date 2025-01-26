@@ -29,7 +29,6 @@ func get_drag_force() -> float:
 	return lerp(dragging_force_min, dragging_force_max, drag_factor)
 
 # Currents stuff
-
 signal currents_behavior_changed(value: CurrentBehavior)
 signal current_param_changed(name: String, value: float)
 

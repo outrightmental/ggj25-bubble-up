@@ -45,7 +45,6 @@ func _process(delta):
 		queue_free()
 
 func _on_force_emitter_body_entered(body:Node2D) -> void:
-	print('body entered')
 	if Global.currents_behavior == Global.CurrentBehavior.PATH_FOLLOW:
 		var new_path_follow = CurrentPathFollowScene.instantiate()
 		new_path_follow.set_follower(body)

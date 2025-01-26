@@ -33,5 +33,33 @@ offset_right = -427.5
 offset_bottom = 3.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Score Label" type="Label" parent="."]
+offset_left = -458.5
+offset_top = -363.0
+offset_right = -379.5
+offset_bottom = -340.0
+text = "BEST EXIT:"
+
+[node name="Score Value" type="Label" parent="."]
+offset_left = -371.5
+offset_top = -363.0
+offset_right = -331.5
+offset_bottom = -340.0
+text = "123"
+
+[node name="Lost Label" type="Label" parent="."]
+offset_left = -300.5
+offset_top = -363.0
+offset_right = -244.5
+offset_bottom = -340.0
+text = "SCORE:"
+
+[node name="Lost Value" type="Label" parent="."]
+offset_left = -238.5
+offset_top = -363.0
+offset_right = -198.5
+offset_bottom = -340.0
+text = "123"
+
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
 [connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]

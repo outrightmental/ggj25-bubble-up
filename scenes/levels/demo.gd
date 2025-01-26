@@ -12,6 +12,8 @@ func _ready():
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
+	Signals.update_score(0)
+	Signals.update_wasted_air_mass(0)
 
 
 func _on_timer_timeout():
@@ -33,3 +35,7 @@ func _on_timer_timeout():
 		target_y + randf_range(-camera_sway_y, camera_sway_y) - camera_lead_y,
 		camera_position_recompute_interval
 	).set_trans(Tween.TRANS_LINEAR)
+
+
+	
+	
