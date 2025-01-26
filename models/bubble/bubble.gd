@@ -43,8 +43,10 @@ class BubbleSprite:
 func get_closest_bubble_sprite(size: int) -> BubbleSprite:
 	var closest: BubbleSprite = bubble_sprites[0]
 	for s in bubble_sprites:
-		if abs(s.size - size) < abs(closest.size - size):
+		if size >= s.size:
 			closest = s
+		elif s.size > closest.size:
+			break
 	return closest
 
 # Export the vanish particle effect resource so you can set it in the inspector
@@ -143,7 +145,7 @@ func update_mass(new_mass: float):
 	var size: int = floor(_bubble_sprite_base_size * pow(mass, 0.333))
 	var bubble_sprite = get_closest_bubble_sprite(size)
 	var collision_scale_factor: float = size / collision_base_size
-	var sprite_scale_factor: float = size / bubble_sprite.size
+	var sprite_scale_factor: float = max(1, size / bubble_sprite.size)
 	sprite.set_deferred("texture",  bubble_sprite.texture)
 	sprite.set_deferred("scale",  Vector2(sprite_scale_factor, sprite_scale_factor))
 	collision.set_deferred("scale",  Vector2(collision_scale_factor, collision_scale_factor))
