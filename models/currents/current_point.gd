@@ -2,7 +2,9 @@ class_name CurrentPoint extends Node2D
 
 signal path_follower_added(follower: Node2D, path_follow_node: PathFollow2D)
 
-const DECAY_FACTOR = 200.0
+const DECAY_FACTOR = 1.0
+
+const LIFETIME = 0.7
 
 var force_strength = 0.0
 var nearest_point_influence = 0.0
@@ -15,20 +17,25 @@ var direction := Vector2.ZERO
 @onready var gravity_shape = $GravityDetector/CollisionShape2D
 @onready var force_shape = $ForceEmitter/CollisionShape2D
 
+var current_force_vector = Vector2.ZERO
+
 var parent_current = null
 
 func init_with(pos: Vector2, p_direction: Vector2, current: Current):
 	position = pos 
 	direction = p_direction
+	current_force_vector = direction * force_strength
 	parent_current = current
 	return self
 
 func update_direction(p_direction: Vector2):
 	direction = p_direction
+	print(direction.length())
+	current_force_vector = direction * force_strength
 	# Update force against intersecting bodies
 	for body in force_emitter.get_overlapping_bodies():
 		if body.has_method('apply_central_impulse'):
-			body.apply_central_impulse(direction * force_strength)
+			body.apply_central_impulse(current_force_vector)
 
 func _ready() -> void:
 	force_strength = Global.current_f_strength
@@ -37,12 +44,28 @@ func _ready() -> void:
 	Global.connect('current_param_changed', _on_current_param_changed)
 	set_current_behavior(Global.currents_behavior)
 
+	var lifetime_timer = get_tree().create_timer(LIFETIME)
+	lifetime_timer.connect('timeout', _on_lifetime_timer_timeout)
+
+# For performance reasons (and a bit of gameplay), do not allow the point to exist for longer than a certain time
+func _on_lifetime_timer_timeout():
+	queue_free()
+
 func _process(delta):
+	pass
 	# Slowly reduce force to zero over time
-	gravity_detector.gravity += DECAY_FACTOR * delta
-	gravity_detector.gravity = min(gravity_detector.gravity, 0.0)
-	if gravity_detector.gravity == 0.0:
-		queue_free()
+	#if direction.length() > 0.0:
+	#	var current_force_strength = current_force_vector.length()
+	#	var new_force_strength = max(current_force_strength - (DECAY_FACTOR * delta), 0)
+	#	current_force_vector = current_force_vector.normalized() * new_force_strength
+	#	if current_force_strength <= 0.0:
+	#		queue_free()
+	#else:
+	#	var current_force_strength = current_force_vector.length()
+	#	var new_force_strength = min(current_force_strength + (DECAY_FACTOR * delta), 0)
+	#	current_force_vector = current_force_vector.normalized() * new_force_strength
+	#	if current_force_strength >= 0.0:
+	#		queue_free()
 
 func _on_force_emitter_body_entered(body:Node2D) -> void:
 	if Global.currents_behavior == Global.CurrentBehavior.PATH_FOLLOW:
@@ -52,10 +75,10 @@ func _on_force_emitter_body_entered(body:Node2D) -> void:
 	elif Global.currents_behavior == Global.CurrentBehavior.NEAREST_POINT_FORWARD_FORCE:
 		if body.has_method('apply_central_impulse'):
 			var vacuum_force = position - body.global_position
-			body.apply_central_impulse(direction * force_strength + vacuum_force * nearest_point_influence)
+			body.apply_central_impulse(current_force_vector + vacuum_force * nearest_point_influence)
 	else:
 		if body.has_method('apply_central_impulse'):
-			body.apply_central_impulse(direction * force_strength)
+			body.apply_central_impulse(current_force_vector)
 			if body.has_method('on_current_collide'):
 				body.on_current_collide(parent_current)
 
@@ -85,4 +108,3 @@ func _on_current_param_changed(param_name: String, value: float):
 			force_shape.shape.radius = value
 		'current_n_influence':
 			nearest_point_influence = value
-

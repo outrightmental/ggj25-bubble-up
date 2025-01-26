@@ -12,4 +12,5 @@ height = 40.0
 texture = ExtResource("1_yur8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
 shape = SubResource("CapsuleShape2D_1ix62")

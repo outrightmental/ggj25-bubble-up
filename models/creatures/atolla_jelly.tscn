@@ -15,6 +15,7 @@ center_of_mass = Vector2(0, -0.01)
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_eaqdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

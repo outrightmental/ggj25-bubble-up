@@ -24,6 +24,7 @@ starting_direction = 1
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_wnyak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

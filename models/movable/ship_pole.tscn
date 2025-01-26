@@ -6,6 +6,7 @@
 size = Vector2(369, 17)
 
 [node name="ShipPole" type="RigidBody2D"]
+texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dfkw5")
