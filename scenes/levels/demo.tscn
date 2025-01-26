@@ -298,10 +298,9 @@ gradient = ExtResource("6_pjbmc")
 
 [node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Background"]
 z_index = -101
-offset_left = 2.0
-offset_top = -284.0
-offset_right = 642.0
-offset_bottom = 76.0
+offset_top = -193.0
+offset_right = 640.0
+offset_bottom = 167.0
 texture = ExtResource("8_q2tfo")
 
 [node name="SnowBack" type="ParallaxLayer" parent="Background/ParallaxBackground"]
