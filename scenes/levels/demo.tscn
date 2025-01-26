@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=76 format=3 uid="uid://blvcseru37xcn"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
@@ -11,26 +11,259 @@
 [ext_resource type="Texture2D" uid="uid://bsk4aqt4fi2lw" path="res://assets/backgrounds/tall_background.png" id="6_dlprd"]
 [ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="6_ee8b1"]
 [ext_resource type="Texture2D" uid="uid://clc124fko5cht" path="res://assets/gradients/background.tres" id="6_pjbmc"]
-[ext_resource type="PackedScene" path="res://models/marine_snow.tscn" id="8_b03hs"]
-[ext_resource type="PackedScene" path="res://models/bubbles_effect.tscn" id="9_ojdci"]
+[ext_resource type="PackedScene" uid="uid://bhvpctpcsmxqw" path="res://models/marine_snow.tscn" id="8_b03hs"]
+[ext_resource type="Texture2D" uid="uid://dlda52dl5spb5" path="res://assets/sky.png" id="8_q2tfo"]
+[ext_resource type="PackedScene" uid="uid://dgdajjka3ta54" path="res://models/bubbles_effect.tscn" id="9_ojdci"]
 [ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="11_y8yd6"]
 [ext_resource type="Script" path="res://scenes/levels/gradient_sampler_canvas_modulate.gd" id="12_qee7i"]
 [ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
-[ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
-[ext_resource type="PackedScene" uid="uid://un0yy20pm2mr" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
-[ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="PackedScene" uid="uid://btv4s6q3pygoq" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://cbce6amij7djt" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
+[ext_resource type="PackedScene" uid="uid://c68e6qfvrrdl6" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
-[ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
-[ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
-[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
-[ext_resource type="PackedScene" uid="uid://bpu5wvmum0tp7" path="res://models/movable/can.tscn" id="23_ey2gt"]
-[ext_resource type="PackedScene" uid="uid://dfe5vx8l7u7nq" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
-[ext_resource type="PackedScene" uid="uid://co1x1r30vr4if" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
-[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
-[ext_resource type="PackedScene" uid="uid://dburt64fbrvr5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
-[ext_resource type="PackedScene" uid="uid://ftusmtv00obr" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
+[ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
+[ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
+[ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
+[ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
+[ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/board_pixel.png" id="32_3mfg7"]
+[ext_resource type="Texture2D" uid="uid://cdbv8po8v1a0y" path="res://assets/atolla_animation_2.png" id="32_8bqhn"]
+[ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="33_5cbdi"]
+[ext_resource type="Texture2D" uid="uid://nhekarmwgme4" path="res://assets/wheel.png" id="35_380sw"]
+[ext_resource type="Texture2D" uid="uid://d0jfbyeldx3cd" path="res://assets/firework_animation.png" id="36_7fhye"]
+[ext_resource type="PackedScene" uid="uid://dp071slbvsnkm" path="res://models/parallax_fish_visual_only.tscn" id="37_m73q5"]
+[ext_resource type="Texture2D" uid="uid://ddmtvhhc1b1ck" path="res://assets/mine.png" id="38_nmpcl"]
+[ext_resource type="Texture2D" uid="uid://b01moka310222" path="res://assets/soda_can.png" id="39_5jkdg"]
+[ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="40_mw11k"]
+[ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="41_58txr"]
+[ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="42_vnxps"]
+[ext_resource type="PackedScene" uid="uid://b2pd0mlym6k58" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
+[ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="44_ghr1b"]
+[ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="45_b34nw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7r56"]
+atlas = ExtResource("32_8bqhn")
+region = Rect2(0, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr01k"]
+atlas = ExtResource("32_8bqhn")
+region = Rect2(88, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdda"]
+atlas = ExtResource("32_8bqhn")
+region = Rect2(176, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh3y3"]
+atlas = ExtResource("32_8bqhn")
+region = Rect2(264, 0, 88, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uaudp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7r56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr01k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwdda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh3y3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq0ep"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(0, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73f5b"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(113, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xopou"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(226, 0, 113, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3wk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq0ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73f5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63xny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq0ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73f5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebnv2"]
+atlas = ExtResource("41_58txr")
+region = Rect2(0, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcewp"]
+atlas = ExtResource("41_58txr")
+region = Rect2(77, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfxcu"]
+atlas = ExtResource("41_58txr")
+region = Rect2(154, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7heaa"]
+atlas = ExtResource("41_58txr")
+region = Rect2(231, 0, 77, 81)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfvyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebnv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcewp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfxcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7heaa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewq8d"]
+atlas = ExtResource("44_ghr1b")
+region = Rect2(0, 0, 98, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nbxk"]
+atlas = ExtResource("44_ghr1b")
+region = Rect2(98, 0, 98, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqryp"]
+atlas = ExtResource("44_ghr1b")
+region = Rect2(196, 0, 98, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s6ey"]
+atlas = ExtResource("44_ghr1b")
+region = Rect2(294, 0, 98, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stnub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewq8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nbxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqryp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s6ey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c2kt"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ynb"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5fqt"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibpx3"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi0by"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifwx8"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg2ak"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnowx"]
+atlas = ExtResource("45_b34nw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g770"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c2kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ynb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5fqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibpx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi0by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifwx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg2ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnowx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
@@ -63,6 +296,14 @@ texture = ExtResource("6_dlprd")
 script = ExtResource("5_lunj7")
 gradient = ExtResource("6_pjbmc")
 
+[node name="TextureRect" type="TextureRect" parent="Background/ParallaxBackground/Background"]
+z_index = -101
+offset_left = 2.0
+offset_top = -284.0
+offset_right = 642.0
+offset_bottom = 76.0
+texture = ExtResource("8_q2tfo")
+
 [node name="SnowBack" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 modulate = Color(0.585232, 0.613571, 0.818121, 1)
 motion_scale = Vector2(0.8, 0.8)
@@ -76,6 +317,445 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(0, 360)
 
 [node name="BubblesEffect" parent="Background/ParallaxBackground/BubblesBack" instance=ExtResource("9_ojdci")]
+
+[node name="BackgroundFish" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+modulate = Color(0.180392, 0.278431, 0.678431, 0.690196)
+position = Vector2(685, -11293)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Fish" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish"]
+texture_filter = 1
+position = Vector2(-649, 12260)
+scale = Vector2(0.5, 0.5)
+
+[node name="PlankTest2" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(1002, 2826)
+rotation = 0.303902
+scale = Vector2(0.964, 1)
+texture = ExtResource("32_3mfg7")
+
+[node name="PlankTest3" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(644, 2916)
+rotation = 0.0650144
+scale = Vector2(0.964, 1)
+texture = ExtResource("32_3mfg7")
+
+[node name="PlankTest4" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(736, 2878)
+rotation = 0.427586
+scale = Vector2(0.964, 1)
+texture = ExtResource("32_3mfg7")
+
+[node name="PlankTest" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(600, 2652)
+rotation = -0.125301
+scale = Vector2(0.956964, 0.971514)
+skew = 0.0296379
+texture = ExtResource("33_5cbdi")
+
+[node name="PlankTest6" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(792, 2706)
+rotation = 0.269683
+scale = Vector2(0.956964, 0.971514)
+skew = 0.0296379
+texture = ExtResource("33_5cbdi")
+
+[node name="PlankTest5" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(732, 2962)
+rotation = -0.1646
+scale = Vector2(0.956964, 0.971514)
+skew = 0.0296379
+texture = ExtResource("33_5cbdi")
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(420, 2828)
+rotation = 0.0631174
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2D11" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(492, 2772)
+rotation = 0.0424731
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2D12" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(526, 2878)
+rotation = -0.285692
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(348, 2900)
+rotation = -0.1656
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(96, 2236)
+rotation = -3.15012
+scale = Vector2(1.059, 1)
+texture = ExtResource("38_nmpcl")
+
+[node name="Sprite3" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(234, 2382)
+rotation = -3.21764
+scale = Vector2(1.059, 1)
+texture = ExtResource("38_nmpcl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(-42, 2870)
+rotation = -2.8353
+texture = ExtResource("35_380sw")
+
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(762, 1668)
+rotation = 0.0924673
+sprite_frames = SubResource("SpriteFrames_w3wk4")
+autoplay = "default"
+
+[node name="ParallaxFishVisualOnly" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(1294, 2196)
+rotation = 0.169291
+scale = Vector2(-1, 1)
+
+[node name="ParallaxFishVisualOnly2" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(776, 1936)
+rotation = 0.0660625
+scale = Vector2(-1, 1)
+
+[node name="Sprite" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(27.3333, 1743.33)
+rotation = -0.00070262
+scale = Vector2(1.059, 1)
+texture = ExtResource("38_nmpcl")
+
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(824, 1746)
+rotation = 0.0346096
+sprite_frames = SubResource("SpriteFrames_63xny")
+autoplay = "default"
+
+[node name="Sprite2D7" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(704, 1372)
+rotation = -0.340893
+texture = ExtResource("39_5jkdg")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(750, 1400)
+rotation = 0.556399
+texture = ExtResource("39_5jkdg")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(594, 1544)
+rotation = -0.624059
+texture = ExtResource("39_5jkdg")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(294, 1752)
+rotation = 0.355645
+texture = ExtResource("40_mw11k")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(438, 1712)
+rotation = -0.781523
+texture = ExtResource("40_mw11k")
+
+[node name="Sprite2D9" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(692, 624)
+rotation = 0.102831
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D18" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(600, 552)
+rotation = -0.0699941
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D17" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(554.637, 2020.52)
+rotation = -0.455589
+scale = Vector2(1, 1)
+texture = ExtResource("39_5jkdg")
+
+[node name="Sprite2D16" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(606, 672)
+rotation = 0.102831
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D10" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(293.333, 387.333)
+rotation = 0.0664386
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D19" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(968, 260)
+rotation = -0.318351
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D20" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(1028, 192)
+rotation = -0.285572
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D21" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+texture_filter = 1
+position = Vector2(1116, 518)
+rotation = -0.285572
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D8" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(312, 780)
+rotation = 0.344376
+texture = ExtResource("42_vnxps")
+
+[node name="VisualOnlyFishSchool" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("43_geh4o")]
+position = Vector2(766, 814)
+scale = Vector2(-1, 1)
+
+[node name="VisualOnlyFishSchool2" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("43_geh4o")]
+position = Vector2(618, 942)
+
+[node name="VisualOnlyFishSchool3" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("43_geh4o")]
+position = Vector2(1088, 1056)
+scale = Vector2(-1, 1)
+
+[node name="VisualOnlyFishSchool4" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("43_geh4o")]
+position = Vector2(-46, 1436)
+
+[node name="ParallaxSchoolFishVisualOnly" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(642, -20)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly7" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(726, 46)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly8" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(830, -80)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly9" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(804, -34)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+texture_filter = 1
+position = Vector2(8, 32)
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+texture_filter = 1
+position = Vector2(46, 182)
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+texture_filter = 1
+position = Vector2(382, 214)
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="Sprite2D4" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+texture_filter = 1
+position = Vector2(434, 148)
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+texture_filter = 1
+position = Vector2(-374, 36)
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly2" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(46.6667, 186.667)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly3" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(174, 73.3333)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly4" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(956, -352)
+rotation = -0.158136
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly10" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(866, -292)
+rotation = -0.158136
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly11" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(646, -324)
+rotation = -0.158136
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly6" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(6, -476.667)
+rotation = 0.14329
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly5" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(109.333, -218)
+rotation = 0.349854
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly5" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly5" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly5"]
+texture_filter = 1
+position = Vector2(-94.5939, -11.0952)
+rotation = 0.36869
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4g770")
+autoplay = "default"
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly5"]
+texture_filter = 1
+position = Vector2(-94.5939, -11.0952)
+rotation = 0.36869
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4g770")
+autoplay = "default"
 
 [node name="BubblesFront" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 modulate = Color(0.534456, 0.603522, 0.828975, 1)
@@ -176,7 +856,6 @@ texture_filter = 0
 position = Vector2(542, 2735)
 mass = 2.0
 gravity_scale = 0.0
-bubble_split_factor = 0.1
 
 [node name="Can" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
 position = Vector2(116, 2365)
@@ -192,7 +871,6 @@ position = Vector2(27, 2163)
 rotation = 1.57176
 mass = 2.0
 gravity_scale = 0.0
-bubble_split_factor = 0.1
 
 [node name="MoonJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
 position = Vector2(499, 2228)
@@ -335,5 +1013,220 @@ position = Vector2(572, 356)
 position = Vector2(546, 3406)
 rotation = -0.223543
 
-[node name="Plank" parent="ObstacleCanvas" instance=ExtResource("5_2r7qs")]
-position = Vector2(97, 567)
+[node name="ParallaxForeground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="foreground" type="ParallaxLayer" parent="ParallaxForeground"]
+modulate = Color(0.204895, 0.284633, 0.49451, 1)
+position = Vector2(685, -11293)
+motion_scale = Vector2(1.2, 1.2)
+
+[node name="Fish" type="Node2D" parent="ParallaxForeground/foreground"]
+texture_filter = 1
+position = Vector2(-649, 12260)
+scale = Vector2(1.5, 1.5)
+
+[node name="PlankTest2" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(18, 2820.67)
+rotation = 0.533386
+scale = Vector2(0.964, 1)
+texture = ExtResource("32_3mfg7")
+
+[node name="PlankTest" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(282.667, 2671.33)
+rotation = -0.581338
+scale = Vector2(0.956964, 0.971514)
+skew = 0.0296379
+texture = ExtResource("33_5cbdi")
+
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(307.333, 2988.67)
+rotation = -0.405486
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(45.3333, 3199.33)
+rotation = 0.211001
+sprite_frames = SubResource("SpriteFrames_uaudp")
+autoplay = "default"
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(36.6668, 2237.33)
+rotation = -0.495939
+texture = ExtResource("35_380sw")
+
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(67.3334, 2611.33)
+rotation = 0.0924673
+sprite_frames = SubResource("SpriteFrames_w3wk4")
+autoplay = "default"
+
+[node name="ParallaxFishVisualOnly" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(44, 1912)
+rotation = 0.169291
+scale = Vector2(-1, 1)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(395.333, 1602)
+rotation = -0.00070262
+scale = Vector2(1.059, 1)
+texture = ExtResource("38_nmpcl")
+
+[node name="Sprite2D5" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(258, 1387.33)
+rotation = -0.448964
+sprite_frames = SubResource("SpriteFrames_63xny")
+autoplay = "default"
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(87.3334, 1346.67)
+rotation = -0.55842
+texture = ExtResource("39_5jkdg")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(14, 1420)
+rotation = 0.355645
+texture = ExtResource("40_mw11k")
+
+[node name="Sprite2D9" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(78, 673.333)
+rotation = -0.148934
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D10" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+texture_filter = 1
+position = Vector2(293.333, 387.333)
+rotation = 0.0664386
+sprite_frames = SubResource("SpriteFrames_dfvyb")
+autoplay = "default"
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(392, 818.667)
+rotation = 1.34806
+scale = Vector2(0.939518, 1.10577)
+texture = ExtResource("42_vnxps")
+
+[node name="VisualOnlyFishSchool" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("43_geh4o")]
+position = Vector2(19.3333, 893.333)
+
+[node name="ParallaxSchoolFishVisualOnly" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(-8, 110.667)
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly2" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(46.6667, 186.667)
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly3" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(174, 73.3333)
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly4" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(302, -358.667)
+rotation = -0.158136
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly6" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(6, -476.667)
+rotation = 0.14329
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly6" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly6" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly6"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_stnub")
+autoplay = "default"
+
+[node name="ParallaxSchoolFishVisualOnly5" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
+position = Vector2(109.333, -218)
+rotation = 0.349854
+scale = Vector2(-1, 1)
+
+[node name="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly5" index="0"]
+visible = false
+
+[node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly5" index="1"]
+position = Vector2(0.666662, 1.33335)
+scale = Vector2(5.73333, 5.13334)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly5"]
+texture_filter = 1
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4g770")
+autoplay = "default"
+
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6"]
+[editable path="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly5"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly6"]
+[editable path="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly5"]
