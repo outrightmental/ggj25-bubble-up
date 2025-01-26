@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdajjka3ta54"]
+
+[ext_resource type="Texture2D" uid="uid://dmel3yfguhaju" path="res://assets/particles/bubble_particle.png" id="1_yr5wu"]
+
+[sub_resource type="Gradient" id="Gradient_5wp3r"]
+offsets = PackedFloat32Array(0, 0.998636)
+colors = PackedColorArray(0.877217, 0.877217, 0.877217, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3eph2"]
+gradient = SubResource("Gradient_5wp3r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ns6yl"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 360, 1)
+orbit_velocity_min = -0.00499991
+orbit_velocity_max = 0.0050001
+radial_velocity_min = -30.0
+radial_velocity_max = 30.0
+gravity = Vector3(0, 30, 0)
+color_ramp = SubResource("GradientTexture1D_3eph2")
+
+[node name="BubblesEffect" type="GPUParticles2D"]
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_ns6yl")
+texture = ExtResource("1_yr5wu")
+lifetime = 2.0
+randomness = 1.0
