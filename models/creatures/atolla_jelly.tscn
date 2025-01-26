@@ -1,37 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://mpgp0wqbuf7v"]
+[gd_scene load_steps=9 format=3 uid="uid://mpgp0wqbuf7v"]
 
 [ext_resource type="Texture2D" uid="uid://cdbv8po8v1a0y" path="res://assets/atolla_animation_2.png" id="1_iu3vl"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_l5g8s"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kjwx8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7r56"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(0, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_avl47"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr01k"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(88, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_navkq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdda"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(176, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7l8lt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh3y3"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(264, 0, 88, 73)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3wd1a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t7t8k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kjwx8")
+"texture": SubResource("AtlasTexture_n7r56")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_avl47")
+"texture": SubResource("AtlasTexture_wr01k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_navkq")
+"texture": SubResource("AtlasTexture_uwdda")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7l8lt")
+"texture": SubResource("AtlasTexture_oh3y3")
 }],
 "loop": true,
 "name": &"default",
@@ -53,7 +54,7 @@ script = ExtResource("1_l5g8s")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_3wd1a")
+sprite_frames = SubResource("SpriteFrames_t7t8k")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

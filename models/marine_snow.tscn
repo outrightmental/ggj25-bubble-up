@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhvpctpcsmxqw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8dnl4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 360, 1)
+gravity = Vector3(0, 98, 0)
+
+[node name="MarineSnow" type="GPUParticles2D"]
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_8dnl4")
+lifetime = 6.0
+randomness = 1.0

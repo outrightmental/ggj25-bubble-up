@@ -1,9 +1,9 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dxmoc4iy5iqk"]
 
-[ext_resource type="Texture2D" uid="uid://dwiklpeilddmt" path="res://assets/bubble_ninerect_pressed.png" id="1_pxqm2"]
+[ext_resource type="Texture2D" uid="uid://dcr1bsalg4f7x" path="res://assets/bubble_ninerect.png" id="1_3akpt"]
 
 [resource]
-texture = ExtResource("1_pxqm2")
+texture = ExtResource("1_3akpt")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0

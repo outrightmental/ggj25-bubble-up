@@ -1,34 +1,36 @@
-[gd_scene load_steps=30 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=32 format=3 uid="uid://wwn3w1xcwn2s"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
 [ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="3_rws3y"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="3_t4t02"]
 [ext_resource type="PackedScene" uid="uid://bdyj503wctuof" path="res://models/hud/hud.tscn" id="4_2udma"]
-[ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="4_6ll6l"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_2r7qs"]
 [ext_resource type="Texture2D" uid="uid://drykod41nrxam" path="res://assets/gradients/background_gradient.tres" id="5_d7c40"]
 [ext_resource type="Script" path="res://scenes/levels/gradient_sampler.gd" id="5_lunj7"]
+[ext_resource type="Texture2D" uid="uid://bsk4aqt4fi2lw" path="res://assets/backgrounds/tall_background.png" id="6_dlprd"]
 [ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="6_ee8b1"]
 [ext_resource type="Texture2D" uid="uid://clc124fko5cht" path="res://assets/gradients/background.tres" id="6_pjbmc"]
+[ext_resource type="PackedScene" uid="uid://bhvpctpcsmxqw" path="res://models/marine_snow.tscn" id="8_b03hs"]
+[ext_resource type="PackedScene" uid="uid://dgdajjka3ta54" path="res://models/bubbles_effect.tscn" id="9_ojdci"]
 [ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="11_y8yd6"]
 [ext_resource type="Script" path="res://scenes/levels/gradient_sampler_canvas_modulate.gd" id="12_qee7i"]
 [ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
-[ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
-[ext_resource type="PackedScene" uid="uid://un0yy20pm2mr" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
-[ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="PackedScene" uid="uid://btv4s6q3pygoq" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://cbce6amij7djt" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
+[ext_resource type="PackedScene" uid="uid://c68e6qfvrrdl6" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
-[ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
-[ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
-[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
-[ext_resource type="PackedScene" uid="uid://bpu5wvmum0tp7" path="res://models/movable/can.tscn" id="23_ey2gt"]
-[ext_resource type="PackedScene" uid="uid://dfe5vx8l7u7nq" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
-[ext_resource type="PackedScene" uid="uid://co1x1r30vr4if" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
-[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
-[ext_resource type="PackedScene" uid="uid://dburt64fbrvr5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
-[ext_resource type="PackedScene" uid="uid://ftusmtv00obr" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
+[ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
+[ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
+[ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
+[ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
@@ -52,19 +54,41 @@ gradient = ExtResource("5_d7c40")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
 
 [node name="Background" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-motion_mirroring = Vector2(0, 360)
 
 [node name="Background" type="TextureRect" parent="Background/ParallaxBackground/Background" groups=["gradients"]]
 custom_minimum_size = Vector2(640, 360)
 offset_right = 640.0
 offset_bottom = 360.0
-texture = ExtResource("4_6ll6l")
+texture = ExtResource("6_dlprd")
 script = ExtResource("5_lunj7")
 gradient = ExtResource("6_pjbmc")
 
-[node name="TransitionLayers" type="Node2D" parent="Background"]
+[node name="SnowBack" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+modulate = Color(0.585232, 0.613571, 0.818121, 1)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(0, 360)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/TransitionLayers"]
+[node name="MarineSnow" parent="Background/ParallaxBackground/SnowBack" instance=ExtResource("8_b03hs")]
+
+[node name="BubblesBack" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+modulate = Color(0.32031, 0.355474, 0.49225, 1)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(0, 360)
+
+[node name="BubblesEffect" parent="Background/ParallaxBackground/BubblesBack" instance=ExtResource("9_ojdci")]
+
+[node name="BubblesFront" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+modulate = Color(0.534456, 0.603522, 0.828975, 1)
+motion_scale = Vector2(1.1, 1.1)
+motion_mirroring = Vector2(0, 360)
+
+[node name="BubblesEffect" parent="Background/ParallaxBackground/BubblesFront" instance=ExtResource("9_ojdci")]
+
+[node name="SnowFront" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(0, 360)
+
+[node name="MarineSnow" parent="Background/ParallaxBackground/SnowFront" instance=ExtResource("8_b03hs")]
 
 [node name="HUDCanvas" type="CanvasLayer" parent="."]
 
