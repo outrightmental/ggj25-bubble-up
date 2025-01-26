@@ -12,6 +12,7 @@ func _ready():
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
+	SignalBus.reset_game.emit()
 
 
 func _on_timer_timeout():
@@ -26,10 +27,15 @@ func _on_timer_timeout():
 		total_mass += m
 		total_y += y * m
 	var target_y: float = total_y / total_mass if total_mass > 0 else 0.0
+	var actual_target_y: float = max(0, target_y + randf_range(-camera_sway_y, camera_sway_y) - camera_lead_y)
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(
 		camera,
 		"position:y",
-		target_y + randf_range(-camera_sway_y, camera_sway_y) - camera_lead_y,
+		actual_target_y,
 		camera_position_recompute_interval
 	).set_trans(Tween.TRANS_LINEAR)
+
+
+	
+	

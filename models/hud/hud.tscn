@@ -33,5 +33,33 @@ offset_right = -427.5
 offset_bottom = 3.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Score Label" type="Label" parent="."]
+offset_left = -458.0
+offset_top = -363.0
+offset_right = -402.0
+offset_bottom = -340.0
+text = "BIGGEST BUBBLE:"
+
+[node name="Score Value" type="Label" parent="."]
+offset_left = -316.5
+offset_top = -363.0
+offset_right = -276.5
+offset_bottom = -340.0
+text = "123"
+
+[node name="Lost Label" type="Label" parent="."]
+offset_left = -258.5
+offset_top = -363.0
+offset_right = -159.5
+offset_bottom = -340.0
+text = "WASTED AIR:"
+
+[node name="Lost Value" type="Label" parent="."]
+offset_left = -153.5
+offset_top = -363.0
+offset_right = -113.5
+offset_bottom = -340.0
+text = "123"
+
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
 [connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]

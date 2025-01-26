@@ -15,9 +15,6 @@ physics_material_override = SubResource("PhysicsMaterial_n8s3h")
 gravity_scale = -1.0
 linear_damp = 15.0
 script = ExtResource("1_a2r14")
-sprite_scale_factor = null
-collision_scale_factor = null
-number = null
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false

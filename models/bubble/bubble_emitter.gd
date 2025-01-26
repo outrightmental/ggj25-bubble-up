@@ -12,10 +12,10 @@ func _ready():
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = 1 / spawn_rate
-	timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
+	timer.connect("timeout", Callable(self, "_on_timer_tick"))
 	timer.start()
 
-func _on_Timer_timeout():
+func _on_timer_tick():
 	if current_bubbles < max_bubbles:
 		_spawn_bubble()
 		current_bubbles += 1
