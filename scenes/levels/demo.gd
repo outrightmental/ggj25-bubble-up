@@ -12,8 +12,7 @@ func _ready():
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
-	SignalBus.update_score.emit(0)
-	SignalBus.update_wasted_air_mass.emit(0)
+	SignalBus.reset_game.emit()
 
 
 func _on_timer_timeout():

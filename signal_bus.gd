@@ -4,6 +4,7 @@ extends Node
 signal bubble_exit(mass: float)
 signal bubble_spawn(mass: float)
 signal bubble_vanish(mass: float)
+signal reset_game
 signal update_score(score: float)
 signal update_total_air_mass(mass: float)
 signal update_wasted_air_mass(mass: float)
@@ -15,37 +16,39 @@ signal update_wasted_air_mass(mass: float)
 @onready var air_exit_masses: Array[float] = []
 
 
-#func bubble_spawn(mass:float):
-	#air_total_mass += mass
-	#emit_signal(BUBBLE_SPAWN, mass)
-	#_recompute_score()
-#
-#
-#func bubble_vanish(mass:float):
-	#air_vanished_mass += mass
-	#emit_signal(BUBBLE_VANISH, mass)
-	#_recompute_score()
-#
-#
-#func bubble_exit(mass:float):
-	#air_exit_masses.append(mass)
-	#emit_signal(BUBBLE_EXIT, mass)
-	#_recompute_score()
-#
-#
-#func update_score(score:float):
-	#emit_signal(UPDATE_SCORE, score)
-#
-#
-#func update_wasted_air_mass(mass:float):
-	#emit_signal(UPDATE_WASTED_AIR_MASS, mass)
+func _ready() -> void:
+	reset_game.connect(_do_reset_game)
+	bubble_spawn.connect(_do_bubble_spawn)
+	bubble_vanish.connect(_do_bubble_vanish)
+	bubble_exit.connect(_do_bubble_exit)	
 
 
-# func _recompute_score():
-# 	var exited_mass:float = 0
-# 	for e in air_exit_masses:
-# 		exited_mass += e
-# 	var score:float = air_exit_masses.max() if air_exit_masses.size() > 0 else 0
-# 	emit_signal(UPDATE_SCORE, score)
-# 	emit_signal(UPDATE_WASTED_AIR_MASS, air_vanished_mass + exited_mass - score)
-# 	emit_signal(UPDATE_TOTAL_AIR_MASS, air_total_mass)
+func _do_reset_game() -> void:
+	update_score.emit(0)
+	update_total_air_mass.emit(0)
+	update_wasted_air_mass.emit(0)
+
+
+func _do_bubble_spawn(mass:float):
+	air_total_mass += mass
+	_recompute_score()
+
+
+func _do_bubble_vanish(mass:float):
+	air_vanished_mass += mass
+	_recompute_score()
+
+
+func _do_bubble_exit(mass:float):
+	air_exit_masses.append(mass)
+	_recompute_score()
+
+
+func _recompute_score():
+	var exited_mass:float = 0
+	for e in air_exit_masses:
+		exited_mass += e
+	var score:float = air_exit_masses.max() if air_exit_masses.size() > 0 else 0
+	update_score.emit(score)
+	update_wasted_air_mass.emit(air_vanished_mass + exited_mass - score)
+	update_total_air_mass.emit(air_total_mass)
