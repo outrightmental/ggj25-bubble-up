@@ -1,11 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://crrbgvru4x8lu"]
+[gd_scene load_steps=8 format=3 uid="uid://crrbgvru4x8lu"]
 
-[ext_resource type="Texture2D" uid="uid://bmprbbyuy2ykm" path="res://assets/jellyfish_b.png" id="1_428tg"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_m67ve"]
+[ext_resource type="Texture2D" uid="uid://d0jfbyeldx3cd" path="res://assets/firework_animation.png" id="2_romaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 16.0
 height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq0ep"]
+atlas = ExtResource("2_romaf")
+region = Rect2(0, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73f5b"]
+atlas = ExtResource("2_romaf")
+region = Rect2(113, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xopou"]
+atlas = ExtResource("2_romaf")
+region = Rect2(226, 0, 113, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87foh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq0ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73f5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="FireworkJelly" type="RigidBody2D"]
 collision_mask = 3
@@ -22,5 +51,5 @@ position = Vector2(0, -19)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uauxw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_428tg")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_87foh")

@@ -1,15 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://drx5vg28bqh2w"]
+[gd_scene load_steps=9 format=3 uid="uid://drx5vg28bqh2w"]
 
-[ext_resource type="Texture2D" uid="uid://c8j3ax41yk3e" path="res://assets/jellyfish_c.png" id="1_e5ubk"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_ilp3h"]
+[ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="2_lbmvv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 17.0
 height = 42.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebnv2"]
+atlas = ExtResource("2_lbmvv")
+region = Rect2(0, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcewp"]
+atlas = ExtResource("2_lbmvv")
+region = Rect2(77, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfxcu"]
+atlas = ExtResource("2_lbmvv")
+region = Rect2(154, 0, 77, 81)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7heaa"]
+atlas = ExtResource("2_lbmvv")
+region = Rect2(231, 0, 77, 81)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kkrta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebnv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcewp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfxcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7heaa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MoonJelly" type="RigidBody2D"]
 collision_mask = 3
-mass = 5.0
+mass = 10.0
 gravity_scale = -0.001
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, -0.01)
@@ -21,6 +57,6 @@ position = Vector2(0, -16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uauxw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_e5ubk")
+sprite_frames = SubResource("SpriteFrames_kkrta")
