@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpgp0wqbuf7v"]
+
+[ext_resource type="Texture2D" uid="uid://b3gv1aj70a7dd" path="res://assets/jellyfish_a.png" id="1_eaqdd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
+radius = 18.0
+height = 54.0
+
+[node name="AtollaJelly" type="RigidBody2D"]
+mass = 5.0
+gravity_scale = -0.001
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, -0.01)
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eaqdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_uauxw")

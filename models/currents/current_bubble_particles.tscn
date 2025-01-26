@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0lf7phjnne8y"]
+
+[ext_resource type="Texture2D" uid="uid://dmel3yfguhaju" path="res://assets/particles/bubble_particle.png" id="1_825bb"]
+[ext_resource type="Script" path="res://models/currents/current_bubble_particles.gd" id="2_ujwlb"]
+
+[sub_resource type="Gradient" id="Gradient_qeuyq"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qldlq"]
+gradient = SubResource("Gradient_qeuyq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u7o4b"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 10, 1)
+emission_shape = 2
+emission_sphere_radius = 1.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 0, 0)
+initial_velocity_min = -20.0
+initial_velocity_max = 20.0
+angular_velocity_min = 30.0
+angular_velocity_max = 120.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = -2.23517e-05
+gravity = Vector3(50, 50, 0)
+radial_accel_min = 10.0
+radial_accel_max = 30.0
+damping_min = 20.0
+damping_max = 30.0
+attractor_interaction_enabled = false
+scale_min = 0.7
+scale_max = 1.7
+color_ramp = SubResource("GradientTexture1D_qldlq")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+turbulence_noise_strength = 2.0
+turbulence_noise_scale = 3.0
+
+[node name="CurrentBubbleParticles" type="GPUParticles2D"]
+texture_filter = 1
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_u7o4b")
+texture = ExtResource("1_825bb")
+lifetime = 2.0
+script = ExtResource("2_ujwlb")
