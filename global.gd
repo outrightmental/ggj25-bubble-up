@@ -5,6 +5,7 @@ var drag_behavior: DragBehavior = DragBehavior.APPLY_DAMPENED_FORCE
 var drag_factor: float          = 0.9
 var dragging_force_min: float   = 5 # How much force is applied when dragging
 var dragging_force_max: float   = 200 # How much force is applied when dragging
+var cull_bubbles_below_camera_margin: float = 360
 
 
 func set_drag_behavior(value: DragBehavior):
