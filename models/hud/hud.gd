@@ -6,8 +6,8 @@ extends Node2D
 
 
 func _ready() -> void:
-	Signals.connect(Signals.UPDATE_WASTED_AIR_MASS,  _update_wasted_air_mass)
-	Signals.connect(Signals.UPDATE_SCORE,  _update_score)
+	Signals.update_wasted_air_mass.connect(_update_wasted_air_mass)
+	Signals.update_score.connect(_update_score)
 
 
 func _update_wasted_air_mass(mass: float) -> void:

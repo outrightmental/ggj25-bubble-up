@@ -93,13 +93,13 @@ func split() -> void:
 
 # Function to destroy the bubble and spawn the vanish particle effect
 func vanish():
-	Signals.bubble_vanish(mass)
+	Signals.bubble_vanish.emit(mass)
 	_destroy()
 
 
 # Function to exit the bubble and vanish it
 func exit():
-	Signals.bubble_exit(mass)
+	Signals.bubble_exit.emit(mass)
 	_destroy()
 
 
@@ -131,7 +131,7 @@ func _ready():
 	add_to_group(Global.GROUP_BUBBLES)
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
-	Signals.bubble_spawn(mass)
+	Signals.bubble_spawned.emit(mass)
 
 
 # Called when another body enters the collision area

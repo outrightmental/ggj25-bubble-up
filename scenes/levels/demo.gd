@@ -12,8 +12,8 @@ func _ready():
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
-	Signals.update_score(0)
-	Signals.update_wasted_air_mass(0)
+	Signals.update_score.emit(0)
+	Signals.update_wasted_air_mass.emit(0)
 
 
 func _on_timer_timeout():

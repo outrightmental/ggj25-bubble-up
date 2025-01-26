@@ -1,12 +1,12 @@
 extends Node
 
 # All available signals -- use these constants to reference them to avoid typos
-var BUBBLE_EXIT = "bubble_exit"
-var BUBBLE_SPAWN = "bubble_spawn"
-var BUBBLE_VANISH = "bubble_vanish"
-var UPDATE_SCORE = "update_score"
-var UPDATE_TOTAL_AIR_MASS = "update_total_air_mass"
-var UPDATE_WASTED_AIR_MASS = "update_wasted_air_mass"
+signal bubble_exit(mass: float)
+signal bubble_spawn(mass: float)
+signal bubble_vanish(mass: float)
+signal update_score(score: float)
+signal update_total_air_mass(mass: float)
+signal update_wasted_air_mass(mass: float)
 
 
 # Keeping track of all the air in play -- we are keeping all global game logic right here in the event bus
@@ -15,32 +15,32 @@ var UPDATE_WASTED_AIR_MASS = "update_wasted_air_mass"
 @onready var air_exit_masses: Array[float] = []
 
 
-func bubble_spawn(mass:float):
-	air_total_mass += mass
-	emit_signal(BUBBLE_SPAWN, mass)
-	_recompute_score()
+#func bubble_spawn(mass:float):
+	#air_total_mass += mass
+	#emit_signal(BUBBLE_SPAWN, mass)
+	#_recompute_score()
+#
+#
+#func bubble_vanish(mass:float):
+	#air_vanished_mass += mass
+	#emit_signal(BUBBLE_VANISH, mass)
+	#_recompute_score()
+#
+#
+#func bubble_exit(mass:float):
+	#air_exit_masses.append(mass)
+	#emit_signal(BUBBLE_EXIT, mass)
+	#_recompute_score()
+#
+#
+#func update_score(score:float):
+	#emit_signal(UPDATE_SCORE, score)
+#
+#
+#func update_wasted_air_mass(mass:float):
+	#emit_signal(UPDATE_WASTED_AIR_MASS, mass)
 
 
-func bubble_vanish(mass:float):
-	air_vanished_mass += mass
-	emit_signal(BUBBLE_VANISH, mass)
-	_recompute_score()
-
-
-func bubble_exit(mass:float):
-	air_exit_masses.append(mass)
-	emit_signal(BUBBLE_EXIT, mass)
-	_recompute_score()
-
-
-func update_score(score:float):
-	emit_signal(UPDATE_SCORE, score)
-
-
-func update_wasted_air_mass(mass:float):
-	emit_signal(UPDATE_WASTED_AIR_MASS, mass)
-	
-	
 func _recompute_score():
 	var exited_mass:float = 0
 	for e in air_exit_masses:
