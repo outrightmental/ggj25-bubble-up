@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://un0yy20pm2mr"]
+[gd_scene load_steps=3 format=3 uid="uid://cbce6amij7djt"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_bwt2k"]
 [ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="2_tum47"]
@@ -21,3 +21,7 @@ texture = ExtResource("2_tum47")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.964, 1)
 polygon = PackedVector2Array(120, -11, -117, -11, -126.9, 0, -127, 11, 127, 11, 127, -0.4, 120, -4.8)
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, -1.50001)
+scale = Vector2(16.55, 5.85)

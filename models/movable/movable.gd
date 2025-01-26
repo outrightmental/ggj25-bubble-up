@@ -10,16 +10,31 @@ var dragging: bool                     = false
 var dragging_force: float              = 10 # How much force is applied when dragging
 
 @onready var collision_polygon = $CollisionPolygon2D # Cache the reference
+@onready var on_screen_notifier = $OnScreenNotifier
 
+var current_gravity = gravity_scale
 
 func _ready() -> void:
+	# hacky... save gravity to be set on and off
+	current_gravity = gravity_scale
+	gravity_scale = 0.0
+
 	super._ready()
 	add_to_group(Global.GROUP_MOVABLES)
 	dragging_force = Global.get_drag_force()
 	if not collision_polygon:
 		push_error("CollisionPolygon2D node is missing!")
 		return
+	if on_screen_notifier.is_on_screen:
+		freeze = false
+	on_screen_notifier.connect('screen_entered', _on_screen_entered)
+	on_screen_notifier.connect('screen_exited', _on_screen_exited)
 
+func _on_screen_entered():
+	gravity_scale = current_gravity
+
+func _on_screen_exited():
+	gravity_scale = 0.0
 
 func _input(event) -> void:
 	if not collision_polygon:

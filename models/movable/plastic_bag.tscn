@@ -10,3 +10,7 @@ polygon = PackedVector2Array(-1, -48, -8, -48, -11, -42, -8, -33, -7, -22, -9, -
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ej8ih")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.500001, -3.5)
+scale = Vector2(8.35, 6.95)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4h5npy4pbw10"]
+[gd_scene load_steps=2 format=3 uid="uid://cnr4ccgrod6qg"]
 
 [ext_resource type="Texture2D" uid="uid://mp763hu25afo" path="res://assets/coral_B.png" id="1_awdxv"]
 
@@ -12,3 +12,7 @@ polygon = PackedVector2Array(69, -45.5, 37.8, -45.5, 32.8, -43.5, 27.6, -43.5, 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_awdxv")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(9.5, -0.500002)
+scale = Vector2(9.25, 6.95)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmyfb0wychs1v"]
+[gd_scene load_steps=3 format=3 uid="uid://btv4s6q3pygoq"]
 
 [ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="1_dfkw5"]
 
@@ -16,3 +16,7 @@ texture = ExtResource("1_dfkw5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_877rm")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2.50001, 1.5)
+scale = Vector2(20.35, 4.55)

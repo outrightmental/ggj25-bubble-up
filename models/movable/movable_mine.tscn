@@ -24,3 +24,7 @@ position = Vector2(-0.725, 0)
 rotation = -0.00070262
 scale = Vector2(1.059, 1)
 texture = ExtResource("2_0dn4w")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5.49999, -1)
+scale = Vector2(10.75, 9.3)

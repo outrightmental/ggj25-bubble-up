@@ -22,3 +22,7 @@ texture = ExtResource("2_qt2yn")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.964, 1)
 polygon = PackedVector2Array(58, -9.5, -63, -9.5, -70, 0.5, -71, 0.5, -71, 9.5, 71, 9.5, 71, 0.9)
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2.49999, -4)
+scale = Vector2(11.05, 4)

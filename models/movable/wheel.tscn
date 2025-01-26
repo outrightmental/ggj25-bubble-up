@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3o8fwo64h2hx"]
+[gd_scene load_steps=2 format=3 uid="uid://drrqygexg4ump"]
 
 [ext_resource type="Texture2D" uid="uid://nhekarmwgme4" path="res://assets/wheel.png" id="1_2a8e1"]
 
@@ -12,3 +12,7 @@ polygon = PackedVector2Array(5, -89.5, -4, -89.5, -4, -71.3, -7, -69.3, -7, -62.
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2a8e1")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.5, 1.5)
+scale = Vector2(11.35, 10.95)
