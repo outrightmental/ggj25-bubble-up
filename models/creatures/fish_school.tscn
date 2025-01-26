@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ic124nkasgpp"]
+
+[ext_resource type="Script" path="res://models/creatures/fish_school.gd" id="1_pda3s"]
+[ext_resource type="PackedScene" uid="uid://70upuk36imcf" path="res://models/creatures/school_fish.tscn" id="2_4f0it"]
+
+[node name="FishSchool" type="Node2D"]
+script = ExtResource("1_pda3s")
+fish = ExtResource("2_4f0it")

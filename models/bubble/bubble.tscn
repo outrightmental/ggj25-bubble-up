@@ -10,6 +10,7 @@ friction = 0.0
 radius = 13.0384
 
 [node name="Bubble" type="RigidBody2D"]
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_n8s3h")
 gravity_scale = -1.0
 linear_damp = 15.0
