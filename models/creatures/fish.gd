@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends "res://models/collidable/collidable.gd"
 
 enum Direction {
 	RIGHT = 0,
@@ -12,6 +12,8 @@ enum Direction {
 
 @onready var burst_wait_timer = $BurstWaitTimer
 @onready var on_screen_check = $OnScreenCheck
+
+@export var bubble_split_factor: float = 0.4
 
 var current_velocity = movement_speed
 var is_influenced := false
@@ -38,6 +40,9 @@ func _on_screen_exited():
 	is_on_screen = false
 
 func _ready() -> void:
+	super._ready()
+	add_to_group(Global.GROUP_MOVABLES)
+
 	on_screen_check.connect('screen_entered', _on_screen_entered)
 	on_screen_check.connect('screen_exited', _on_screen_exited)
 

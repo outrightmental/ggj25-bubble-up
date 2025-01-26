@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://crrbgvru4x8lu"]
+[gd_scene load_steps=4 format=3 uid="uid://crrbgvru4x8lu"]
 
 [ext_resource type="Texture2D" uid="uid://bmprbbyuy2ykm" path="res://assets/jellyfish_b.png" id="1_428tg"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_m67ve"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 16.0
@@ -13,6 +14,7 @@ gravity_scale = -0.001
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, -0.01)
 lock_rotation = true
+script = ExtResource("1_m67ve")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
