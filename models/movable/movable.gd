@@ -25,17 +25,17 @@ func _input(event) -> void:
 	if not collision_polygon:
 		return # Prevent errors if the node is missing
 
-	if event is InputEventScreenTouch or event is InputEventMouseButton:
-		if event.is_pressed(): # Touch or mouse press
-			var touch_pos: Vector2 = event.position
-			if Geometry2D.is_point_in_polygon(to_local(touch_pos), collision_polygon.polygon):
-				_drag_start(touch_pos)
-		else: # Release
-			_drag_stop()
-
-	elif event is InputEventScreenDrag or event is InputEventMouseMotion:
-		if dragging:
-			_drag(event.position)
+	#if event is InputEventScreenTouch or event is InputEventMouseButton:
+	#	if event.is_pressed(): # Touch or mouse press
+	#		var touch_pos: Vector2 = event.position
+	#		if Geometry2D.is_point_in_polygon(to_local(touch_pos), collision_polygon.polygon):
+	#			_drag_start(touch_pos)
+	#	else: # Release
+	#		_drag_stop()
+#
+#	elif event is InputEventScreenDrag or event is InputEventMouseMotion:
+#		if dragging:
+#			_drag(event.position)
 
 
 func _drag_start(touch_pos: Vector2):
