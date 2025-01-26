@@ -25,3 +25,7 @@ polygon = PackedVector2Array(-3.4, -38, -36.6, -38, -36.6, -37.1, -39.6, -37.1, 
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="OnScreenCheck" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0.375006, 0.00145435)
+scale = Vector2(4.94463, 3.85083)

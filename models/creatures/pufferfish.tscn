@@ -29,3 +29,7 @@ texture = ExtResource("2_wnyak")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.98824, 1.02319)
 shape = SubResource("CircleShape2D_obkus")
+
+[node name="OnScreenCheck" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-2.01461, 0.639134)
+scale = Vector2(2.3443, 2.28561)
