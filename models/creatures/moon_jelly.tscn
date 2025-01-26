@@ -1,12 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://drx5vg28bqh2w"]
 
-[ext_resource type="Texture2D" uid="uid://dic5xu2pxv688" path="res://assets/jellyfish_c.png" id="1_e5ubk"]
+[ext_resource type="Texture2D" uid="uid://c8j3ax41yk3e" path="res://assets/jellyfish_c.png" id="1_e5ubk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
-radius = 20.0
-height = 64.0
+radius = 17.0
+height = 42.0
 
-[node name="Jellyfish" type="RigidBody2D"]
+[node name="MoonJelly" type="RigidBody2D"]
+mass = 5.0
+gravity_scale = -0.001
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, -0.01)
+lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)

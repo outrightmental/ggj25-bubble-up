@@ -27,6 +27,11 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[global_group]
+
+bubbles="Bubbles are the main subject of player attention"
+movables="Movables are everything else underwater that isn't a bubble"
+
 [input]
 
 touch={
@@ -35,13 +40,10 @@ touch={
 ]
 }
 
-[global_group]
-
-bubbles="Bubbles are the main subject of player attention"
-movables="Movables are everything else underwater that isn't a bubble"
-
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 anti_aliasing/quality/msaa_2d=2
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true

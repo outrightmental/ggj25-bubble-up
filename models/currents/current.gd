@@ -8,7 +8,7 @@ var CurrentBubbleParticleScene: PackedScene = preload('res://models/currents/cur
 @onready var line = $CanvasGroup/Line2D
 @onready var line_visual = $Line2DVisual
 
-const VISUAL_LINE_MAX_POINTS = 15
+const VISUAL_LINE_MAX_POINTS = 20
 
 @onready var timer = $Timer
 @onready var path = $Path2D

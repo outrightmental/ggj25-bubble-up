@@ -40,27 +40,27 @@ enum CurrentBehavior {
 	PATH_FOLLOW = 3
 }
 var currents_behavior: CurrentBehavior = CurrentBehavior.FORWARD_FORCE_ONLY
-var current_g_strength := 0.0:
+var current_g_strength := 5.0:
 	set(v):
 		current_g_strength = v
 		emit_signal('current_param_changed', 'current_g_strength', v)
-var current_g_size := 0.0:
+var current_g_size := 40.0:
 	set(v):
 		current_g_size = v
 		emit_signal('current_param_changed', 'current_g_size', v)
-var current_f_strength := 0.0:
+var current_f_strength := 16.0:
 	set(v):
 		current_f_strength = v
 		emit_signal('current_param_changed', 'current_f_strength', v)
-var current_f_size := 0.0:
+var current_f_size := 30.0:
 	set(v):
 		current_f_size = v
 		emit_signal('current_param_changed', 'current_f_size', v)
-var current_n_influence := 0.0:
+var current_n_influence := 5.0:
 	set(v):
 		current_n_influence = v
 		emit_signal('current_param_changed', 'current_n_influence', v)
-var point_freq := 0.0:
+var point_freq := 0.002:
 	set(v):
 		point_freq = v
 		emit_signal('current_param_changed', 'point_freq', v)

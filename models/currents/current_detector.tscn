@@ -1,16 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://du0bix06fta8k"]
+[gd_scene load_steps=2 format=3 uid="uid://du0bix06fta8k"]
 
 [ext_resource type="Script" path="res://models/currents/current_detector.gd" id="1_ec8su"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03lqb"]
-size = Vector2(640, 360)
-
-[node name="CurrentDetector" type="Area2D"]
+[node name="CurrentDetector" type="Node2D"]
 script = ExtResource("1_ec8su")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(320, 180)
-shape = SubResource("RectangleShape2D_03lqb")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

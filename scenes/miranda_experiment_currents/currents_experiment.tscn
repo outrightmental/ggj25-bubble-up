@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccxygjcelwpxa"]
+[gd_scene load_steps=10 format=3 uid="uid://ccxygjcelwpxa"]
 
-[ext_resource type="PackedScene" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
+[ext_resource type="PackedScene" uid="uid://dk16uun07tsnv" path="res://models/bubble/bubble_emitter.tscn" id="1_akn24"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="1_lvb3o"]
 [ext_resource type="Script" path="res://scenes/miranda_experiment_currents/physics_selector.gd" id="3_7jgml"]
 [ext_resource type="Script" path="res://scenes/miranda_experiment_currents/param_sliders.gd" id="4_4tnk3"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_kfx50"]
+[ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="6_8qbhb"]
+[ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="7_ay2xq"]
+[ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="8_u8gh0"]
+[ext_resource type="PackedScene" uid="uid://blbfvxwdti3nl" path="res://models/creatures/fish.tscn" id="9_us3nt"]
 
 [node name="CurrentsExperiment" type="Node2D"]
 
@@ -213,6 +217,18 @@ layout_mode = 2
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("5_kfx50")]
 position = Vector2(224, 95)
+
+[node name="Jellyfish" parent="." instance=ExtResource("6_8qbhb")]
+position = Vector2(103, 130)
+
+[node name="Jellyfish2" parent="." instance=ExtResource("7_ay2xq")]
+position = Vector2(379, 103)
+
+[node name="FireworkJelly" parent="." instance=ExtResource("8_u8gh0")]
+position = Vector2(208, 213)
+
+[node name="Fish" parent="." instance=ExtResource("9_us3nt")]
+position = Vector2(473, 141)
 
 [connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_point_freq_slider_value_changed"]

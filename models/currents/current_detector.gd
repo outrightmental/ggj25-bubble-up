@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var mouse_detection_active := true
 
@@ -6,7 +6,7 @@ var current_current: Current = null
 
 var CurrentScene: PackedScene = preload('res://models/currents/current.tscn')
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed('touch') and mouse_detection_active:
 		var mouse_pos = get_global_mouse_position()
 		var current = CurrentScene.instantiate().init_with(mouse_pos)
@@ -18,11 +18,3 @@ func _process(delta: float) -> void:
 func complete_current():
 	current_current.complete()
 	current_current = null
-
-func _on_mouse_exited() -> void:
-	mouse_detection_active = false
-	if current_current != null:
-		complete_current()
-
-func _on_mouse_entered() -> void:
-	mouse_detection_active = true

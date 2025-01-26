@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi5jd8phit4cn"]
+[gd_scene load_steps=7 format=3 uid="uid://bi5jd8phit4cn"]
 
 [ext_resource type="Script" path="res://models/currents/current.gd" id="1_vbsca"]
 
@@ -13,6 +13,9 @@ point_count = 3
 [sub_resource type="Curve" id="Curve_8vaph"]
 _data = [Vector2(0.496879, 0), 0.0, 0.0, 0, 0, Vector2(0.499376, 0.0982659), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_xrubj"]
+colors = PackedColorArray(0.214872, 0.299392, 0.398003, 1, 0.658824, 0.807843, 0.831373, 1)
 
 [node name="Current" type="Node2D"]
 script = ExtResource("1_vbsca")
@@ -39,11 +42,13 @@ material = SubResource("ShaderMaterial_l6ujw")
 width = 40.0
 width_curve = SubResource("Curve_8vaph")
 default_color = Color(0.658824, 0.807843, 0.831373, 1)
+gradient = SubResource("Gradient_xrubj")
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
 sharp_limit = 32.0
-round_precision = 16
+round_precision = 24
+antialiased = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
