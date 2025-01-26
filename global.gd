@@ -70,3 +70,5 @@ func set_currents_behavior(value: CurrentBehavior):
 
 static var GROUP_BUBBLES: String  = "bubbles"
 static var GROUP_MOVABLES: String = "movables"
+
+var GAME_HEIGHT = 4980.0

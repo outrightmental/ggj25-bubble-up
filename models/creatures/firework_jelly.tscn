@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://crrbgvru4x8lu"]
+[gd_scene load_steps=4 format=3 uid="uid://crrbgvru4x8lu"]
 
 [ext_resource type="Texture2D" uid="uid://bmprbbyuy2ykm" path="res://assets/jellyfish_b.png" id="1_428tg"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="2_7vmtt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 16.0
@@ -21,3 +22,15 @@ shape = SubResource("CapsuleShape2D_uauxw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_428tg")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PointLight2D2" type="PointLight2D" parent="Node2D"]
+position = Vector2(1, 32)
+energy = 5.0
+texture = ExtResource("2_7vmtt")
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+position = Vector2(-8, 32)
+energy = 5.0
+texture = ExtResource("2_7vmtt")
