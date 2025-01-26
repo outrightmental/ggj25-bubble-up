@@ -31,6 +31,9 @@ var _collision_cooldown_millis: int       = 100
 # Reference to the vanish particle emitter node
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
+# Whether the bubble is still in play
+var done: bool = false
+
 
 # Function to merge two bubbles
 func merge_into(other) -> void:
@@ -39,28 +42,25 @@ func merge_into(other) -> void:
 		other.merge_into(self)
 		return
 
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled() or other.is_freeze_enabled():
+	# Lock the bubble to prevent further activity
+	if done:
 		return
-	else:
-		set_deferred("freeze", true)
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
 
 	# Destroy this bubble
 	queue_free()
+	done = true
 
 
 # Function to split a bubble: remove the current bubble and spawn two new bubbles with half the mass. Position the two
 # new bubbles on opposite sides of the center of the original bubble, halfway between the center and the outside. New
 # bubbles inherit the acceleration of the original bubble
 func split() -> void:
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled():
+	# Lock the bubble to prevent further activity
+	if done:
 		return
-	else:
-		set_deferred("freeze", true)
 
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
@@ -76,31 +76,36 @@ func split() -> void:
 	var v: Vector2 = Vector2(cos(a), sin(a)) * r
 
 	# Create the new bubble 1
-	var b1 = preload("res://models/bubble/bubble.tscn").instantiate()
+	var b1: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b1.position = position + v
 	b1.mass = new_mass
-	get_parent().add_child(b1)
+	get_parent().call_deferred("add_child", b1)
 
 	# Create the new bubble 2
-	var b2 = preload("res://models/bubble/bubble.tscn").instantiate()
+	var b2: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b2.position = position - v
 	b2.mass = new_mass
-	get_parent().add_child(b2)
+	get_parent().call_deferred("add_child", b2)
 
 	# Destroy this bubble
 	queue_free()
+	done = true
 
 
 # Function to vanish the bubble; air is wasted
-func vanish():
-	if await _destroy():
-		SignalBus.bubble_vanish.emit(mass)
+func vanish() -> void:
+	if done:
+		return
+	SignalBus.bubble_vanish.emit(mass)
+	_destroy()
 
 
 # Function to exit the bubble; score is updated
-func exit():
-	if await _destroy():
-		SignalBus.bubble_exit.emit(mass)
+func exit() -> void:
+	if done:
+		return
+	SignalBus.bubble_exit.emit(mass)
+	_destroy()
 
 
 # Function to update the scale of the bubble based on its mass
@@ -116,11 +121,15 @@ func update_mass(new_mass: float):
 # Called when the bubble is instantiated
 func _init():
 	super._init()
-	
-	
+
+
 # Called every frame to check if the bubble has risen to the surface
 func _process(_delta) -> void:
 	if global_position.y < 0:
+		exit()
+	elif global_position.x < -sprite.get_rect().size.x:
+		exit()
+	elif global_position.x > 640  + sprite.get_rect().size.x:
 		exit()
 
 
@@ -131,7 +140,7 @@ func _ready():
 	add_to_group(Global.GROUP_BUBBLES)
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
-	SignalBus.bubble_spawn.emit(mass)
+	SignalBus.cull_bubbles_below.connect(_do_cull_bubbles_below)
 
 
 # Called when another body enters the collision area
@@ -141,8 +150,6 @@ func _on_body_entered(other):
 			_on_collision_with_bubble(other)
 		elif other.is_in_group(Global.GROUP_MOVABLES):
 			_on_collision_with_movable(other)
-		else:
-			print("Unknown collision: " + name + " → " + other.name)
 
 
 # Function to handle collision with another bubble
@@ -165,13 +172,7 @@ func _on_collision_with_movable(other) -> void:
 		split()
 
 # Function to destroy the bubble with an effect
-func _destroy() -> bool:
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled():
-		return false
-	else:
-		set_deferred("freeze", true)
-
+func _destroy() -> void:
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
 		# Instance the particle effect
@@ -181,17 +182,17 @@ func _destroy() -> bool:
 		# Set the position of the particles to the bubble's position
 		particles.global_position = global_position
 
-		# Optional: Start the particle effect
-		if particles.has_method("restart"):
-			particles.restart()
-
 	# Activate the particle emitter
 	vanish_particle_emitter.emitting = true
 
 	# Hide the sprite, disable the collision shape, wait 1 second, then queue free
 	sprite.hide()
-	collision.disabled = true
+	collision.set_deferred("disabled", true)
+	done = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
-	return true
 	
+# Function to cull bubbles below a certain y position
+func _do_cull_bubbles_below(y: float) -> void:
+	if global_position.y > y + sprite.get_rect().size.y / 2:
+		vanish()

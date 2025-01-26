@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dk16uun07tsnv" path="res://models/bubble/bubble_emitter.tscn" id="2_q7ms0"]
 [ext_resource type="Script" path="res://scenes/experiments/physics_selector.gd" id="3_l21to"]
 [ext_resource type="Script" path="res://scenes/experiments/param_sliders.gd" id="4_0e6vy"]
+[ext_resource type="Script" path="res://scenes/experiments/controls/menu_button.gd" id="4_skn7f"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_mra41"]
 [ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="6_xsqvt"]
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="7_0wexx"]
@@ -49,6 +50,16 @@ popup/item_2/id = 2
 popup/item_3/text = "Path Follow"
 popup/item_3/id = 3
 script = ExtResource("3_l21to")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
+layout_direction = 3
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "menu"
+script = ExtResource("4_skn7f")
 
 [node name="Sliders" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -235,6 +246,7 @@ position = Vector2(473, 141)
 position = Vector2(95, 283)
 
 [connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
+[connection signal="pressed" from="Controls/MarginContainer/VBoxContainer/HBoxContainer/Button" to="Controls/MarginContainer/VBoxContainer/HBoxContainer/Button" method="_on_navigate_main"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_point_freq_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravityStrength/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_strength_slider_value_changed"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/GravitySize/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_g_size_slider_value_changed"]
