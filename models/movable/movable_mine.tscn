@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bafcm8c2s84yr" path="res://assets/mine_test.png" id="2_wdvor"]
 
 [node name="RigidBody2D2" type="RigidBody2D"]
+collision_mask = 3
 mass = 25.0
 gravity_scale = 0.05
 freeze_mode = 1

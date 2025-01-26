@@ -56,6 +56,8 @@ func _on_force_emitter_body_entered(body:Node2D) -> void:
 	else:
 		if body.has_method('apply_central_impulse'):
 			body.apply_central_impulse(direction * force_strength)
+			if body.has_method('on_current_collide'):
+				body.on_current_collide(parent_current)
 
 func _on_currents_behavior_changed(value: Global.CurrentBehavior):
 	set_current_behavior(value)
