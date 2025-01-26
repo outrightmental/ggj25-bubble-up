@@ -83,6 +83,7 @@ script = ExtResource("1_fu35c")
 movement_speed = 70.0
 burst_wait = 0.2
 starting_direction = 1
+bubble_split_factor = 0.8
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true
