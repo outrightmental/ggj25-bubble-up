@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cj1uy"]
-radius = 13.0384
+radius = 13.0
 
 [node name="Bubble" type="RigidBody2D"]
 collision_mask = 3
