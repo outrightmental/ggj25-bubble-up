@@ -38,7 +38,7 @@ func _on_timer_timeout():
 	for gradient_node in gradient_nodes:
 		if gradient_node.has_method('update_sample'):
 			gradient_node.update_sample(actual_target_y, camera_position_recompute_interval)
-	SignalBus.cull_bubbles_below.emit(actual_target_y + 180)
+	SignalBus.cull_bubbles_below.emit(actual_target_y + Global.cull_bubbles_below_camera_margin)
 
 
 	
