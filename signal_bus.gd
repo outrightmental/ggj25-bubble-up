@@ -32,20 +32,20 @@ func _do_reset_game() -> void:
 
 func _do_bubble_spawn(mass: float):
 	air_total_mass += mass
-	_recompute_score()
+	_update()
 
 
 func _do_bubble_vanish(mass: float):
 	air_vanished_mass += mass
-	_recompute_score()
+	_update()
 
 
 func _do_bubble_exit(mass: float):
 	air_exit_masses.append(mass)
-	_recompute_score()
+	_update()
 
 
-func _recompute_score():
+func _update():
 	var exited_mass: float = 0
 	for e in air_exit_masses:
 		exited_mass += e

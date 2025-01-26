@@ -42,16 +42,15 @@ func merge_into(other) -> void:
 		return
 
 	# Lock the bubble to prevent further activity
-	if done or other.done:
+	if done:
 		return
-	else:
-		done = true
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
 
 	# Destroy this bubble
 	queue_free()
+	done = true
 
 
 # Function to split a bubble: remove the current bubble and spawn two new bubbles with half the mass. Position the two
@@ -61,8 +60,6 @@ func split() -> void:
 	# Lock the bubble to prevent further activity
 	if done:
 		return
-	else:
-		done = true
 	
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
@@ -78,20 +75,20 @@ func split() -> void:
 	var v: Vector2 = Vector2(cos(a), sin(a)) * r
 
 	# Create the new bubble 1
-	var b1 = preload("res://models/bubble/bubble.tscn").instantiate()
+	var b1: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b1.position = position + v
 	b1.mass = new_mass
 	get_parent().add_child(b1)
 
 	# Create the new bubble 2
-	var b2 = preload("res://models/bubble/bubble.tscn").instantiate()
+	var b2: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b2.position = position - v
 	b2.mass = new_mass
 	get_parent().add_child(b2)
 
 	# Destroy this bubble
 	queue_free()
-
+	done = true
 
 # Function to vanish the bubble; air is wasted
 func vanish():
@@ -143,8 +140,6 @@ func _on_body_entered(other):
 			_on_collision_with_bubble(other)
 		elif other.is_in_group(Global.GROUP_MOVABLES):
 			_on_collision_with_movable(other)
-		else:
-			print("Unknown collision: " + name + " → " + other.name)
 
 
 # Function to handle collision with another bubble
@@ -171,8 +166,6 @@ func _destroy() -> bool:
 	# Lock the bubble to prevent further activity
 	if done:
 		return false
-	else:
-		done = true
 
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
@@ -195,5 +188,6 @@ func _destroy() -> bool:
 	collision.disabled = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
+	done = true
 	return true
 	
