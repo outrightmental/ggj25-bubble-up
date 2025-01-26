@@ -190,37 +190,23 @@ position = Vector2(219, 1033)
 texture_filter = 0
 position = Vector2(60, 1534)
 scale = Vector2(-1, 1)
-mass = 100.0
-gravity_scale = 0.0
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.5
 
 [node name="Gorgonian2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
 texture_filter = 0
 position = Vector2(590, 842)
-mass = 100.0
-gravity_scale = 0.0
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.5
 
 [node name="TableCoral" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
 texture_filter = 0
 position = Vector2(564, 1402)
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.85
 
 [node name="TableCoral2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
 texture_filter = 0
 position = Vector2(70, 938)
 scale = Vector2(-1, 1)
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.85
 
 [node name="TableCoral3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
 texture_filter = 0
 position = Vector2(569, 624)
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.85
 
 [node name="MoorishIdol" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
 position = Vector2(123, 740)
@@ -282,7 +268,3 @@ rotation = 0.15321
 [node name="Gorgonian3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
 texture_filter = 0
 position = Vector2(578, 1582)
-mass = 100.0
-gravity_scale = 0.0
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://k2fxqlw5t3mb"]
+[gd_scene load_steps=11 format=3 uid="uid://k2fxqlw5t3mb"]
 
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="1_v1uw4"]
 [ext_resource type="PackedScene" uid="uid://dk16uun07tsnv" path="res://models/bubble/bubble_emitter.tscn" id="2_q7ms0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="7_0wexx"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="8_11ssv"]
 [ext_resource type="PackedScene" uid="uid://5w4w0wx7fbs8" path="res://models/creatures/fish.tscn" id="9_hk3e4"]
+[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="10_ihk6y"]
 
 [node name="CurrentsExperiment" type="Node2D"]
 
@@ -229,6 +230,9 @@ position = Vector2(208, 213)
 
 [node name="Fish" parent="." instance=ExtResource("9_hk3e4")]
 position = Vector2(473, 141)
+
+[node name="TableCoral" parent="." instance=ExtResource("10_ihk6y")]
+position = Vector2(95, 283)
 
 [connection signal="item_selected" from="Controls/MarginContainer/VBoxContainer/PhysicsSelector" to="Controls/MarginContainer/VBoxContainer/PhysicsSelector" method="_on_item_selected"]
 [connection signal="value_changed" from="Controls/MarginContainer/VBoxContainer/Sliders/PointFrequency/Slider" to="Controls/MarginContainer/VBoxContainer/Sliders" method="_on_point_freq_slider_value_changed"]
