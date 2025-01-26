@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://duf16ne45ntug"]
+
+[ext_resource type="Script" path="res://scenes/levels/fish_move_visual_only.gd" id="1_k5lnf"]
+[ext_resource type="Texture2D" uid="uid://bvfst6vqo1w4o" path="res://assets/sardine_animation.png" id="2_8af71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ycao"]
+atlas = ExtResource("2_8af71")
+region = Rect2(0, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iinva"]
+atlas = ExtResource("2_8af71")
+region = Rect2(58, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4jsk"]
+atlas = ExtResource("2_8af71")
+region = Rect2(116, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnmjj"]
+atlas = ExtResource("2_8af71")
+region = Rect2(174, 0, 58, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joieg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ycao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iinva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4jsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnmjj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ParallaxSchoolFishVisualOnly" type="Node2D"]
+script = ExtResource("1_k5lnf")
+movement_speed = 3.0
+burst_wait = 0.5
+deceleration = 2.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_joieg")
+autoplay = "default"
+
+[node name="OnScreenCheck" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, 1.5)
+scale = Vector2(3.55, 2.15)
+
+[node name="BurstWaitTimer" type="Timer" parent="."]
+one_shot = true

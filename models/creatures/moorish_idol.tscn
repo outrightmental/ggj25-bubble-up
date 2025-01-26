@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dburt64fbrvr5"]
+[gd_scene load_steps=8 format=3 uid="uid://b8k3di6ptsnp5"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_ed1db"]
 [ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="2_xull8"]

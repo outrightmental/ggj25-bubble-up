@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dp071slbvsnkm"]
+
+[ext_resource type="Script" path="res://scenes/levels/fish_move_visual_only.gd" id="1_er68k"]
+[ext_resource type="Texture2D" uid="uid://botvde3lkgemk" path="res://assets/anglerfish_animation.png" id="2_2nwdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u31c2"]
+atlas = ExtResource("2_2nwdh")
+region = Rect2(0, 0, 191, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eag7"]
+atlas = ExtResource("2_2nwdh")
+region = Rect2(191, 0, 191, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chf7v"]
+atlas = ExtResource("2_2nwdh")
+region = Rect2(382, 0, 191, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnvdn"]
+atlas = ExtResource("2_2nwdh")
+region = Rect2(573, 0, 191, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk0y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u31c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eag7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chf7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnvdn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ParallaxSchoolFishVisualOnly" type="Node2D"]
+script = ExtResource("1_er68k")
+movement_speed = 3.0
+burst_wait = 0.5
+deceleration = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fk0y3")
+autoplay = "default"
+
+[node name="OnScreenCheck" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.50002, -0.499996)
+scale = Vector2(11.25, 8.15)
+
+[node name="BurstWaitTimer" type="Timer" parent="."]
+one_shot = true
