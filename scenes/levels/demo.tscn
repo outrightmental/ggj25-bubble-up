@@ -16,19 +16,19 @@
 [ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
-[ext_resource type="PackedScene" uid="uid://btv4s6q3pygoq" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
-[ext_resource type="PackedScene" uid="uid://cbce6amij7djt" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
-[ext_resource type="PackedScene" uid="uid://c68e6qfvrrdl6" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://un0yy20pm2mr" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
+[ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
-[ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
-[ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
-[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
-[ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
-[ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
-[ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
-[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
-[ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
-[ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
+[ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://bpu5wvmum0tp7" path="res://models/movable/can.tscn" id="23_ey2gt"]
+[ext_resource type="PackedScene" uid="uid://dfe5vx8l7u7nq" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
+[ext_resource type="PackedScene" uid="uid://co1x1r30vr4if" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://dburt64fbrvr5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
+[ext_resource type="PackedScene" uid="uid://ftusmtv00obr" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
@@ -89,7 +89,7 @@ gradient = ExtResource("13_35gav")
 
 [node name="plank1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
 texture_filter = 0
-position = Vector2(374, 4121)
+position = Vector2(454, 4485)
 rotation = 0.0609657
 
 [node name="plank2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
@@ -102,22 +102,21 @@ position = Vector2(119, 3433)
 rotation = 0.127886
 
 [node name="mine2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
-position = Vector2(488, 3231)
+position = Vector2(574, 3561)
 
 [node name="AtollaJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
 position = Vector2(522, 4731)
 rotation = -0.0816072
 
 [node name="RigidBody2D2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
-position = Vector2(175, 4568)
+position = Vector2(175, 4692)
 rotation = -0.0502933
 
 [node name="Anglerfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("17_bsav6")]
 position = Vector2(516, 4298)
-starting_direction = 0
 
 [node name="AtollaJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
-position = Vector2(185, 4212)
+position = Vector2(162, 4265)
 rotation = -0.0500541
 
 [node name="Wheel" parent="ObstacleCanvas/Obstacles" instance=ExtResource("18_u7qxp")]
@@ -130,12 +129,12 @@ script = ExtResource("17_njxh5")
 bubble_split_factor = 0.5
 
 [node name="FireworkJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
-position = Vector2(141, 3738)
+position = Vector2(276, 3626)
 rotation = 0.0598845
 
 [node name="FireworkJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
-position = Vector2(517, 3512)
-rotation = -0.332366
+position = Vector2(518, 3224)
+rotation = -0.0226715
 
 [node name="MoonJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
 position = Vector2(257, 1657)
@@ -157,8 +156,8 @@ script = ExtResource("17_njxh5")
 bubble_split_factor = 0.1
 
 [node name="Can" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
-position = Vector2(130, 2305)
-rotation = -2.11008
+position = Vector2(116, 2365)
+rotation = -3.5735
 
 [node name="Can2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
 position = Vector2(491, 2472)
@@ -209,11 +208,11 @@ texture_filter = 0
 position = Vector2(571, 624)
 
 [node name="MoorishIdol" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
-position = Vector2(123, 740)
+position = Vector2(44, 708)
+starting_direction = 0
 
 [node name="MoorishIdol2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
-position = Vector2(553, 1211)
-starting_direction = 0
+position = Vector2(638, 1147)
 
 [node name="Mine" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
 position = Vector2(483, 2875)
@@ -223,7 +222,7 @@ rotation = -0.0909927
 position = Vector2(524, 1819)
 
 [node name="AtollaJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
-position = Vector2(98, 4401)
+position = Vector2(106, 4501)
 rotation = 0.0682226
 
 [node name="RigidBody2D3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
@@ -232,34 +231,26 @@ rotation = -0.0863745
 
 [node name="ShipPole2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
 texture_filter = 0
-position = Vector2(138, 3937)
+position = Vector2(105, 4038)
 rotation = -0.0833836
 gravity_scale = 0.0
 script = ExtResource("17_njxh5")
 bubble_split_factor = 0.2
 
 [node name="RigidBody2D4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
-position = Vector2(174, 3609)
+position = Vector2(168, 3781)
 rotation = 0.109207
 
 [node name="Bottle" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
-position = Vector2(204, 2857)
-rotation = 0.274507
+position = Vector2(263, 2203)
+rotation = 8.83261
 
 [node name="Bottle2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
-position = Vector2(469, 2077)
+position = Vector2(402, 1980)
 
 [node name="RigidBody2D5" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
 position = Vector2(86, 1804)
 rotation = -0.205231
-
-[node name="ShipPole3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
-texture_filter = 0
-position = Vector2(519, 2325)
-rotation = -0.158721
-gravity_scale = 0.0
-script = ExtResource("17_njxh5")
-bubble_split_factor = 0.2
 
 [node name="RigidBody2D6" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
 position = Vector2(108, 1175)

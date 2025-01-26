@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://70upuk36imcf"]
+[gd_scene load_steps=9 format=3 uid="uid://vvxjajliqr5e"]
 
-[ext_resource type="Texture2D" uid="uid://2wnhv1jfwn4b" path="res://assets/sardine.png" id="1_j3c8o"]
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_nxqy5"]
+[ext_resource type="Texture2D" uid="uid://bvfst6vqo1w4o" path="res://assets/sardine_animation.png" id="2_hudc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ycao"]
+atlas = ExtResource("2_hudc5")
+region = Rect2(0, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iinva"]
+atlas = ExtResource("2_hudc5")
+region = Rect2(58, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4jsk"]
+atlas = ExtResource("2_hudc5")
+region = Rect2(116, 0, 58, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnmjj"]
+atlas = ExtResource("2_hudc5")
+region = Rect2(174, 0, 58, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhyg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ycao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iinva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4jsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnmjj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p28ih"]
 radius = 6.0
@@ -13,9 +49,10 @@ gravity_scale = 0.0
 script = ExtResource("1_nxqy5")
 burst_wait = 0.2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_j3c8o")
+sprite_frames = SubResource("SpriteFrames_nhyg8")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 1)
