@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
-[ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="3_rws3y"]
+[ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradients/gradient.png" id="3_rws3y"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="3_t4t02"]
 [ext_resource type="PackedScene" uid="uid://bdyj503wctuof" path="res://models/hud/hud.tscn" id="4_2udma"]
 [ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="4_6ll6l"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
 [ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
-[ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
 [ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
 [ext_resource type="PackedScene" uid="uid://bpu5wvmum0tp7" path="res://models/movable/can.tscn" id="23_ey2gt"]
 [ext_resource type="PackedScene" uid="uid://dfe5vx8l7u7nq" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]

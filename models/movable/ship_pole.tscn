@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmyfb0wychs1v"]
 
-[ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="1_dfkw5"]
+[ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/obstacles/pole.png" id="1_dfkw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_877rm"]
 size = Vector2(369, 17)

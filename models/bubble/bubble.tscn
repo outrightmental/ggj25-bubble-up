@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpm0ebbgn2yt0"]
 
 [ext_resource type="Script" path="res://models/bubble/bubble.gd" id="1_a2r14"]
-[ext_resource type="Texture2D" uid="uid://bt0c28kkpxuv" path="res://assets/bubble_test.png" id="2_aojhw"]
+[ext_resource type="Texture2D" uid="uid://bt0c28kkpxuv" path="res://assets/bubble/bubble_test.png" id="2_aojhw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n8s3h"]
 friction = 0.0

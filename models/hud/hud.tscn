@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdyj503wctuof"]
 
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
-[ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
-[ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="2_nl07q"]
-[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
+[ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/ui/munro.ttf" id="2_4nhim"]
+[ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/ui/button_style.tres" id="2_nl07q"]
+[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/ui/button_style_pressed.tres" id="3_j6n3k"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4cmqk53ynl56"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_hdwxx"]
-[ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/board_pixel.png" id="2_qt2yn"]
+[ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/obstacles/board_pixel.png" id="2_qt2yn"]
 
 [node name="Plank" type="RigidBody2D"]
 texture_filter = 1

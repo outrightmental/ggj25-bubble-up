@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnxy8a4o6w04q"]
 
-[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/background_test.png" id="1_manqw"]
+[ext_resource type="Texture2D" uid="uid://b6ly3cu7rfjje" path="res://assets/backgrounds/background_test.png" id="1_manqw"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="2_dwjvr"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="3_qogcy"]
 [ext_resource type="PackedScene" uid="uid://gl5hdp43qnoj" path="res://scenes/experiments/controls/controls.tscn" id="4_dfg2y"]

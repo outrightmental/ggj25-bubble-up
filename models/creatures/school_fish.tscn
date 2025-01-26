@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://vvxjajliqr5e"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_nxqy5"]
-[ext_resource type="Texture2D" uid="uid://bvfst6vqo1w4o" path="res://assets/sardine_animation.png" id="2_hudc5"]
+[ext_resource type="Texture2D" uid="uid://bvfst6vqo1w4o" path="res://assets/creatures/sardine_animation.png" id="2_hudc5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ycao"]
 atlas = ExtResource("2_hudc5")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfe5vx8l7u7nq"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_fu35c"]
-[ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="2_mjat6"]
+[ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/creatures/pufferfish_animation.png" id="2_mjat6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8c2kt"]
 atlas = ExtResource("2_mjat6")

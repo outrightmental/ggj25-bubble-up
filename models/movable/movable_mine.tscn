@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cny5s4lrsj5k8"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_8edr5"]
-[ext_resource type="Texture2D" uid="uid://ddmtvhhc1b1ck" path="res://assets/mine.png" id="2_0dn4w"]
+[ext_resource type="Texture2D" uid="uid://ddmtvhhc1b1ck" path="res://assets/obstacles/mine.png" id="2_0dn4w"]
 
 [node name="Mine" type="RigidBody2D"]
 collision_mask = 3

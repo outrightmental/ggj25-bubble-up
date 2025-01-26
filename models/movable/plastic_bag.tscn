@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fbrnskyn67e5"]
 
-[ext_resource type="Texture2D" uid="uid://bbgttvuy12cts" path="res://assets/plastic_bag.png" id="1_ej8ih"]
+[ext_resource type="Texture2D" uid="uid://bbgttvuy12cts" path="res://assets/obstacles/plastic_bag.png" id="1_ej8ih"]
 
 [node name="PlasticBag" type="RigidBody2D"]
 texture_filter = 1
