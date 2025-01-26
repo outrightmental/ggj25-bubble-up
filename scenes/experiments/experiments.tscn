@@ -41,6 +41,14 @@ offset_bottom = 161.0
 theme = SubResource("Theme_o41tl")
 text = "4 - bubble lifecycle:emit-merge-split"
 
+[node name="4_lifecycle_emit_merge_split2" type="Button" parent="."]
+offset_left = 11.0
+offset_top = 170.0
+offset_right = 229.0
+offset_bottom = 201.0
+theme = SubResource("Theme_o41tl")
+text = "5 - currents experiment"
+
 [node name="Button Main" type="Button" parent="."]
 offset_left = 582.667
 offset_top = -7.0
@@ -53,4 +61,5 @@ text = "menu"
 [connection signal="pressed" from="2_stack_of_planks" to="." method="_on_navigate_experiment" binds= ["2_stack_of_planks"]]
 [connection signal="pressed" from="3_diving_bell_traps" to="." method="_on_navigate_experiment" binds= ["3_diving_bell_traps"]]
 [connection signal="pressed" from="4_lifecycle_emit_merge_split" to="." method="_on_navigate_experiment" binds= ["4_lifecycle_emit_merge_split"]]
+[connection signal="pressed" from="4_lifecycle_emit_merge_split2" to="." method="_on_navigate_experiment" binds= ["5_currents_experiment"]]
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
