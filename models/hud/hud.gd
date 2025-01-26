@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 
-@onready var bar_total: ColorRect = $"Bar/Total"
-@onready var bar_score: ColorRect = $"Bar/Score"
-@onready var bar_wasted: ColorRect = $"Bar/Wasted"
+@onready var bar_total: ColorRect = $"MarginContainer/VBoxContainer/HBoxContainer/Bar/Total"
+@onready var bar_score: ColorRect = $"MarginContainer/VBoxContainer/HBoxContainer/Bar/Score"
+@onready var bar_wasted: ColorRect = $"MarginContainer/VBoxContainer/HBoxContainer/Bar/Wasted"
 
 var total: float = 0
 

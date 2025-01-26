@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://k2fxqlw5t3mb"]
+[gd_scene load_steps=12 format=3 uid="uid://k2fxqlw5t3mb"]
 
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="1_v1uw4"]
 [ext_resource type="PackedScene" uid="uid://dk16uun07tsnv" path="res://models/bubble/bubble_emitter.tscn" id="2_q7ms0"]

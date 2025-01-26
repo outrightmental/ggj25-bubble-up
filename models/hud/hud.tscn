@@ -1,52 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdyj503wctuof"]
+[gd_scene load_steps=6 format=3 uid="uid://bdyj503wctuof"]
 
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
+[ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
+[ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="2_nl07q"]
+[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_rlli4")
 
-[node name="Button Main" type="Button" parent="."]
-offset_left = 578.5
-offset_top = -6.0
-offset_right = 631.5
-offset_bottom = 25.0
-theme = SubResource("Theme_yn7ku")
-text = "menu"
-metadata/_edit_use_anchors_ = true
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Button Reset" type="Button" parent="."]
-offset_left = 522.5
-offset_top = -6.0
-offset_right = 570.5
-offset_bottom = 25.0
-theme = SubResource("Theme_yn7ku")
-text = "reset"
-metadata/_edit_use_anchors_ = true
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 
-[node name="Bar" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 305.0
-offset_bottom = 15.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
 
-[node name="Total" type="ColorRect" parent="Bar"]
+[node name="Bar" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Total" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Bar"]
+layout_mode = 0
 offset_right = 300.0
 offset_bottom = 10.0
 color = Color(1, 1, 1, 0.152941)
 metadata/_edit_use_anchors_ = true
 
-[node name="Score" type="ColorRect" parent="Bar"]
+[node name="Score" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Bar"]
+layout_mode = 0
 offset_right = 300.0
 offset_bottom = 10.0
 scale = Vector2(1e-05, 1)
 color = Color(0, 0.0588235, 0.537255, 0.490196)
 metadata/_edit_use_anchors_ = true
 
-[node name="Wasted" type="ColorRect" parent="Bar"]
+[node name="Wasted" type="ColorRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Bar"]
 layout_mode = 0
 offset_left = 300.0
 offset_top = 10.0
@@ -57,5 +64,33 @@ scale = Vector2(1e-05, 1)
 color = Color(1, 0, 0, 0.27451)
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
-[connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Button Main" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+theme = SubResource("Theme_yn7ku")
+theme_override_fonts/font = ExtResource("2_4nhim")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("2_nl07q")
+theme_override_styles/hover = ExtResource("3_j6n3k")
+theme_override_styles/pressed = ExtResource("3_j6n3k")
+theme_override_styles/normal = ExtResource("2_nl07q")
+text = "menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button Reset" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+theme = SubResource("Theme_yn7ku")
+theme_override_fonts/font = ExtResource("2_4nhim")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("2_nl07q")
+theme_override_styles/hover = ExtResource("3_j6n3k")
+theme_override_styles/pressed = ExtResource("3_j6n3k")
+theme_override_styles/normal = ExtResource("2_nl07q")
+text = "reset"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/Button Main" to="." method="_on_navigate_main"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/Button Reset" to="." method="_on_navigate_reset"]
