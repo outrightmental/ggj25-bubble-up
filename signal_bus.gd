@@ -41,11 +41,11 @@ signal update_wasted_air_mass(mass: float)
 	#emit_signal(UPDATE_WASTED_AIR_MASS, mass)
 
 
-func _recompute_score():
-	var exited_mass:float = 0
-	for e in air_exit_masses:
-		exited_mass += e
-	var score:float = air_exit_masses.max() if air_exit_masses.size() > 0 else 0
-	emit_signal(UPDATE_SCORE, score)
-	emit_signal(UPDATE_WASTED_AIR_MASS, air_vanished_mass + exited_mass - score)
-	emit_signal(UPDATE_TOTAL_AIR_MASS, air_total_mass)
+# func _recompute_score():
+# 	var exited_mass:float = 0
+# 	for e in air_exit_masses:
+# 		exited_mass += e
+# 	var score:float = air_exit_masses.max() if air_exit_masses.size() > 0 else 0
+# 	emit_signal(UPDATE_SCORE, score)
+# 	emit_signal(UPDATE_WASTED_AIR_MASS, air_vanished_mass + exited_mass - score)
+# 	emit_signal(UPDATE_TOTAL_AIR_MASS, air_total_mass)
