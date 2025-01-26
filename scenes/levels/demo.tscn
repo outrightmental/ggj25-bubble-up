@@ -1,15 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=30 format=3 uid="uid://wwn3w1xcwn2s"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
-[ext_resource type="Texture2D" uid="uid://b4mxdek0ds4e" path="res://assets/deep_background_test.jpg" id="2_l7h20"]
-[ext_resource type="Texture2D" uid="uid://tp4u1bxf8sac" path="res://assets/kelp_test.png" id="3_li4dl"]
+[ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="3_rws3y"]
 [ext_resource type="Script" path="res://models/bubble/bubble_emitter.gd" id="3_t4t02"]
 [ext_resource type="PackedScene" uid="uid://bdyj503wctuof" path="res://models/hud/hud.tscn" id="4_2udma"]
-[ext_resource type="Texture2D" uid="uid://y0e0a62hso3x" path="res://assets/leaf_test.png" id="4_nrgwe"]
+[ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="4_6ll6l"]
 [ext_resource type="PackedScene" uid="uid://d4cmqk53ynl56" path="res://models/movable/movable_plank.tscn" id="5_2r7qs"]
+[ext_resource type="Texture2D" uid="uid://drykod41nrxam" path="res://assets/gradients/background_gradient.tres" id="5_d7c40"]
+[ext_resource type="Script" path="res://scenes/levels/gradient_sampler.gd" id="5_lunj7"]
 [ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="6_ee8b1"]
-[ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="7_gf4m4"]
+[ext_resource type="Texture2D" uid="uid://clc124fko5cht" path="res://assets/gradients/background.tres" id="6_pjbmc"]
+[ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="11_y8yd6"]
+[ext_resource type="Script" path="res://scenes/levels/gradient_sampler_canvas_modulate.gd" id="12_qee7i"]
+[ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
+[ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
+[ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
+[ext_resource type="PackedScene" uid="uid://btv4s6q3pygoq" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://cbce6amij7djt" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
+[ext_resource type="PackedScene" uid="uid://c68e6qfvrrdl6" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
+[ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
+[ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
+[ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
+[ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
@@ -17,76 +36,35 @@ script = ExtResource("1_57u5x")
 [node name="CurrentDetector" parent="." instance=ExtResource("2_2m3wr")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 3200)
+position = Vector2(320, 4800)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="DeepBackground" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, 25)
-motion_scale = Vector2(0.26, 0.26)
+[node name="GradientImage" type="TextureRect" parent="Background" groups=["gradients"]]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("3_rws3y")
+script = ExtResource("5_lunj7")
+gradient = ExtResource("5_d7c40")
 
-[node name="DeepBackgroundTest" type="Sprite2D" parent="ParallaxBackground/DeepBackground"]
-position = Vector2(320, 645)
-texture = ExtResource("2_l7h20")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
 
-[node name="NearBackground" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 0.4)
+[node name="Background" type="ParallaxLayer" parent="Background/ParallaxBackground"]
+motion_mirroring = Vector2(0, 360)
 
-[node name="KelpTest" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(202, 1541)
-texture = ExtResource("3_li4dl")
+[node name="Background" type="TextureRect" parent="Background/ParallaxBackground/Background" groups=["gradients"]]
+custom_minimum_size = Vector2(640, 360)
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("4_6ll6l")
+script = ExtResource("5_lunj7")
+gradient = ExtResource("6_pjbmc")
 
-[node name="KelpTest2" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(493, 1274)
-texture = ExtResource("3_li4dl")
+[node name="TransitionLayers" type="Node2D" parent="Background"]
 
-[node name="KelpTest3" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(213, 957)
-texture = ExtResource("3_li4dl")
-
-[node name="KelpTest4" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(482, 573)
-texture = ExtResource("3_li4dl")
-
-[node name="LeafTest" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(447, 1595)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest2" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(303, 1382)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest3" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(151, 1243)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest4" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(372, 1131)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest5" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(513, 870)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest6" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(361, 790)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest7" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(286, 598)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest8" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(417, 427)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest9" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(206, 227)
-texture = ExtResource("4_nrgwe")
-
-[node name="LeafTest10" type="Sprite2D" parent="ParallaxBackground/NearBackground"]
-position = Vector2(480, 90)
-texture = ExtResource("4_nrgwe")
+[node name="Sprite2D" type="Sprite2D" parent="Background/TransitionLayers"]
 
 [node name="HUDCanvas" type="CanvasLayer" parent="."]
 
@@ -96,56 +74,197 @@ top_level = true
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BubbleEmitter" type="Node2D" parent="."]
-position = Vector2(320, 3392)
+position = Vector2(320, 5000)
 script = ExtResource("3_t4t02")
 spawn_rate = 20.0
 max_bubbles = 50
 spread_x = 200
 spread_y = 50
 
-[node name="Obstacles" type="Node2D" parent="."]
+[node name="ObstacleCanvas" type="CanvasGroup" parent="." groups=["gradients"]]
+script = ExtResource("12_qee7i")
+gradient = ExtResource("13_35gav")
 
-[node name="plank1" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(277, 3181)
+[node name="Obstacles" type="Node2D" parent="ObstacleCanvas"]
 
-[node name="plank2" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(379, 3045)
+[node name="plank1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
+texture_filter = 0
+position = Vector2(374, 4121)
+rotation = 0.0609657
 
-[node name="plank3" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(306, 2840)
+[node name="plank2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
+texture_filter = 0
+position = Vector2(177, 3162)
+rotation = -0.128316
 
-[node name="plank5" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(342, 2152)
+[node name="mine1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(119, 3433)
+rotation = 0.127886
 
-[node name="plank6" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(314, 1812)
+[node name="mine2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(488, 3231)
 
-[node name="plank7" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(354, 1492)
+[node name="AtollaJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(522, 4731)
+rotation = -0.0816072
 
-[node name="plank8" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(314, 1288)
+[node name="RigidBody2D2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(175, 4568)
+rotation = -0.0502933
 
-[node name="plank9" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(358, 1016)
+[node name="Anglerfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("17_bsav6")]
+position = Vector2(516, 4298)
+starting_direction = 0
 
-[node name="plank4" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(294, 2392)
+[node name="AtollaJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(185, 4212)
+rotation = -0.0500541
 
-[node name="plank10" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(366, 710)
+[node name="Wheel" parent="ObstacleCanvas/Obstacles" instance=ExtResource("18_u7qxp")]
+texture_filter = 0
+position = Vector2(548, 3978)
+rotation = 0.151944
+mass = 25.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.5
 
-[node name="plank11" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(340, 280)
+[node name="FireworkJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
+position = Vector2(141, 3738)
+rotation = 0.0598845
 
-[node name="plank12" parent="Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(366, 137)
+[node name="FireworkJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
+position = Vector2(517, 3512)
+rotation = -0.332366
 
-[node name="mine1" parent="Obstacles" instance=ExtResource("6_ee8b1")]
-position = Vector2(167, 787)
+[node name="MoonJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(257, 1657)
+rotation = 0.21383
 
-[node name="mine2" parent="Obstacles" instance=ExtResource("6_ee8b1")]
-position = Vector2(536, 458)
+[node name="MoonJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(173, 2517)
+rotation = 0.086483
 
-[node name="bell1" parent="Obstacles" instance=ExtResource("7_gf4m4")]
-position = Vector2(490, 2578)
+[node name="FishSchool" parent="ObstacleCanvas/Obstacles" instance=ExtResource("21_aateg")]
+position = Vector2(111, 2708)
+
+[node name="PlasticBag" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+texture_filter = 0
+position = Vector2(470, 2638)
+mass = 2.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.1
+
+[node name="Can" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
+position = Vector2(130, 2305)
+rotation = -2.11008
+
+[node name="Can2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
+position = Vector2(491, 2472)
+rotation = 0.662621
+
+[node name="PlasticBag2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+texture_filter = 0
+position = Vector2(27, 2163)
+rotation = 1.57176
+mass = 2.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.1
+
+[node name="MoonJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(499, 2228)
+
+[node name="FishSchool2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("21_aateg")]
+position = Vector2(101, 1972)
+
+[node name="Pufferfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(93, 1366)
+starting_direction = 0
+
+[node name="Pufferfish2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(219, 1033)
+
+[node name="Gorgonian" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
+position = Vector2(60, 1534)
+scale = Vector2(-1, 1)
+
+[node name="Gorgonian2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
+position = Vector2(590, 842)
+
+[node name="TableCoral" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
+position = Vector2(564, 1402)
+
+[node name="TableCoral2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
+position = Vector2(70, 938)
+scale = Vector2(-1, 1)
+
+[node name="TableCoral3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
+position = Vector2(569, 624)
+
+[node name="MoorishIdol" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
+position = Vector2(123, 740)
+
+[node name="MoorishIdol2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
+position = Vector2(553, 1211)
+starting_direction = 0
+
+[node name="Mine" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(483, 2875)
+rotation = -0.0909927
+
+[node name="Pufferfish3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(524, 1819)
+
+[node name="AtollaJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(98, 4401)
+rotation = 0.0682226
+
+[node name="RigidBody2D3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(47, 2954)
+rotation = -0.0863745
+
+[node name="ShipPole2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+texture_filter = 0
+position = Vector2(138, 3937)
+rotation = -0.0833836
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.2
+
+[node name="RigidBody2D4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(174, 3609)
+rotation = 0.109207
+
+[node name="Bottle" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
+position = Vector2(204, 2857)
+rotation = 0.274507
+
+[node name="Bottle2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
+position = Vector2(469, 2077)
+
+[node name="RigidBody2D5" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(86, 1804)
+rotation = -0.205231
+
+[node name="ShipPole3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+texture_filter = 0
+position = Vector2(519, 2325)
+rotation = -0.158721
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.2
+
+[node name="RigidBody2D6" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(108, 1175)
+rotation = 0.15321
+
+[node name="Gorgonian3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
+position = Vector2(578, 1582)

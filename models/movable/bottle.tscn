@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1wyhkk5l13hv"]
+
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_42esl"]
+[ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="1_va3wc"]
+
+[node name="Bottle" type="RigidBody2D"]
+mass = 2.0
+gravity_scale = 0.0
+script = ExtResource("1_42esl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -29, -6, -22, -11, 6, -13, 23, -11, 25, -7, 28, -4, 29, 6, 29, 9, 25, 10, 7, 13, -2, 14, -19, 8, -29)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_va3wc")
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.5, 0.500001)
+scale = Vector2(1.65, 3.25)

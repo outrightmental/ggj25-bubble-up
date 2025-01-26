@@ -1,25 +1,28 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4cmqk53ynl56"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_hdwxx"]
-[ext_resource type="Texture2D" uid="uid://ctjkek2sy7t3h" path="res://assets/plank_test.png" id="2_658lm"]
+[ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/board_pixel.png" id="2_qt2yn"]
 
-[node name="RigidBody2D2" type="RigidBody2D"]
+[node name="Plank" type="RigidBody2D"]
+texture_filter = 1
 collision_mask = 3
-mass = 25.0
-gravity_scale = 0.05
+mass = 20.0
+gravity_scale = 0.0
 freeze_mode = 1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_hdwxx")
-bubble_split_factor = 0.01
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-1.72492, 1.62982)
-rotation = -0.00070262
-polygon = PackedVector2Array(49.1966, -7.12859, 47.0621, -5.46342, 57.4558, 3.54389, 56.921, 5.54351, 54.6542, 5.80858, 53.9865, 7.27478, -52.3467, 7.00007, -54.0121, 5.1989, -55.9456, 5.46421, -56.7449, 4.46365, -50.0089, 0.668379, -51.0071, -1.86566, -45.2718, -4.66163, -46.8702, -6.99609, -45.0027, -8.19477)
+bubble_split_factor = 0.2
 
 [node name="PlankTest" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1.00804, 1.25)
-scale = Vector2(0.161267, 0.166667)
-texture = ExtResource("2_658lm")
+scale = Vector2(0.964, 1)
+texture = ExtResource("2_qt2yn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.964, 1)
+polygon = PackedVector2Array(58, -9.5, -63, -9.5, -70, 0.5, -71, 0.5, -71, 9.5, 71, 9.5, 71, 0.9)
+
+[node name="OnScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2.49999, -4)
+scale = Vector2(11.05, 4)

@@ -24,3 +24,7 @@ shape = SubResource("CapsuleShape2D_p28ih")
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="OnScreenCheck" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(2.85, 1.1)

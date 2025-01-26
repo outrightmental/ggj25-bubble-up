@@ -7,7 +7,6 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var timer: Timer = $Timer
 
-
 func _ready():
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
@@ -35,6 +34,10 @@ func _on_timer_timeout():
 		actual_target_y,
 		camera_position_recompute_interval
 	).set_trans(Tween.TRANS_LINEAR)
+	var gradient_nodes = get_tree().get_nodes_in_group('gradients')
+	for gradient_node in gradient_nodes:
+		if gradient_node.has_method('update_sample'):
+			gradient_node.update_sample(actual_target_y, camera_position_recompute_interval)
 	SignalBus.cull_bubbles_below.emit(actual_target_y + 180)
 
 
