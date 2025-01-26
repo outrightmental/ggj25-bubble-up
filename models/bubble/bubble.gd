@@ -58,7 +58,7 @@ func get_closest_bubble_sprite(size: int) -> BubbleSprite:
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
 # Store collision base size based on starting size of collision, so we know the scale factor for later
-@onready var collision_base_size = collision.get_rect().size.x
+@onready var collision_base_size = collision.shape.get_rect().size.x
 
 # Whether the bubble is still in play
 var done: bool = false
@@ -144,9 +144,9 @@ func update_mass(new_mass: float):
 	var bubble_sprite = get_closest_bubble_sprite(size)
 	var collision_scale_factor: float = size / collision_base_size
 	var sprite_scale_factor: float = size / bubble_sprite.size
-	sprite.texture = bubble_sprite.texture
-	sprite.scale = Vector2(sprite_scale_factor, sprite_scale_factor)
-	collision.scale = Vector2(collision_scale_factor, collision_scale_factor)
+	sprite.set_deferred("texture",  bubble_sprite.texture)
+	sprite.set_deferred("scale",  Vector2(sprite_scale_factor, sprite_scale_factor))
+	collision.set_deferred("scale",  Vector2(collision_scale_factor, collision_scale_factor))
 
 
 # Called when the bubble is instantiated
