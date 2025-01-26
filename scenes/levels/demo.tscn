@@ -1025,12 +1025,12 @@ sprite_frames = SubResource("SpriteFrames_w3wk4")
 autoplay = "default"
 
 [node name="ParallaxFishVisualOnly" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("37_m73q5")]
-position = Vector2(314, 1801.33)
+position = Vector2(44, 1912)
 rotation = 0.169291
 scale = Vector2(-1, 1)
 
 [node name="Sprite" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(27.3333, 1743.33)
+position = Vector2(395.333, 1602)
 rotation = -0.00070262
 scale = Vector2(1.059, 1)
 texture = ExtResource("38_nmpcl")
@@ -1067,8 +1067,9 @@ sprite_frames = SubResource("SpriteFrames_dfvyb")
 autoplay = "default"
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(312, 780)
-rotation = 0.344376
+position = Vector2(324, 714)
+rotation = 1.34806
+scale = Vector2(0.939518, 1.10577)
 texture = ExtResource("42_vnxps")
 
 [node name="VisualOnlyFishSchool" parent="ParallaxForeground/foreground/Fish" instance=ExtResource("43_geh4o")]
