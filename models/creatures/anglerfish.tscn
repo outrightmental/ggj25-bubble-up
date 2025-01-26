@@ -27,5 +27,6 @@ polygon = PackedVector2Array(-79, -69.5, -80, -69, -80, -68, -81, -68, -81, -67,
 texture = ExtResource("2_ccgar")
 
 [node name="OnScreenCheck" type="VisibleOnScreenEnabler2D" parent="."]
+texture_filter = 1
 position = Vector2(0.501717, 0.148651)
 scale = Vector2(9.59985, 7.07467)

@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://fbrnskyn67e5"]
+[gd_scene load_steps=2 format=3 uid="uid://dagww6odvtyda"]
 
 [ext_resource type="Texture2D" uid="uid://bbgttvuy12cts" path="res://assets/plastic_bag.png" id="1_ej8ih"]
-[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_o1xfe"]
 
 [node name="PlasticBag" type="RigidBody2D"]
-mass = 2.0
-gravity_scale = 0.0
-script = ExtResource("1_o1xfe")
-bubble_split_factor = 0.1
+texture_filter = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-1, -48, -8, -48, -11, -42, -8, -33, -7, -22, -9, -17, -19, -20, -34, -30, -36, -31, -57, -41, -63, -40, -65, -30, -43, -6, -24, 29, -22, 33, -7, 48, 7, 48, 29, 38, 51, 31, 63, 24, 65, 14, 45, -9, 39, -17, 32, -33, 28, -36, 23, -40, 16, -42)

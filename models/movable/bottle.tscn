@@ -12,4 +12,5 @@ script = ExtResource("1_42esl")
 polygon = PackedVector2Array(0, -29, -6, -22, -11, 6, -13, 23, -11, 25, -7, 28, -4, 29, 6, 29, 9, 25, 10, 7, 13, -2, 14, -19, 8, -29)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_va3wc")

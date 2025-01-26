@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4h5npy4pbw10"]
+[gd_scene load_steps=2 format=3 uid="uid://cnr4ccgrod6qg"]
 
-[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_atsbe"]
 [ext_resource type="Texture2D" uid="uid://mp763hu25afo" path="res://assets/coral_B.png" id="1_awdxv"]
 
 [node name="TableCoral" type="RigidBody2D"]
-mass = 100.0
-gravity_scale = 0.0
-script = ExtResource("1_atsbe")
-bubble_split_factor = 0.85
+texture_filter = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(69, -45.5, 37.8, -45.5, 32.8, -43.5, 27.6, -43.5, 20, -35.9, 20, -30, 23, -28, 23, -26.8, 31, -23.9, 31, -22.7, 48.9, -18.5, 49.6, -18.5, 49, -17.9, -20.2, -17.5, -25.2, -15.5, -33.4, -15.5, -36.4, -12.5, -37.7, -12.5, -38.2, -11.3, -35, -8.1, -35, -6.5, -33, -6.5, -33, -5.7, -23, -3.7, -23, -2.6, -12, -1.5, -2.2, -1.5, 2, -0.700001, 2, 0.400002, 24, 3.3, 24, 6.4, -33, 5.5, -34.4, 5.5, -36, 7.1, -47, 6.5, -48.2, 6.5, -52, 7.8, -52, 8.5, -62, 8.5, -62, 9.5, -65.6, 9.5, -66.6, 11.5, -67.7, 11.5, -68.2, 12.7, -66, 14.9, -66, 16.4, -58, 17.3, -58, 18.4, -44.1, 20.5, -25.3, 20.5, -18.1, 22.5, -9.2, 22.5, -6, 23.3, -6, 24.4, 1.9, 25.5, 8.8, 25.5, 38.9, 31.5, 43.8, 31.5, 53.8, 36.5, 55.4, 36.5, 56.4, 38.5, 58.5, 38.5, 64.6, 45.5, 69, 45.5)

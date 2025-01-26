@@ -47,7 +47,7 @@ var current_g_size := 40.0:
 	set(v):
 		current_g_size = v
 		emit_signal('current_param_changed', 'current_g_size', v)
-var current_f_strength := 16.0:
+var current_f_strength := 8.0:
 	set(v):
 		current_f_strength = v
 		emit_signal('current_param_changed', 'current_f_strength', v)
@@ -55,7 +55,7 @@ var current_f_size := 30.0:
 	set(v):
 		current_f_size = v
 		emit_signal('current_param_changed', 'current_f_size', v)
-var current_n_influence := 5.0:
+var current_n_influence := 3.0:
 	set(v):
 		current_n_influence = v
 		emit_signal('current_param_changed', 'current_n_influence', v)

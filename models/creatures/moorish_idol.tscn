@@ -18,6 +18,7 @@ burst_wait = 0.2
 starting_direction = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_7qdr7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
