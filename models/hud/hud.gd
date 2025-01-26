@@ -1,8 +1,8 @@
 extends Node2D
 
 
-@onready var label_wasted_air_mass: Label = $"Lost Value"
-@onready var label_score: Label = $"Score Value"
+@onready var text_wasted_air_mass: Label = $"Lost Value"
+@onready var text_score: Label = $"Score Value"
 
 
 func _ready() -> void:
@@ -11,11 +11,11 @@ func _ready() -> void:
 
 
 func _update_wasted_air_mass(mass: float) -> void:
-	label_wasted_air_mass.text = str(mass)
+	text_wasted_air_mass.text = str(floor(mass))
 
 
-func _update_score(score: float) -> void:
-	label_score.text = str(score)
+func _update_score(score: int) -> void:
+	text_score.text = str(score)
 
 
 func _on_navigate_main() -> void:

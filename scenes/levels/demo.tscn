@@ -96,7 +96,7 @@ top_level = true
 [node name="Timer" type="Timer" parent="."]
 
 [node name="BubbleEmitter" type="Node2D" parent="."]
-position = Vector2(-23, 3392)
+position = Vector2(320, 3392)
 script = ExtResource("3_t4t02")
 spawn_rate = 20.0
 max_bubbles = 50

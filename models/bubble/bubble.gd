@@ -91,16 +91,16 @@ func split() -> void:
 	queue_free()
 
 
-# Function to destroy the bubble and spawn the vanish particle effect
+# Function to vanish the bubble; air is wasted
 func vanish():
-	SignalBus.bubble_vanish.emit(mass)
-	_destroy()
+	if await _destroy():
+		SignalBus.bubble_vanish.emit(mass)
 
 
-# Function to exit the bubble and vanish it
+# Function to exit the bubble; score is updated
 func exit():
-	SignalBus.bubble_exit.emit(mass)
-	_destroy()
+	if await _destroy():
+		SignalBus.bubble_exit.emit(mass)
 
 
 # Function to update the scale of the bubble based on its mass
@@ -165,7 +165,13 @@ func _on_collision_with_movable(other) -> void:
 
 
 # Function to destroy the bubble with an effect
-func _destroy():
+func _destroy() -> bool:
+	# Lock the other bubble to prevent further collisions
+	if is_freeze_enabled():
+		return false
+	else:
+		set_deferred("freeze", true)
+
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
 		# Instance the particle effect
@@ -187,4 +193,5 @@ func _destroy():
 	collision.disabled = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
+	return true
 	

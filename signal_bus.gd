@@ -5,7 +5,7 @@ signal bubble_exit(mass: float)
 signal bubble_spawn(mass: float)
 signal bubble_vanish(mass: float)
 signal reset_game
-signal update_score(score: float)
+signal update_score(score: int)
 signal update_total_air_mass(mass: float)
 signal update_wasted_air_mass(mass: float)
 
@@ -48,7 +48,7 @@ func _recompute_score():
 	var exited_mass:float = 0
 	for e in air_exit_masses:
 		exited_mass += e
-	var score:float = air_exit_masses.max() if air_exit_masses.size() > 0 else 0
+	var score:int = floor(air_exit_masses.max()) if air_exit_masses.size() > 0 else 0
 	update_score.emit(score)
 	update_wasted_air_mass.emit(air_vanished_mass + exited_mass - score)
 	update_total_air_mass.emit(air_total_mass)
