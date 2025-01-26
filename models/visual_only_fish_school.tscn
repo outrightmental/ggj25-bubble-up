@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2pd0mlym6k58"]
+
+[ext_resource type="Script" path="res://models/parallax_school_fish_visual_only.gd" id="1_16sw2"]
+
+[node name="VisualOnlyFishSchool" type="Node2D"]
+script = ExtResource("1_16sw2")
