@@ -34,6 +34,7 @@ var _collision_cooldown_millis: int       = 100
 # Whether the bubble is still in play
 var done: bool = false
 
+
 # Function to merge two bubbles
 func merge_into(other) -> void:
 	# If the other bubble is smaller or faster, call the function to merge that into this instead
@@ -60,7 +61,7 @@ func split() -> void:
 	# Lock the bubble to prevent further activity
 	if done:
 		return
-	
+
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
 
@@ -90,16 +91,21 @@ func split() -> void:
 	queue_free()
 	done = true
 
+
 # Function to vanish the bubble; air is wasted
-func vanish():
-	if await _destroy():
-		SignalBus.bubble_vanish.emit(mass)
+func vanish() -> void:
+	if done:
+		return
+	SignalBus.bubble_vanish.emit(mass)
+	_destroy()
 
 
 # Function to exit the bubble; score is updated
-func exit():
-	if await _destroy():
-		SignalBus.bubble_exit.emit(mass)
+func exit() -> void:
+	if done:
+		return
+	SignalBus.bubble_exit.emit(mass)
+	_destroy()
 
 
 # Function to update the scale of the bubble based on its mass
@@ -109,14 +115,16 @@ func update_mass(new_mass: float):
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
 	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
 	sprite.texture = bubble_sprites[0]
-	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
+
+
+# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
 
 
 # Called when the bubble is instantiated
 func _init():
 	super._init()
-	
-	
+
+
 # Called every frame to check if the bubble has risen to the surface
 func _process(_delta) -> void:
 	if global_position.y < 0:
@@ -162,11 +170,7 @@ func _on_collision_with_movable(other) -> void:
 
 
 # Function to destroy the bubble with an effect
-func _destroy() -> bool:
-	# Lock the bubble to prevent further activity
-	if done:
-		return false
-
+func _destroy() -> void:
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
 		# Instance the particle effect
@@ -176,18 +180,13 @@ func _destroy() -> bool:
 		# Set the position of the particles to the bubble's position
 		particles.global_position = global_position
 
-		# Optional: Start the particle effect
-		if particles.has_method("restart"):
-			particles.restart()
-
 	# Activate the particle emitter
 	vanish_particle_emitter.emitting = true
 
 	# Hide the sprite, disable the collision shape, wait 1 second, then queue free
 	sprite.hide()
 	collision.disabled = true
+	done = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
-	done = true
-	return true
 	
