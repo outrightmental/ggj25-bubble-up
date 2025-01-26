@@ -5,61 +5,57 @@
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(466.5, 364)
 script = ExtResource("1_rlli4")
 
 [node name="Button Main" type="Button" parent="."]
-offset_left = 112.0
-offset_top = -371.0
-offset_right = 165.0
-offset_bottom = -340.0
+offset_left = 578.5
+offset_top = -6.0
+offset_right = 631.5
+offset_bottom = 25.0
 theme = SubResource("Theme_yn7ku")
 text = "menu"
-
-[node name="Button Reset" type="Button" parent="."]
-offset_left = 56.0
-offset_top = -371.0
-offset_right = 104.0
-offset_bottom = -340.0
-theme = SubResource("Theme_yn7ku")
-text = "reset"
-
-[node name="Drag Controls" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -467.5
-offset_top = -37.0
-offset_right = -427.5
-offset_bottom = 3.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Score Label" type="Label" parent="."]
-offset_left = -458.0
-offset_top = -363.0
-offset_right = -402.0
-offset_bottom = -340.0
-text = "BIGGEST BUBBLE:"
+[node name="Button Reset" type="Button" parent="."]
+offset_left = 522.5
+offset_top = -6.0
+offset_right = 570.5
+offset_bottom = 25.0
+theme = SubResource("Theme_yn7ku")
+text = "reset"
+metadata/_edit_use_anchors_ = true
 
-[node name="Score Value" type="Label" parent="."]
-offset_left = -316.5
-offset_top = -363.0
-offset_right = -276.5
-offset_bottom = -340.0
-text = "123"
+[node name="Bar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 305.0
+offset_bottom = 15.0
 
-[node name="Lost Label" type="Label" parent="."]
-offset_left = -258.5
-offset_top = -363.0
-offset_right = -159.5
-offset_bottom = -340.0
-text = "WASTED AIR:"
+[node name="Total" type="ColorRect" parent="Bar"]
+offset_right = 300.0
+offset_bottom = 10.0
+color = Color(1, 1, 1, 0.152941)
+metadata/_edit_use_anchors_ = true
 
-[node name="Lost Value" type="Label" parent="."]
-offset_left = -153.5
-offset_top = -363.0
-offset_right = -113.5
-offset_bottom = -340.0
-text = "123"
+[node name="Score" type="ColorRect" parent="Bar"]
+offset_right = 300.0
+offset_bottom = 10.0
+scale = Vector2(1e-05, 1)
+color = Color(0, 0.0588235, 0.537255, 0.490196)
+metadata/_edit_use_anchors_ = true
+
+[node name="Wasted" type="ColorRect" parent="Bar"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 10.0
+offset_right = 600.0
+offset_bottom = 20.0
+rotation = 3.14159
+scale = Vector2(1e-05, 1)
+color = Color(1, 0, 0, 0.27451)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button Main" to="." method="_on_navigate_main"]
 [connection signal="pressed" from="Button Reset" to="." method="_on_navigate_reset"]
