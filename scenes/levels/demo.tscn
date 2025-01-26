@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=29 format=3 uid="uid://wwn3w1xcwn2s"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
@@ -11,10 +11,23 @@
 [ext_resource type="Script" path="res://scenes/levels/gradient_sampler.gd" id="5_lunj7"]
 [ext_resource type="PackedScene" uid="uid://cny5s4lrsj5k8" path="res://models/movable/movable_mine.tscn" id="6_ee8b1"]
 [ext_resource type="Texture2D" uid="uid://clc124fko5cht" path="res://assets/gradients/background.tres" id="6_pjbmc"]
-[ext_resource type="PackedScene" uid="uid://dic112bb06qtg" path="res://models/movable/movable_diving_bell.tscn" id="7_gf4m4"]
+[ext_resource type="PackedScene" uid="uid://drx5vg28bqh2w" path="res://models/creatures/moon_jelly.tscn" id="11_y8yd6"]
 [ext_resource type="Script" path="res://scenes/levels/gradient_sampler_canvas_modulate.gd" id="12_qee7i"]
 [ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
+[ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
+[ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://un0yy20pm2mr" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
+[ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
+[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://bpu5wvmum0tp7" path="res://models/movable/can.tscn" id="23_ey2gt"]
+[ext_resource type="PackedScene" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
+[ext_resource type="PackedScene" uid="uid://co1x1r30vr4if" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
+[ext_resource type="PackedScene" uid="uid://ftusmtv00obr" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
@@ -74,49 +87,156 @@ gradient = ExtResource("13_35gav")
 [node name="Obstacles" type="Node2D" parent="ObstacleCanvas"]
 
 [node name="plank1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(277, 3181)
+position = Vector2(374, 4121)
+rotation = 0.0609657
 
 [node name="plank2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(379, 3045)
-
-[node name="plank3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(306, 2840)
-
-[node name="plank5" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(342, 2152)
-
-[node name="plank6" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(314, 1812)
-
-[node name="plank7" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(354, 1492)
-
-[node name="plank8" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(314, 1288)
-
-[node name="plank9" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(358, 1016)
-
-[node name="plank4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(294, 2392)
-
-[node name="plank10" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(366, 710)
-
-[node name="plank11" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(340, 280)
-
-[node name="plank12" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
-position = Vector2(366, 137)
+position = Vector2(177, 3162)
+rotation = -0.128316
 
 [node name="mine1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
-position = Vector2(167, 787)
+position = Vector2(119, 3433)
+rotation = 0.127886
 
 [node name="mine2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
-position = Vector2(536, 458)
+position = Vector2(488, 3231)
 
-[node name="bell1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("7_gf4m4")]
-position = Vector2(490, 2578)
+[node name="AtollaJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(522, 4731)
+rotation = -0.0816072
+
+[node name="RigidBody2D2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(147, 4680)
+rotation = -0.203266
+
+[node name="ShipPole" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+position = Vector2(563, 4441)
+rotation = -0.137083
+
+[node name="Anglerfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("17_bsav6")]
+position = Vector2(516, 4298)
+starting_direction = 0
+
+[node name="AtollaJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(185, 4212)
+rotation = -0.0500541
+
+[node name="Wheel" parent="ObstacleCanvas/Obstacles" instance=ExtResource("18_u7qxp")]
+position = Vector2(548, 3978)
+rotation = 0.151944
 
 [node name="FireworkJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
-position = Vector2(178, 4714)
+position = Vector2(141, 3738)
+rotation = 0.0598845
+
+[node name="FireworkJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
+position = Vector2(517, 3512)
+rotation = -0.332366
+
+[node name="MoonJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(257, 1657)
+rotation = 0.21383
+
+[node name="MoonJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(173, 2517)
+rotation = 0.086483
+
+[node name="FishSchool" parent="ObstacleCanvas/Obstacles" instance=ExtResource("21_aateg")]
+position = Vector2(111, 2708)
+
+[node name="PlasticBag" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+position = Vector2(470, 2638)
+
+[node name="Can" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
+position = Vector2(130, 2305)
+rotation = -2.11008
+
+[node name="Can2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
+position = Vector2(491, 2472)
+rotation = 0.662621
+
+[node name="PlasticBag2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+position = Vector2(27, 2163)
+rotation = 1.57176
+
+[node name="MoonJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
+position = Vector2(499, 2228)
+
+[node name="FishSchool2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("21_aateg")]
+position = Vector2(101, 1972)
+
+[node name="Pufferfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(93, 1366)
+starting_direction = 0
+
+[node name="Pufferfish2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(219, 1033)
+
+[node name="Gorgonian" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+position = Vector2(60, 1534)
+scale = Vector2(-1, 1)
+
+[node name="Gorgonian2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+position = Vector2(590, 842)
+
+[node name="TableCoral" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+position = Vector2(564, 1402)
+
+[node name="TableCoral2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+position = Vector2(70, 938)
+scale = Vector2(-1, 1)
+
+[node name="TableCoral3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+position = Vector2(569, 624)
+
+[node name="MoorishIdol" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
+position = Vector2(123, 740)
+
+[node name="MoorishIdol2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
+position = Vector2(553, 1211)
+starting_direction = 0
+
+[node name="Mine" parent="ObstacleCanvas/Obstacles" instance=ExtResource("6_ee8b1")]
+position = Vector2(483, 2875)
+rotation = -0.0909927
+
+[node name="Pufferfish3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("24_ot7re")]
+position = Vector2(524, 1819)
+
+[node name="AtollaJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_y6n6d")]
+position = Vector2(98, 4401)
+rotation = 0.0682226
+
+[node name="RigidBody2D3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(47, 2954)
+rotation = -0.0863745
+
+[node name="ShipPole2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+position = Vector2(138, 3937)
+rotation = -0.0833836
+
+[node name="RigidBody2D4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(174, 3609)
+rotation = 0.109207
+
+[node name="Bottle" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
+position = Vector2(204, 2857)
+rotation = 0.274507
+
+[node name="Bottle2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("28_gpb7l")]
+position = Vector2(469, 2077)
+
+[node name="RigidBody2D5" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(86, 1804)
+rotation = -0.205231
+
+[node name="ShipPole3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+position = Vector2(519, 2325)
+rotation = -0.158721
+
+[node name="RigidBody2D6" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
+position = Vector2(108, 1175)
+rotation = 0.15321
+
+[node name="Gorgonian3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+position = Vector2(578, 1582)

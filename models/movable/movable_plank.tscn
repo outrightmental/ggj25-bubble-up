@@ -5,13 +5,13 @@
 
 [node name="Plank" type="RigidBody2D"]
 collision_mask = 3
-mass = 25.0
-gravity_scale = 0.05
+mass = 20.0
+gravity_scale = 0.0
 freeze_mode = 1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_hdwxx")
-bubble_split_factor = 0.01
+bubble_split_factor = 0.2
 
 [node name="PlankTest" type="Sprite2D" parent="."]
 texture_filter = 1

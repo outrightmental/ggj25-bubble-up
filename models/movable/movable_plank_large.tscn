@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbce6amij7djt"]
+[gd_scene load_steps=3 format=3 uid="uid://un0yy20pm2mr"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_bwt2k"]
 [ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="2_tum47"]
@@ -6,12 +6,12 @@
 [node name="RigidBody2D2" type="RigidBody2D"]
 collision_mask = 3
 mass = 25.0
-gravity_scale = 0.05
+gravity_scale = 0.0
 freeze_mode = 1
 linear_damp = 5.0
 angular_damp = 5.0
 script = ExtResource("1_bwt2k")
-bubble_split_factor = 0.01
+bubble_split_factor = 0.2
 
 [node name="PlankTest" type="Sprite2D" parent="."]
 texture_filter = 1

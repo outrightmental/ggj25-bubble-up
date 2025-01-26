@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://btv4s6q3pygoq"]
+[gd_scene load_steps=4 format=3 uid="uid://cmyfb0wychs1v"]
 
 [ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="1_dfkw5"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="1_tumn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_877rm"]
 size = Vector2(369, 17)
 
 [node name="ShipPole" type="RigidBody2D"]
+mass = 25.0
+gravity_scale = 0.0
+script = ExtResource("1_tumn6")
+bubble_split_factor = 0.2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dfkw5")
