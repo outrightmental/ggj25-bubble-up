@@ -31,6 +31,8 @@ var _collision_cooldown_millis: int       = 100
 # Reference to the vanish particle emitter node
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
 
+# Whether the bubble is still in play
+var done: bool = false
 
 # Function to merge two bubbles
 func merge_into(other) -> void:
@@ -39,11 +41,11 @@ func merge_into(other) -> void:
 		other.merge_into(self)
 		return
 
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled() or other.is_freeze_enabled():
+	# Lock the bubble to prevent further activity
+	if done or other.done:
 		return
 	else:
-		set_deferred("freeze", true)
+		done = true
 
 	# Update the other bubble's mass
 	other.update_mass(mass + other.mass)
@@ -56,12 +58,12 @@ func merge_into(other) -> void:
 # new bubbles on opposite sides of the center of the original bubble, halfway between the center and the outside. New
 # bubbles inherit the acceleration of the original bubble
 func split() -> void:
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled():
+	# Lock the bubble to prevent further activity
+	if done:
 		return
 	else:
-		set_deferred("freeze", true)
-
+		done = true
+	
 	# Calculate the new mass for the two bubbles
 	var new_mass: float = mass / 2
 
@@ -166,11 +168,11 @@ func _on_collision_with_movable(other) -> void:
 
 # Function to destroy the bubble with an effect
 func _destroy() -> bool:
-	# Lock the other bubble to prevent further collisions
-	if is_freeze_enabled():
+	# Lock the bubble to prevent further activity
+	if done:
 		return false
 	else:
-		set_deferred("freeze", true)
+		done = true
 
 	# Check if a particle effect is assigned
 	if vanish_particle_effect:
