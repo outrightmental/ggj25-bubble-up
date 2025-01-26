@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wwn3w1xcwn2s"]
+[gd_scene load_steps=30 format=3 uid="uid://wwn3w1xcwn2s"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
 [ext_resource type="PackedScene" uid="uid://un0yy20pm2mr" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
 [ext_resource type="PackedScene" uid="uid://c0u8tuetebpvx" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
+[ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
 [ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
 [ext_resource type="PackedScene" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
 [ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
@@ -87,10 +88,12 @@ gradient = ExtResource("13_35gav")
 [node name="Obstacles" type="Node2D" parent="ObstacleCanvas"]
 
 [node name="plank1" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
+texture_filter = 0
 position = Vector2(374, 4121)
 rotation = 0.0609657
 
 [node name="plank2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("5_2r7qs")]
+texture_filter = 0
 position = Vector2(177, 3162)
 rotation = -0.128316
 
@@ -106,12 +109,8 @@ position = Vector2(522, 4731)
 rotation = -0.0816072
 
 [node name="RigidBody2D2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
-position = Vector2(147, 4680)
-rotation = -0.203266
-
-[node name="ShipPole" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
-position = Vector2(563, 4441)
-rotation = -0.137083
+position = Vector2(175, 4568)
+rotation = -0.0502933
 
 [node name="Anglerfish" parent="ObstacleCanvas/Obstacles" instance=ExtResource("17_bsav6")]
 position = Vector2(516, 4298)
@@ -122,8 +121,13 @@ position = Vector2(185, 4212)
 rotation = -0.0500541
 
 [node name="Wheel" parent="ObstacleCanvas/Obstacles" instance=ExtResource("18_u7qxp")]
+texture_filter = 0
 position = Vector2(548, 3978)
 rotation = 0.151944
+mass = 25.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.5
 
 [node name="FireworkJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
 position = Vector2(141, 3738)
@@ -145,7 +149,12 @@ rotation = 0.086483
 position = Vector2(111, 2708)
 
 [node name="PlasticBag" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+texture_filter = 0
 position = Vector2(470, 2638)
+mass = 2.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.1
 
 [node name="Can" parent="ObstacleCanvas/Obstacles" instance=ExtResource("23_ey2gt")]
 position = Vector2(130, 2305)
@@ -156,8 +165,13 @@ position = Vector2(491, 2472)
 rotation = 0.662621
 
 [node name="PlasticBag2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("22_kh6yd")]
+texture_filter = 0
 position = Vector2(27, 2163)
 rotation = 1.57176
+mass = 2.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.1
 
 [node name="MoonJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("11_y8yd6")]
 position = Vector2(499, 2228)
@@ -173,21 +187,40 @@ starting_direction = 0
 position = Vector2(219, 1033)
 
 [node name="Gorgonian" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
 position = Vector2(60, 1534)
 scale = Vector2(-1, 1)
+mass = 100.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.5
 
 [node name="Gorgonian2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
 position = Vector2(590, 842)
+mass = 100.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.5
 
 [node name="TableCoral" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
 position = Vector2(564, 1402)
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.85
 
 [node name="TableCoral2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
 position = Vector2(70, 938)
 scale = Vector2(-1, 1)
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.85
 
 [node name="TableCoral3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("26_w13cr")]
+texture_filter = 0
 position = Vector2(569, 624)
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.85
 
 [node name="MoorishIdol" parent="ObstacleCanvas/Obstacles" instance=ExtResource("27_swdrb")]
 position = Vector2(123, 740)
@@ -212,8 +245,12 @@ position = Vector2(47, 2954)
 rotation = -0.0863745
 
 [node name="ShipPole2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+texture_filter = 0
 position = Vector2(138, 3937)
 rotation = -0.0833836
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.2
 
 [node name="RigidBody2D4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
 position = Vector2(174, 3609)
@@ -231,12 +268,21 @@ position = Vector2(86, 1804)
 rotation = -0.205231
 
 [node name="ShipPole3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_nghgp")]
+texture_filter = 0
 position = Vector2(519, 2325)
 rotation = -0.158721
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.2
 
 [node name="RigidBody2D6" parent="ObstacleCanvas/Obstacles" instance=ExtResource("16_npd68")]
 position = Vector2(108, 1175)
 rotation = 0.15321
 
 [node name="Gorgonian3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("25_s8sar")]
+texture_filter = 0
 position = Vector2(578, 1582)
+mass = 100.0
+gravity_scale = 0.0
+script = ExtResource("17_njxh5")
+bubble_split_factor = 0.5
