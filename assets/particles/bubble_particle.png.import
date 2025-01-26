@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v435ih5v35so"
-path="res://.godot/imported/water_bottle.png-3613dbd034b4c252730eff2937aafb8a.ctex"
+uid="uid://dmel3yfguhaju"
+path="res://.godot/imported/bubble_particle.png-31d17e26ecbfd660392ab906a685569e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/water_bottle.png"
-dest_files=["res://.godot/imported/water_bottle.png-3613dbd034b4c252730eff2937aafb8a.ctex"]
+source_file="res://assets/particles/bubble_particle.png"
+dest_files=["res://.godot/imported/bubble_particle.png-31d17e26ecbfd660392ab906a685569e.ctex"]
 
 [params]
 
