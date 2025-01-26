@@ -35,6 +35,7 @@ func _on_timer_timeout():
 		actual_target_y,
 		camera_position_recompute_interval
 	).set_trans(Tween.TRANS_LINEAR)
+	SignalBus.cull_bubbles_below.emit(actual_target_y + 180)
 
 
 	

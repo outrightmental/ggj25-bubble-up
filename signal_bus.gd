@@ -6,8 +6,10 @@ signal bubble_spawn(mass: float)
 signal bubble_vanish(mass: float)
 signal reset_game
 signal update_score(score: int)
-signal update_total_air_mass(mass: float)
-signal update_wasted_air_mass(mass: float)
+signal update_total(mass: float)
+signal update_wasted(mass: float)
+signal cull_bubbles_below(y: float)
+
 # Keeping track of all the air in play -- we are keeping all global game logic right here in the event bus
 @onready var air_total_mass: float = 0
 @onready var air_vanished_mass: float = 0
@@ -23,8 +25,8 @@ func _ready() -> void:
 
 func _do_reset_game() -> void:
 	update_score.emit(0)
-	update_total_air_mass.emit(0)
-	update_wasted_air_mass.emit(0)
+	update_total.emit(0)
+	update_wasted.emit(0)
 	air_total_mass = 0
 	air_vanished_mass = 0
 	air_exit_masses = []
@@ -51,5 +53,5 @@ func _update():
 		exited_mass += e
 	var score: int = floor(air_exit_masses.max()) if air_exit_masses.size() > 0 else 0
 	update_score.emit(score)
-	update_wasted_air_mass.emit(air_vanished_mass + exited_mass - score)
-	update_total_air_mass.emit(air_total_mass)
+	update_wasted.emit(air_vanished_mass + exited_mass - score)
+	update_total.emit(air_total_mass)

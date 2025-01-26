@@ -1,21 +1,36 @@
 extends Node2D
 
+@onready var bar_total: ColorRect = $"Bar/Total"
+@onready var bar_score: ColorRect = $"Bar/Score"
+@onready var bar_wasted: ColorRect = $"Bar/Wasted"
 
-@onready var text_wasted_air_mass: Label = $"Lost Value"
-@onready var text_score: Label = $"Score Value"
-
+var total: float = 0
 
 func _ready() -> void:
-	SignalBus.update_wasted_air_mass.connect(_update_wasted_air_mass)
+	SignalBus.update_wasted.connect(_update_wasted)
 	SignalBus.update_score.connect(_update_score)
+	SignalBus.update_total.connect(_update_total)
 
 
-func _update_wasted_air_mass(mass: float) -> void:
-	text_wasted_air_mass.text = str(floor(mass))
+func _update_total(mass: float) -> void:
+	# print("[HUD] Total mass: ", mass)
+	total = mass
 
 
-func _update_score(score: int) -> void:
-	text_score.text = str(score)
+func _update_wasted(value: float) -> void:
+	# print("[HUD] Wasted mass: ", value)
+	if value > 0 && total > 0:
+		bar_wasted.scale.x = value / total 
+	else:
+		bar_wasted.scale.x = 0
+
+
+func _update_score(value: int) -> void:
+	# print("[HUD] Score: ", value)
+	if value > 0 && total > 0:
+		bar_score.scale.x = value / total
+	else:
+		bar_score.scale.x = 0
 
 
 func _on_navigate_main() -> void:

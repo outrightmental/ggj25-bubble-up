@@ -79,13 +79,13 @@ func split() -> void:
 	var b1: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b1.position = position + v
 	b1.mass = new_mass
-	get_parent().add_child(b1)
+	get_parent().call_deferred("add_child", b1)
 
 	# Create the new bubble 2
 	var b2: Node = preload("res://models/bubble/bubble.tscn").instantiate()
 	b2.position = position - v
 	b2.mass = new_mass
-	get_parent().add_child(b2)
+	get_parent().call_deferred("add_child", b2)
 
 	# Destroy this bubble
 	queue_free()
@@ -115,9 +115,7 @@ func update_mass(new_mass: float):
 	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
 	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
 	sprite.texture = bubble_sprites[0]
-
-
-# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
+	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
 
 
 # Called when the bubble is instantiated
@@ -129,6 +127,10 @@ func _init():
 func _process(_delta) -> void:
 	if global_position.y < 0:
 		exit()
+	elif global_position.x < -sprite.get_rect().size.x:
+		exit()
+	elif global_position.x > 640  + sprite.get_rect().size.x:
+		exit()
 
 
 # Called when the scene is added to the tree
@@ -138,7 +140,7 @@ func _ready():
 	add_to_group(Global.GROUP_BUBBLES)
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	update_mass(mass)
-	SignalBus.bubble_spawn.emit(mass)
+	SignalBus.cull_bubbles_below.connect(_do_cull_bubbles_below)
 
 
 # Called when another body enters the collision area
@@ -185,8 +187,12 @@ func _destroy() -> void:
 
 	# Hide the sprite, disable the collision shape, wait 1 second, then queue free
 	sprite.hide()
-	collision.disabled = true
+	collision.set_deferred("disabled", true)
 	done = true
 	await get_tree().create_timer(1).timeout
 	queue_free()
 	
+# Function to cull bubbles below a certain y position
+func _do_cull_bubbles_below(y: float) -> void:
+	if global_position.y > y + sprite.get_rect().size.y / 2:
+		vanish()
