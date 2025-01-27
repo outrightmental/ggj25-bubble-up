@@ -1,21 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://mpgp0wqbuf7v"]
+[gd_scene load_steps=10 format=3 uid="uid://mpgp0wqbuf7v"]
 
 [ext_resource type="Texture2D" uid="uid://cdbv8po8v1a0y" path="res://assets/atolla_animation_2.png" id="1_iu3vl"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_l5g8s"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="2_j6bxa"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7r56"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
+radius = 18.0
+height = 54.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54151"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(0, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wr01k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt0qj"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(88, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwdda"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iceee"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(176, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oh3y3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdvi"]
 atlas = ExtResource("1_iu3vl")
 region = Rect2(264, 0, 88, 73)
 
@@ -23,27 +28,24 @@ region = Rect2(264, 0, 88, 73)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7r56")
+"texture": SubResource("AtlasTexture_54151")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wr01k")
+"texture": SubResource("AtlasTexture_gt0qj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uwdda")
+"texture": SubResource("AtlasTexture_iceee")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oh3y3")
+"texture": SubResource("AtlasTexture_kcdvi")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
-radius = 18.0
-height = 54.0
-
 [node name="AtollaJelly" type="RigidBody2D"]
+texture_filter = 1
 collision_mask = 3
 mass = 15.0
 gravity_scale = -0.001
@@ -52,12 +54,67 @@ center_of_mass = Vector2(0, -0.01)
 lock_rotation = true
 script = ExtResource("1_l5g8s")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_t7t8k")
-autoplay = "default"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uauxw")
+
+[node name="AtollaJelly" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="AtollaJelly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_t7t8k")
+autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="AtollaJelly"]
+
+[node name="PointLight2D" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D2" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D3" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D4" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D5" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D6" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+
+[node name="PointLight2D7" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="AtollaJelly/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 3.0
+range_layer_min = -100
+texture = ExtResource("2_j6bxa")
+texture_scale = 4.0

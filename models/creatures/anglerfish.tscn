@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c68e6qfvrrdl6"]
+[gd_scene load_steps=9 format=3 uid="uid://c68e6qfvrrdl6"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_lm5na"]
 [ext_resource type="Texture2D" uid="uid://botvde3lkgemk" path="res://assets/anglerfish_animation.png" id="2_6gj4p"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="3_rq870"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u31c2"]
 atlas = ExtResource("2_6gj4p")
@@ -68,3 +69,12 @@ polygon = PackedVector2Array(63.5, -69.5, 63.5, -68.9, 60.1, -65.5, 58.9, -65.5,
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ou8lq")
 autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(73.3439, -56.8566)
+energy = 2.0
+range_layer_min = -100
+texture = ExtResource("3_rq870")
+texture_scale = 2.0

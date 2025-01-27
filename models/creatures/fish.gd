@@ -12,6 +12,7 @@ enum Direction {
 
 @onready var burst_wait_timer = $BurstWaitTimer
 @onready var on_screen_check = $OnScreenCheck
+@onready var lights = $Lights
 
 @export var bubble_split_factor: float = 0.4
 
@@ -51,6 +52,8 @@ func _ready() -> void:
 
 	if starting_direction == Direction.LEFT:
 		$Sprite2D.scale = Vector2(-1, 1)
+		if is_instance_valid(lights):
+			lights.scale = Vector2(-1, 1)
 		
 	burst_wait_timer.connect('timeout', _on_burst_wait_timer_timeout)
 	if should_randomize_movement:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://blvcseru37xcn"]
+[gd_scene load_steps=83 format=3 uid="uid://blvcseru37xcn"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
@@ -46,119 +46,103 @@
 [ext_resource type="PackedScene" uid="uid://b2pd0mlym6k58" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
 [ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="44_ghr1b"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="45_b34nw"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="47_uku7r"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7r56"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_54151"]
 atlas = ExtResource("32_8bqhn")
 region = Rect2(0, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wr01k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt0qj"]
 atlas = ExtResource("32_8bqhn")
 region = Rect2(88, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwdda"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iceee"]
 atlas = ExtResource("32_8bqhn")
 region = Rect2(176, 0, 88, 73)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oh3y3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcdvi"]
 atlas = ExtResource("32_8bqhn")
 region = Rect2(264, 0, 88, 73)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uaudp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_srr4t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7r56")
+"texture": SubResource("AtlasTexture_54151")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wr01k")
+"texture": SubResource("AtlasTexture_gt0qj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uwdda")
+"texture": SubResource("AtlasTexture_iceee")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oh3y3")
+"texture": SubResource("AtlasTexture_kcdvi")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cq0ep"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3vs0"]
 atlas = ExtResource("36_7fhye")
 region = Rect2(0, 0, 113, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_73f5b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikeje"]
 atlas = ExtResource("36_7fhye")
 region = Rect2(113, 0, 113, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xopou"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xuie"]
 atlas = ExtResource("36_7fhye")
 region = Rect2(226, 0, 113, 74)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w3wk4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cggin"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cq0ep")
+"texture": SubResource("AtlasTexture_s3vs0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_73f5b")
+"texture": SubResource("AtlasTexture_ikeje")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xopou")
+"texture": SubResource("AtlasTexture_6xuie")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_63xny"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cq0ep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_73f5b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xopou")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebnv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7u62"]
 atlas = ExtResource("41_58txr")
 region = Rect2(0, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcewp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_whbhk"]
 atlas = ExtResource("41_58txr")
 region = Rect2(77, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pfxcu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcv6k"]
 atlas = ExtResource("41_58txr")
 region = Rect2(154, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7heaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmjb"]
 atlas = ExtResource("41_58txr")
 region = Rect2(231, 0, 77, 81)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dfvyb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_51na0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebnv2")
+"texture": SubResource("AtlasTexture_s7u62")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mcewp")
+"texture": SubResource("AtlasTexture_whbhk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pfxcu")
+"texture": SubResource("AtlasTexture_lcv6k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7heaa")
+"texture": SubResource("AtlasTexture_mrmjb")
 }],
 "loop": true,
 "name": &"default",
@@ -265,7 +249,94 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tcla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54151")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt0qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iceee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcdvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b34hc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3vs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikeje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xuie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq0ep"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(0, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73f5b"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(113, 0, 113, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xopou"]
+atlas = ExtResource("36_7fhye")
+region = Rect2(226, 0, 113, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3wk4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq0ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73f5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xopou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsdvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7u62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whbhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcv6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrmjb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Demo Level" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_57u5x")
 
 [node name="CurrentDetector" parent="." instance=ExtResource("2_2m3wr")]
@@ -372,33 +443,286 @@ scale = Vector2(0.956964, 0.971514)
 skew = 0.0296379
 texture = ExtResource("33_5cbdi")
 
-[node name="Sprite2D2" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="AtollaJelly2" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(420, 2828)
 rotation = 0.0631174
-sprite_frames = SubResource("SpriteFrames_uaudp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_srr4t")
 autoplay = "default"
 
-[node name="Sprite2D11" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 3.0
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 4.0
+
+[node name="AtollaJelly4" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(492, 2772)
 rotation = 0.0424731
-sprite_frames = SubResource("SpriteFrames_uaudp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_srr4t")
 autoplay = "default"
 
-[node name="Sprite2D12" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly4/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 3.0
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 4.0
+
+[node name="AtollaJelly3" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(526, 2878)
 rotation = -0.285692
-sprite_frames = SubResource("SpriteFrames_uaudp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_srr4t")
 autoplay = "default"
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly3/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 3.0
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 4.0
+
+[node name="AtollaJelly" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(348, 2900)
 rotation = -0.1656
-sprite_frames = SubResource("SpriteFrames_uaudp")
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_srr4t")
 autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 3.0
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 4.0
 
 [node name="Sprite2" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(96, 2236)
@@ -417,11 +741,317 @@ position = Vector2(-42, 2870)
 rotation = -2.8353
 texture = ExtResource("35_380sw")
 
-[node name="Sprite2D3" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+[node name="FireworkJelly2" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(762, 1668)
 rotation = 0.0924673
-sprite_frames = SubResource("SpriteFrames_w3wk4")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2"]
+sprite_frames = SubResource("SpriteFrames_cggin")
 autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(0, -23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(51, -17)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(53, 3)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(52, 16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(38, 23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(30, 26)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(19, 29)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(8, 32)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(0, 32)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-8, 31)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-18, 29)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-29, 26)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-37, 23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-51, 15)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-53, 4)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-51, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-44, -1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D18" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-29, 8)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(-18, 14)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D20" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+visible = false
+position = Vector2(-4, 11)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D21" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(5, 11)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D22" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(19, 13)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D23" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(30, 7)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D24" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly2/Lights"]
+position = Vector2(45, -1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="FireworkJelly3" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
+position = Vector2(852, 1732)
+rotation = 0.0154564
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3"]
+sprite_frames = SubResource("SpriteFrames_cggin")
+autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3"]
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(0, -23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(51, -17)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(53, 3)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(52, 16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(38, 23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(30, 26)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(19, 29)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D8" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(8, 32)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D9" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(0, 32)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D10" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-8, 31)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D11" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-18, 29)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D12" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-29, 26)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D13" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-37, 23)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D14" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-51, 15)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D15" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-53, 4)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D16" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-51, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D17" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-44, -1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D18" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-29, 8)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D19" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(-18, 14)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D20" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+visible = false
+position = Vector2(-4, 11)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D21" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(5, 11)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D22" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(19, 13)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D23" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(30, 7)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D24" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/FireworkJelly3/Lights"]
+position = Vector2(45, -1)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
 
 [node name="ParallaxFishVisualOnly" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
 position = Vector2(1294, 2196)
@@ -438,12 +1068,6 @@ position = Vector2(27.3333, 1743.33)
 rotation = -0.00070262
 scale = Vector2(1.059, 1)
 texture = ExtResource("38_nmpcl")
-
-[node name="Sprite2D5" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-position = Vector2(824, 1746)
-rotation = 0.0346096
-sprite_frames = SubResource("SpriteFrames_63xny")
-autoplay = "default"
 
 [node name="Sprite2D7" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(704, 1372)
@@ -472,60 +1096,124 @@ position = Vector2(438, 1712)
 rotation = -0.781523
 texture = ExtResource("40_mw11k")
 
-[node name="Sprite2D9" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="MoonJelly4" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(692, 624)
 rotation = 0.102831
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly4"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
 
-[node name="Sprite2D18" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly4"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly2" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(600, 552)
 rotation = -0.0699941
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly2"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
 
 [node name="Sprite2D17" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(554.637, 2020.52)
 rotation = -0.455589
-scale = Vector2(1, 1)
 texture = ExtResource("39_5jkdg")
 
-[node name="Sprite2D16" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="MoonJelly3" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(606, 672)
 rotation = 0.102831
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly3"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
 
-[node name="Sprite2D10" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly3"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(293.333, 387.333)
 rotation = 0.0664386
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
 
-[node name="Sprite2D19" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly6" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(968, 260)
 rotation = -0.318351
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly6"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
 
-[node name="Sprite2D20" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly6"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly7" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(1028, 192)
 rotation = -0.285572
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly7"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
 
-[node name="Sprite2D21" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
-texture_filter = 1
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly7"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly5" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(1116, 518)
 rotation = -0.285572
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly5"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_51na0")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly5"]
+position = Vector2(0, -16)
+range_layer_min = -100
+range_layer_max = -100
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
 
 [node name="Sprite2D8" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(312, 780)
@@ -556,6 +1244,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -570,6 +1264,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly7"]
 texture_filter = 1
@@ -586,6 +1286,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly8"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -600,6 +1306,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
 texture_filter = 1
@@ -625,12 +1337,6 @@ position = Vector2(434, 148)
 sprite_frames = SubResource("SpriteFrames_stnub")
 autoplay = "default"
 
-[node name="Sprite2D5" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly9"]
-texture_filter = 1
-position = Vector2(-374, 36)
-sprite_frames = SubResource("SpriteFrames_stnub")
-autoplay = "default"
-
 [node name="ParallaxSchoolFishVisualOnly2" parent="Background/ParallaxBackground/BackgroundFish/Fish" instance=ExtResource("37_m73q5")]
 position = Vector2(46.6667, 186.667)
 
@@ -640,6 +1346,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly2"]
 texture_filter = 1
@@ -655,6 +1367,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly3"]
 texture_filter = 1
@@ -673,6 +1391,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly4"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -689,6 +1413,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly10"]
 texture_filter = 1
@@ -707,6 +1437,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly11"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -722,6 +1458,12 @@ visible = false
 [node name="OnScreenCheck" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/ParallaxSchoolFishVisualOnly6"]
 texture_filter = 1
@@ -1040,26 +1782,447 @@ scale = Vector2(0.956964, 0.971514)
 skew = 0.0296379
 texture = ExtResource("33_5cbdi")
 
-[node name="Sprite2D2" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
-texture_filter = 1
-position = Vector2(307.333, 2988.67)
-rotation = -0.405486
-sprite_frames = SubResource("SpriteFrames_uaudp")
-autoplay = "default"
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
-texture_filter = 1
+[node name="AtollaJelly" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
 position = Vector2(45.3333, 3199.33)
 rotation = 0.211001
-sprite_frames = SubResource("SpriteFrames_uaudp")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3tcla")
 autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly"]
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 5.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 5.0
+
+[node name="AtollaJelly2" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(308.667, 2989.33)
+rotation = -0.498534
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3tcla")
+autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2"]
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D2" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(-23, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(-14, -16)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(9, -15)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(17, -17)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(24, -19)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, 6)
+color = Color(0.86986, 0, 0.293686, 1)
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D8" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/AtollaJelly2/Lights"]
+position = Vector2(0, -28)
+color = Color(0.86986, 0, 0.293686, 1)
+energy = 5.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 5.0
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
 position = Vector2(36.6668, 2237.33)
 rotation = -0.495939
 texture = ExtResource("35_380sw")
 
+[node name="FireworkJelly" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(67.3334, 2611.33)
+rotation = 0.0924673
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly"]
+sprite_frames = SubResource("SpriteFrames_b34hc")
+autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly"]
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(0, -23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(51, -17)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(53, 3)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(52, 16)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(38, 23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(30, 26)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(19, 29)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D8" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(8, 32)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D9" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(0, 32)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D10" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-8, 31)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D11" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-18, 29)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D12" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-29, 26)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D13" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-37, 23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D14" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-51, 15)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D15" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-53, 4)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D16" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-51, -16)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D17" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-44, -1)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D18" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-29, 8)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D19" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-18, 14)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D20" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(-4, 11)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D21" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(5, 11)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D22" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(19, 13)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D23" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(30, 7)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D24" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly/Lights"]
+position = Vector2(45, -1)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="FireworkJelly2" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(264, 1398.67)
+rotation = -0.489966
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2"]
+sprite_frames = SubResource("SpriteFrames_b34hc")
+autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2"]
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(0, -23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 3.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(51, -17)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D3" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(53, 3)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D4" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(52, 16)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D5" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(38, 23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D6" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(30, 26)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D7" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(19, 29)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D8" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(8, 32)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D9" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(0, 32)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D10" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-8, 31)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D11" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-18, 29)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D12" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-29, 26)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D13" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-37, 23)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D14" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-51, 15)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D15" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-53, 4)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D16" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-51, -16)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D17" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-44, -1)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D18" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-29, 8)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D19" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-18, 14)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D20" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(-4, 11)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D21" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(5, 11)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D22" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(19, 13)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D23" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(30, 7)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
+[node name="PointLight2D24" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/FireworkJelly2/Lights"]
+position = Vector2(45, -1)
+energy = 3.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+
 [node name="Sprite2D3" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+visible = false
 position = Vector2(67.3334, 2611.33)
 rotation = 0.0924673
 sprite_frames = SubResource("SpriteFrames_w3wk4")
@@ -1076,12 +2239,6 @@ rotation = -0.00070262
 scale = Vector2(1.059, 1)
 texture = ExtResource("38_nmpcl")
 
-[node name="Sprite2D5" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(258, 1387.33)
-rotation = -0.448964
-sprite_frames = SubResource("SpriteFrames_63xny")
-autoplay = "default"
-
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
 position = Vector2(87.3334, 1346.67)
 rotation = -0.55842
@@ -1093,19 +2250,37 @@ position = Vector2(14, 1420)
 rotation = 0.355645
 texture = ExtResource("40_mw11k")
 
-[node name="Sprite2D9" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
-texture_filter = 1
+[node name="MoonJelly" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
 position = Vector2(78, 673.333)
 rotation = -0.148934
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/MoonJelly"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nsdvc")
 autoplay = "default"
 
-[node name="Sprite2D10" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish"]
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/MoonJelly"]
+position = Vector2(0, -16)
+energy = 2.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
+
+[node name="MoonJelly2" type="Node2D" parent="ParallaxForeground/foreground/Fish"]
+position = Vector2(298, 382.667)
+rotation = 0.0785329
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/MoonJelly2"]
 texture_filter = 1
-position = Vector2(293.333, 387.333)
-rotation = 0.0664386
-sprite_frames = SubResource("SpriteFrames_dfvyb")
+sprite_frames = SubResource("SpriteFrames_nsdvc")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxForeground/foreground/Fish/MoonJelly2"]
+position = Vector2(0, -16)
+energy = 2.0
+range_layer_max = 2
+texture = ExtResource("47_uku7r")
+texture_scale = 2.0
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
 position = Vector2(392, 818.667)
@@ -1126,6 +2301,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -1141,6 +2322,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly2"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
@@ -1155,6 +2342,12 @@ visible = false
 [node name="OnScreenCheck" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3" index="1"]
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
+
+[node name="Lights" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3/Lights" index="0"]
+visible = false
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly3"]
 texture_filter = 1

@@ -1,21 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://crrbgvru4x8lu"]
+[gd_scene load_steps=9 format=3 uid="uid://crrbgvru4x8lu"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_m67ve"]
 [ext_resource type="Texture2D" uid="uid://d0jfbyeldx3cd" path="res://assets/firework_animation.png" id="2_romaf"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="3_k3tf3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 16.0
 height = 42.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cq0ep"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3vs0"]
 atlas = ExtResource("2_romaf")
 region = Rect2(0, 0, 113, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_73f5b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikeje"]
 atlas = ExtResource("2_romaf")
 region = Rect2(113, 0, 113, 74)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xopou"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xuie"]
 atlas = ExtResource("2_romaf")
 region = Rect2(226, 0, 113, 74)
 
@@ -23,13 +24,13 @@ region = Rect2(226, 0, 113, 74)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cq0ep")
+"texture": SubResource("AtlasTexture_s3vs0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_73f5b")
+"texture": SubResource("AtlasTexture_ikeje")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xopou")
+"texture": SubResource("AtlasTexture_6xuie")
 }],
 "loop": true,
 "name": &"default",
@@ -51,6 +52,131 @@ position = Vector2(0, -19)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uauxw")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="FireworkJelly" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="FireworkJelly"]
 sprite_frames = SubResource("SpriteFrames_87foh")
 autoplay = "default"
+
+[node name="Lights" type="Node2D" parent="FireworkJelly"]
+
+[node name="PointLight2D" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(0, -23)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+texture_scale = 2.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(51, -17)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D3" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(53, 3)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D4" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(52, 16)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D5" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(38, 23)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D6" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(30, 26)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D7" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(19, 29)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D8" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(8, 32)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D9" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(0, 32)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D10" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-8, 31)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D11" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-18, 29)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D12" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-29, 26)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D13" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-37, 23)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D14" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-51, 15)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D15" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-53, 4)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D16" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-51, -16)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D17" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-44, -1)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D18" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-29, 8)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D19" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-18, 14)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D20" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(-4, 11)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D21" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(5, 11)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D22" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(19, 13)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D23" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(30, 7)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")
+
+[node name="PointLight2D24" type="PointLight2D" parent="FireworkJelly/Lights"]
+position = Vector2(45, -1)
+range_layer_min = -100
+texture = ExtResource("3_k3tf3")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp071slbvsnkm"]
+[gd_scene load_steps=9 format=3 uid="uid://dp071slbvsnkm"]
 
 [ext_resource type="Script" path="res://scenes/levels/fish_move_visual_only.gd" id="1_er68k"]
 [ext_resource type="Texture2D" uid="uid://botvde3lkgemk" path="res://assets/anglerfish_animation.png" id="2_2nwdh"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="3_1hrx6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u31c2"]
 atlas = ExtResource("2_2nwdh")
@@ -55,3 +56,13 @@ scale = Vector2(11.25, 8.15)
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(73.3439, -56.8566)
+energy = 2.0
+range_layer_min = -100
+range_layer_max = 2
+texture = ExtResource("3_1hrx6")
+texture_scale = 2.0

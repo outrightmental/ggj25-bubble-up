@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://drx5vg28bqh2w"]
+[gd_scene load_steps=10 format=3 uid="uid://drx5vg28bqh2w"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_ilp3h"]
 [ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="2_lbmvv"]
+[ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="3_10jde"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uauxw"]
 radius = 17.0
 height = 42.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebnv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7u62"]
 atlas = ExtResource("2_lbmvv")
 region = Rect2(0, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcewp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_whbhk"]
 atlas = ExtResource("2_lbmvv")
 region = Rect2(77, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pfxcu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcv6k"]
 atlas = ExtResource("2_lbmvv")
 region = Rect2(154, 0, 77, 81)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7heaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrmjb"]
 atlas = ExtResource("2_lbmvv")
 region = Rect2(231, 0, 77, 81)
 
@@ -27,16 +28,16 @@ region = Rect2(231, 0, 77, 81)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebnv2")
+"texture": SubResource("AtlasTexture_s7u62")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mcewp")
+"texture": SubResource("AtlasTexture_whbhk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pfxcu")
+"texture": SubResource("AtlasTexture_lcv6k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7heaa")
+"texture": SubResource("AtlasTexture_mrmjb")
 }],
 "loop": true,
 "name": &"default",
@@ -57,7 +58,15 @@ position = Vector2(0, -16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uauxw")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="MoonJelly" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MoonJelly"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kkrta")
 autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="MoonJelly"]
+position = Vector2(0, -16)
+range_layer_min = -100
+texture = ExtResource("3_10jde")
+texture_scale = 2.0
