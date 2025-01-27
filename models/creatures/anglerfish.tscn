@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0u8tuetebpvx"]
+[gd_scene load_steps=8 format=3 uid="uid://c68e6qfvrrdl6"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_lm5na"]
 [ext_resource type="Texture2D" uid="uid://botvde3lkgemk" path="res://assets/anglerfish_animation.png" id="2_6gj4p"]
@@ -52,6 +52,7 @@ script = ExtResource("1_lm5na")
 movement_speed = 70.0
 burst_wait = 0.2
 starting_direction = 1
+bubble_split_factor = 0.8
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true

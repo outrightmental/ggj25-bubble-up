@@ -4,50 +4,22 @@ extends "res://models/collidable/collidable.gd"
 var _collision_merge_accel_threshold: int = 1
 var _collision_split_accel_threshold: int = 4
 var _split_mass_vanish_threshold: float   = 0.5
-var _collision_cooldown_millis: int       = 100
-var _bubble_sprite_base_size: float = 20 # bubble size at mass=1
+var _collision_cooldown_millis: int       = 500
 
 # var _max_scale_factor: int				= 10
 
-# Structure for holding bubble sprites of different sizes
-class BubbleSprite:
-	var texture: Texture
-	var size: int
-
-	func _init(_texture: Texture, _size: int):
-		self.texture = _texture
-		self.size = _size
+# Scale factor for the sprite and collision area
+@export var sprite_scale_factor: float = 0.8
+@export var collision_scale_factor: float = 0.5
 
 # Load the bubble textures
-@onready var bubble_sprites: Array[BubbleSprite] = [
-	 BubbleSprite.new(preload("res://assets/bubble_20.png"), 20),
-	 BubbleSprite.new(preload("res://assets/bubble_21.png"), 21),
-	 BubbleSprite.new(preload("res://assets/bubble_24.png"), 24),
-	 BubbleSprite.new(preload("res://assets/bubble_28.png"), 28),
-	 BubbleSprite.new(preload("res://assets/bubble_32.png"), 32),
-	 BubbleSprite.new(preload("res://assets/bubble_36.png"), 36),
-	 BubbleSprite.new(preload("res://assets/bubble_40.png"), 40),
-	 BubbleSprite.new(preload("res://assets/bubble_44.png"), 44),
-	 BubbleSprite.new(preload("res://assets/bubble_48.png"), 48),
-	 BubbleSprite.new(preload("res://assets/bubble_52.png"), 52),
-	 BubbleSprite.new(preload("res://assets/bubble_56.png"), 56),
-	 BubbleSprite.new(preload("res://assets/bubble_60.png"), 60),
-	 BubbleSprite.new(preload("res://assets/bubble_64.png"), 64),
-	 BubbleSprite.new(preload("res://assets/bubble_68.png"), 68),
-	 BubbleSprite.new(preload("res://assets/bubble_72.png"), 72),
-	 BubbleSprite.new(preload("res://assets/bubble_76.png"), 76),
-	 BubbleSprite.new(preload("res://assets/bubble_80.png"), 80),
-]
-
-# Get the closest matching bubble sprite for the given size
-func get_closest_bubble_sprite(size: int) -> BubbleSprite:
-	var closest: BubbleSprite = bubble_sprites[0]
-	for s in bubble_sprites:
-		if size >= s.size:
-			closest = s
-		elif s.size > closest.size:
-			break
-	return closest
+@onready var bubble_sprites: Array[Variant] = [
+											  preload("res://assets/bubble_test.png"),
+											  #	preload("res://assets/bubble1.png"),
+											  #	preload("res://assets/bubble2.png"),
+											  #	preload("res://assets/bubble3.png"),
+											  #	preload("res://assets/bubble4.png")
+											  ]
 
 # Export the vanish particle effect resource so you can set it in the inspector
 @export var vanish_particle_effect: PackedScene
@@ -58,9 +30,6 @@ func get_closest_bubble_sprite(size: int) -> BubbleSprite:
 @onready var collision: CollisionShape2D = $CollisionShape2D
 # Reference to the vanish particle emitter node
 @onready var vanish_particle_emitter: CPUParticles2D = $CPUParticles2D
-
-# Store collision base size based on starting size of collision, so we know the scale factor for later
-@onready var collision_base_size = collision.shape.get_rect().size.x
 
 # Whether the bubble is still in play
 var done: bool = false
@@ -142,13 +111,11 @@ func exit() -> void:
 # Function to update the scale of the bubble based on its mass
 func update_mass(new_mass: float):
 	mass = new_mass
-	var size: int = floor(_bubble_sprite_base_size * pow(mass, 0.333))
-	var bubble_sprite = get_closest_bubble_sprite(size)
-	var collision_scale_factor: float = size / collision_base_size
-	var sprite_scale_factor: float = max(1, size / bubble_sprite.size)
-	sprite.set_deferred("texture",  bubble_sprite.texture)
-	sprite.set_deferred("scale",  Vector2(sprite_scale_factor, sprite_scale_factor))
-	collision.set_deferred("scale",  Vector2(collision_scale_factor, collision_scale_factor))
+	var scale_factor: float = pow(mass, 0.333)
+	sprite.scale = Vector2(scale_factor, scale_factor) * sprite_scale_factor
+	collision.scale = Vector2(scale_factor, scale_factor) * collision_scale_factor
+	sprite.texture = bubble_sprites[0]
+	# TODO sprite.texture = bubble_sprites[clamp(int(bubble_sprites.size() * scale_factor / _max_scale_factor), 0, bubble_sprites.size() - 1)]
 
 
 # Called when the bubble is instantiated

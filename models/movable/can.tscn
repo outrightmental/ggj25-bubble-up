@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpu5wvmum0tp7"]
+[gd_scene load_steps=4 format=3 uid="uid://vektpxokagtd"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_2nwi5"]
 [ext_resource type="Texture2D" uid="uid://b01moka310222" path="res://assets/soda_can.png" id="1_yur8y"]
@@ -8,10 +8,10 @@ radius = 11.0
 height = 40.0
 
 [node name="Can" type="RigidBody2D"]
-mass = 5.0
+mass = 10.0
 gravity_scale = 0.05
 script = ExtResource("1_2nwi5")
-bubble_split_factor = 0.5
+bubble_split_factor = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yur8y")

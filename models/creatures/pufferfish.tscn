@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfe5vx8l7u7nq"]
+[gd_scene load_steps=13 format=3 uid="uid://dm6m7gkslxoco"]
 
 [ext_resource type="Script" path="res://models/creatures/fish.gd" id="1_fu35c"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="2_mjat6"]
@@ -83,6 +83,7 @@ script = ExtResource("1_fu35c")
 movement_speed = 70.0
 burst_wait = 0.2
 starting_direction = 1
+bubble_split_factor = 0.8
 
 [node name="BurstWaitTimer" type="Timer" parent="."]
 one_shot = true
