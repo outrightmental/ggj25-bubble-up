@@ -1907,7 +1907,7 @@ texture = ExtResource("47_uku7r")
 texture_scale = 5.0
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(36.6668, 2237.33)
+position = Vector2(-16.0001, 2254)
 rotation = -0.495939
 texture = ExtResource("35_380sw")
 
@@ -2234,7 +2234,7 @@ rotation = 0.169291
 scale = Vector2(-1, 1)
 
 [node name="Sprite" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(395.333, 1602)
+position = Vector2(412, 1566.67)
 rotation = -0.00070262
 scale = Vector2(1.059, 1)
 texture = ExtResource("38_nmpcl")
@@ -2283,8 +2283,8 @@ texture = ExtResource("47_uku7r")
 texture_scale = 2.0
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxForeground/foreground/Fish"]
-position = Vector2(392, 818.667)
-rotation = 1.34806
+position = Vector2(447.333, 516.667)
+rotation = 0.724223
 scale = Vector2(0.939518, 1.10577)
 texture = ExtResource("42_vnxps")
 
