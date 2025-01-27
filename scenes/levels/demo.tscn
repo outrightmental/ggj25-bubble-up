@@ -656,7 +656,6 @@ texture_scale = 4.0
 [node name="AtollaJelly" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(348, 2900)
 rotation = -0.1656
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/AtollaJelly"]
 texture_filter = 1
@@ -1099,7 +1098,6 @@ texture = ExtResource("40_mw11k")
 [node name="MoonJelly4" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(692, 624)
 rotation = 0.102831
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly4"]
 texture_filter = 1
@@ -1137,7 +1135,6 @@ texture = ExtResource("39_5jkdg")
 [node name="MoonJelly3" type="Node2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(606, 672)
 rotation = 0.102831
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish/MoonJelly3"]
 texture_filter = 1
@@ -1574,7 +1571,7 @@ script = ExtResource("17_njxh5")
 bubble_split_factor = 0.5
 
 [node name="FireworkJelly" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
-position = Vector2(145, 3607)
+position = Vector2(82, 3464)
 rotation = 0.0598845
 
 [node name="FireworkJelly2" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
@@ -1753,6 +1750,9 @@ position = Vector2(572, 356)
 [node name="FireworkJelly3" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
 position = Vector2(546, 3406)
 rotation = -0.223543
+
+[node name="FireworkJelly4" parent="ObstacleCanvas/Obstacles" instance=ExtResource("15_b3lyc")]
+position = Vector2(155, 3638)
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="."]
 layer = 2
