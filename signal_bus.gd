@@ -4,11 +4,12 @@ extends Node
 signal bubble_exit(mass: float)
 signal bubble_spawn(mass: float)
 signal bubble_vanish(mass: float)
+signal cull_bubbles_below(y: float)
+signal game_over
 signal reset_game
 signal update_score(score: int)
 signal update_total(mass: float)
 signal update_wasted(mass: float)
-signal cull_bubbles_below(y: float)
 
 # Keeping track of all the air in play -- we are keeping all global game logic right here in the event bus
 @onready var air_total_mass: float = 0
