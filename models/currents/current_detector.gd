@@ -16,7 +16,7 @@ func _toggle_current_detector(value: bool):
 
 func _process(_delta: float) -> void:
 	if is_enabled:
-		if Input.is_action_just_pressed('touch') and mouse_detection_active:
+		if Input.is_action_just_pressed('touch') and mouse_detection_active and !current_current:
 			var mouse_pos = get_global_mouse_position()
 			var current = CurrentScene.instantiate().init_with(mouse_pos)
 			current_current = current
