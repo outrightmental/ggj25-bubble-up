@@ -9,7 +9,7 @@ extends Control
 @onready var menu_resume_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/ResumeButton"
 @onready var menu_main_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/MainButton"
 @onready var menu_restart_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/RestartButton"
-@onready var perfect_score:Label = $"GameOverContainer/MarginContainer/VBoxContainer/PerfectScore"
+@onready var game_over_score_text:Label = $"GameOverContainer/MarginContainer/VBoxContainer/PerfectScore"
 
 var _total: float = 0
 var _wasted: float = 0
@@ -23,7 +23,6 @@ func _ready() -> void:
 	SignalBus.game_over.connect(_on_game_over)
 	menu_container.hide()	
 	game_over_container.hide()
-	perfect_score.hide()
 
 
 func _update_total(value: float) -> void:
@@ -62,8 +61,7 @@ func _on_menu_close() -> void:
 
 func _on_menu_select_resume() -> void:
 	_on_menu_close()
-	get_tree().reload_current_scene()
-
+	
 
 func _on_menu_select_main() -> void:
 	_on_menu_close()
@@ -86,7 +84,7 @@ func _resume() -> void:
 func _on_game_over() -> void:
 	game_over_container.show()
 	if _wasted == 0 and _score == _total:
-		perfect_score.show()
+		game_over_score_text.text = "Perfect Score!"
 	else:
-		perfect_score.hide()
+		game_over_score_text.text = str(floor(100 * _score/_total)) + "%"
 	_pause()
