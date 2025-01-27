@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdyj503wctuof"]
+[gd_scene load_steps=12 format=3 uid="uid://bdyj503wctuof"]
 
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
 [ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
@@ -15,6 +15,9 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d21wc"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stn75"]
+size = Vector2(34, 34)
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -223,9 +226,17 @@ theme_override_styles/normal = ExtResource("2_nl07q")
 text = "Main Menu"
 metadata/_edit_use_anchors_ = true
 
+[node name="CurrentDeadzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CurrentDeadzone"]
+position = Vector2(618, 22)
+shape = SubResource("RectangleShape2D_stn75")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/MenuButton" to="." method="_on_menu_open"]
 [connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_menu_select_resume"]
 [connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_menu_select_restart"]
 [connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/MainButton" to="." method="_on_menu_select_main"]
 [connection signal="pressed" from="GameOverContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_menu_select_restart"]
 [connection signal="pressed" from="GameOverContainer/MarginContainer/VBoxContainer/MainButton" to="." method="_on_menu_select_main"]
+[connection signal="mouse_entered" from="CurrentDeadzone" to="." method="_on_current_deadzone_mouse_entered"]
+[connection signal="mouse_exited" from="CurrentDeadzone" to="." method="_on_current_deadzone_mouse_exited"]

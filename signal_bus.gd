@@ -11,11 +11,12 @@ signal update_score(score: int)
 signal update_total(mass: float)
 signal update_wasted(mass: float)
 
+signal toggle_current_detector(value: bool) 
+
 # Keeping track of all the air in play -- we are keeping all global game logic right here in the event bus
 @onready var air_total_mass: float = 0
 @onready var air_vanished_mass: float = 0
 @onready var air_exit_masses: Array[float] = []
-
 
 func _ready() -> void:
 	reset_game.connect(_do_reset_game)

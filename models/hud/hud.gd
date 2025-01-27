@@ -74,10 +74,12 @@ func _on_menu_select_restart() -> void:
 
 
 func _pause() -> void:
+	SignalBus.emit_signal('toggle_current_detector', false)
 	get_tree().set_deferred("paused", true)
 	
 	
 func _resume() -> void:
+	SignalBus.emit_signal('toggle_current_detector', true)
 	get_tree().set_deferred("paused", false)
 
 
@@ -88,3 +90,9 @@ func _on_game_over() -> void:
 	else:
 		game_over_score_text.text = str(floor(100 * _score/_total)) + "%"
 	_pause()
+
+func _on_current_deadzone_mouse_exited() -> void:
+	SignalBus.emit_signal('toggle_current_detector', true)
+
+func _on_current_deadzone_mouse_entered() -> void:
+	SignalBus.emit_signal('toggle_current_detector', false)
