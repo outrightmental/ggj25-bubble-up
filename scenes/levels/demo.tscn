@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://blvcseru37xcn"]
+[gd_scene load_steps=84 format=3 uid="uid://blvcseru37xcn"]
 
 [ext_resource type="Script" path="res://scenes/levels/demo.gd" id="1_57u5x"]
 [ext_resource type="PackedScene" uid="uid://du0bix06fta8k" path="res://models/currents/current_detector.tscn" id="2_2m3wr"]
@@ -19,19 +19,19 @@
 [ext_resource type="Texture2D" uid="uid://dk7spe3qrevxt" path="res://assets/gradients/game_world_gradient.tres" id="13_35gav"]
 [ext_resource type="PackedScene" uid="uid://crrbgvru4x8lu" path="res://models/creatures/firework_jelly.tscn" id="15_b3lyc"]
 [ext_resource type="PackedScene" uid="uid://mpgp0wqbuf7v" path="res://models/creatures/atolla_jelly.tscn" id="15_y6n6d"]
-[ext_resource type="PackedScene" uid="uid://btv4s6q3pygoq" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
+[ext_resource type="PackedScene" uid="uid://cmyfb0wychs1v" path="res://models/movable/ship_pole.tscn" id="16_nghgp"]
 [ext_resource type="PackedScene" uid="uid://cbce6amij7djt" path="res://models/movable/movable_plank_large.tscn" id="16_npd68"]
 [ext_resource type="PackedScene" uid="uid://c68e6qfvrrdl6" path="res://models/creatures/anglerfish.tscn" id="17_bsav6"]
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
-[ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
+[ext_resource type="PackedScene" uid="uid://d3o8fwo64h2hx" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
 [ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
-[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
 [ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
 [ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
 [ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
-[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
 [ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
-[ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
+[ext_resource type="PackedScene" uid="uid://ftusmtv00obr" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 [ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/board_pixel.png" id="32_3mfg7"]
 [ext_resource type="Texture2D" uid="uid://cdbv8po8v1a0y" path="res://assets/atolla_animation_2.png" id="32_8bqhn"]
 [ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="33_5cbdi"]
@@ -43,10 +43,11 @@
 [ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="40_mw11k"]
 [ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="41_58txr"]
 [ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="42_vnxps"]
-[ext_resource type="PackedScene" uid="uid://b2pd0mlym6k58" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
+[ext_resource type="PackedScene" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
 [ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="44_ghr1b"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="45_b34nw"]
 [ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="47_uku7r"]
+[ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="48_076ap"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54151"]
 atlas = ExtResource("32_8bqhn")
@@ -1761,6 +1762,16 @@ layer = 2
 modulate = Color(0.204895, 0.284633, 0.49451, 1)
 position = Vector2(685, -11293)
 motion_scale = Vector2(1.2, 1.2)
+
+[node name="Instructions" type="Label" parent="ParallaxForeground/foreground"]
+offset_left = -1027.0
+offset_top = 17163.0
+offset_right = 327.0
+offset_bottom = 21163.0
+theme_override_fonts/font = ExtResource("48_076ap")
+theme_override_font_sizes/font_size = 20
+text = "make the biggest bubble and guide it up to the surface "
+horizontal_alignment = 1
 
 [node name="Fish" type="Node2D" parent="ParallaxForeground/foreground"]
 texture_filter = 1
