@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="4_8qp7o"]
 [ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="4_k30n6"]
 [ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="5_o5orc"]
-[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="5_txcna"]
+[ext_resource type="StyleBox" uid="uid://c6voixto0coym" path="res://assets/button_style_pressed.tres" id="5_txcna"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tms0t"]
 particle_flag_disable_z = true
@@ -129,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_5tiys")
-text = "Nick Charney Kaye, fruitsdancer, ghostpastry"
+text = "outrightmental, fruitsdancer, ghostpastry"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.404195, 0.652216, 0.655446, 1)

@@ -1,5 +1,8 @@
 extends Node2D
 
+# game cannot end in less than this amount of millis
+var game_over_time_threshold_millis: float = 1000
+
 @export var camera_position_recompute_interval: float = 2.5	
 @export var camera_sway_y: float = 25
 @export var camera_lead_y: float = 150
@@ -7,7 +10,17 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var timer: Timer = $Timer
 
+# Time started
+var started_at: float = 0.0
+
+
+# Function to get the age of the bubble in milliseconds 
+func game_clock() -> float:
+	return Time.get_ticks_msec() - created_at
+
+ 
 func _ready():
+	started_at = Time.get_ticks_msec()
 	timer.wait_time = camera_position_recompute_interval
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
@@ -17,6 +30,8 @@ func _ready():
 func _on_timer_timeout():
 	var bubbles: Array[Node] = get_tree().get_nodes_in_group(Global.GROUP_BUBBLES)
 	if bubbles.size() == 0:
+		if game_over_time_threshold_millis < game_clock():
+			SignalBus.game_over.emit()
 		return
 	var total_mass: float    = 0
 	var total_y: float       = 0

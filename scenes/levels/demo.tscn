@@ -25,11 +25,11 @@
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="17_njxh5"]
 [ext_resource type="PackedScene" uid="uid://drrqygexg4ump" path="res://models/movable/wheel.tscn" id="18_u7qxp"]
 [ext_resource type="PackedScene" uid="uid://ic124nkasgpp" path="res://models/creatures/fish_school.tscn" id="21_aateg"]
-[ext_resource type="PackedScene" uid="uid://dagww6odvtyda" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
+[ext_resource type="PackedScene" uid="uid://fbrnskyn67e5" path="res://models/movable/plastic_bag.tscn" id="22_kh6yd"]
 [ext_resource type="PackedScene" uid="uid://vektpxokagtd" path="res://models/movable/can.tscn" id="23_ey2gt"]
 [ext_resource type="PackedScene" uid="uid://dm6m7gkslxoco" path="res://models/creatures/pufferfish.tscn" id="24_ot7re"]
-[ext_resource type="PackedScene" uid="uid://m6ti4nrv7erd" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
-[ext_resource type="PackedScene" uid="uid://cnr4ccgrod6qg" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
+[ext_resource type="PackedScene" uid="uid://co1x1r30vr4if" path="res://models/movable/gorgonian.tscn" id="25_s8sar"]
+[ext_resource type="PackedScene" uid="uid://b4h5npy4pbw10" path="res://models/movable/table_coral.tscn" id="26_w13cr"]
 [ext_resource type="PackedScene" uid="uid://b8k3di6ptsnp5" path="res://models/creatures/moorish_idol.tscn" id="27_swdrb"]
 [ext_resource type="PackedScene" uid="uid://d1wyhkk5l13hv" path="res://models/movable/bottle.tscn" id="28_gpb7l"]
 [ext_resource type="Texture2D" uid="uid://bndsnq7ksslqf" path="res://assets/board_pixel.png" id="32_3mfg7"]
@@ -37,13 +37,13 @@
 [ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="33_5cbdi"]
 [ext_resource type="Texture2D" uid="uid://nhekarmwgme4" path="res://assets/wheel.png" id="35_380sw"]
 [ext_resource type="Texture2D" uid="uid://d0jfbyeldx3cd" path="res://assets/firework_animation.png" id="36_7fhye"]
-[ext_resource type="PackedScene" uid="uid://dp071slbvsnkm" path="res://models/parallax_fish_visual_only.tscn" id="37_m73q5"]
+[ext_resource type="PackedScene" path="res://models/parallax_fish_visual_only.tscn" id="37_m73q5"]
 [ext_resource type="Texture2D" uid="uid://ddmtvhhc1b1ck" path="res://assets/mine.png" id="38_nmpcl"]
 [ext_resource type="Texture2D" uid="uid://b01moka310222" path="res://assets/soda_can.png" id="39_5jkdg"]
 [ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="40_mw11k"]
 [ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="41_58txr"]
 [ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="42_vnxps"]
-[ext_resource type="PackedScene" uid="uid://b2pd0mlym6k58" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
+[ext_resource type="PackedScene" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
 [ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="44_ghr1b"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="45_b34nw"]
 
@@ -267,6 +267,9 @@ animations = [{
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
+camera_position_recompute_interval = null
+camera_sway_y = null
+camera_lead_y = null
 
 [node name="CurrentDetector" parent="." instance=ExtResource("2_2m3wr")]
 
@@ -489,7 +492,6 @@ autoplay = "default"
 [node name="Sprite2D17" type="Sprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
 position = Vector2(554.637, 2020.52)
 rotation = -0.455589
-scale = Vector2(1, 1)
 texture = ExtResource("39_5jkdg")
 
 [node name="Sprite2D16" type="AnimatedSprite2D" parent="Background/ParallaxBackground/BackgroundFish/Fish"]
