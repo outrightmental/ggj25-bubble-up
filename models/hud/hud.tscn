@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
 [ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
 [ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="2_nl07q"]
-[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
+[ext_resource type="StyleBox" uid="uid://c6voixto0coym" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
@@ -68,7 +68,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Button Main" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 theme = SubResource("Theme_yn7ku")
 theme_override_fonts/font = ExtResource("2_4nhim")
@@ -80,7 +80,35 @@ theme_override_styles/normal = ExtResource("2_nl07q")
 text = "menu"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button Reset" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
+[node name="MenuContainer" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MenuContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4nhim")
+theme_override_font_sizes/font_size = 60
+text = "Bubble Up!"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MenuContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_yn7ku")
 theme_override_fonts/font = ExtResource("2_4nhim")
@@ -89,8 +117,34 @@ theme_override_styles/focus = ExtResource("2_nl07q")
 theme_override_styles/hover = ExtResource("3_j6n3k")
 theme_override_styles/pressed = ExtResource("3_j6n3k")
 theme_override_styles/normal = ExtResource("2_nl07q")
-text = "reset"
+text = "Resume Game"
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/Button Main" to="." method="_on_navigate_main"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/Button Reset" to="." method="_on_navigate_reset"]
+[node name="RestartButton" type="Button" parent="MenuContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_yn7ku")
+theme_override_fonts/font = ExtResource("2_4nhim")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("2_nl07q")
+theme_override_styles/hover = ExtResource("3_j6n3k")
+theme_override_styles/pressed = ExtResource("3_j6n3k")
+theme_override_styles/normal = ExtResource("2_nl07q")
+text = "Start New Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="MainButton" type="Button" parent="MenuContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_yn7ku")
+theme_override_fonts/font = ExtResource("2_4nhim")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = ExtResource("2_nl07q")
+theme_override_styles/hover = ExtResource("3_j6n3k")
+theme_override_styles/pressed = ExtResource("3_j6n3k")
+theme_override_styles/normal = ExtResource("2_nl07q")
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Buttons/MenuButton" to="." method="_on_menu_open"]
+[connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_menu_select_resume"]
+[connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_menu_select_restart"]
+[connection signal="pressed" from="MenuContainer/MarginContainer/VBoxContainer/MainButton" to="." method="_on_menu_select_main"]
