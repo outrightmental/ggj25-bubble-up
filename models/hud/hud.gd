@@ -9,7 +9,7 @@ extends Control
 @onready var menu_resume_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/ResumeButton"
 @onready var menu_main_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/MainButton"
 @onready var menu_restart_button: Button = $"MenuContainer/MarginContainer/VBoxContainer/RestartButton"
-@onready var game_over_score_text:Label = $"GameOverContainer/MarginContainer/VBoxContainer/PerfectScore"
+@onready var game_over_score_text:Label = $"GameOverContainer/MarginContainer/VBoxContainer/ScoreText"
 
 var _total: float = 0
 var _wasted: float = 0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdyj503wctuof"]
+[gd_scene load_steps=7 format=3 uid="uid://bdyj503wctuof"]
 
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
 [ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
 [ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="2_nl07q"]
-[ext_resource type="StyleBox" uid="uid://c6voixto0coym" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
+[ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
+[ext_resource type="Texture2D" uid="uid://cl81tgqtscm1p" path="res://assets/hamburger.png" id="5_yarks"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
@@ -71,14 +72,10 @@ theme_override_constants/separation = 8
 
 [node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Buttons"]
 layout_mode = 2
-theme = SubResource("Theme_yn7ku")
+theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_4nhim")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = ExtResource("2_nl07q")
-theme_override_styles/hover = ExtResource("3_j6n3k")
-theme_override_styles/pressed = ExtResource("3_j6n3k")
-theme_override_styles/normal = ExtResource("2_nl07q")
-text = "menu"
+icon = ExtResource("5_yarks")
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuContainer" type="ColorRect" parent="."]
