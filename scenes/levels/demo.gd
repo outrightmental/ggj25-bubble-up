@@ -16,7 +16,7 @@ var started_at: float = 0.0
 
 # Function to get the age of the bubble in milliseconds 
 func game_clock() -> float:
-	return Time.get_ticks_msec() - created_at
+	return Time.get_ticks_msec() - started_at
 
  
 func _ready():

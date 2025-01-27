@@ -267,9 +267,6 @@ animations = [{
 
 [node name="Demo Level" type="Node2D"]
 script = ExtResource("1_57u5x")
-camera_position_recompute_interval = null
-camera_sway_y = null
-camera_lead_y = null
 
 [node name="CurrentDetector" parent="." instance=ExtResource("2_2m3wr")]
 
