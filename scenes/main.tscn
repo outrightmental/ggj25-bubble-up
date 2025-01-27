@@ -129,7 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_5tiys")
-text = "Nick Charney Kaye, fruitsdancer, ghostpastry"
+text = "outrightmental, fruitsdancer, ghostpastry"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.404195, 0.652216, 0.655446, 1)
