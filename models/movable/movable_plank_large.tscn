@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbce6amij7djt"]
+[gd_scene load_steps=3 format=3 uid="uid://un0yy20pm2mr"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_bwt2k"]
 [ext_resource type="Texture2D" uid="uid://dqam6qdjhueyv" path="res://assets/plank_large.png" id="2_tum47"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_vaujs"]
 [ext_resource type="Texture2D" uid="uid://bt0c28kkpxuv" path="res://assets/bubble_test.png" id="2_bx37g"]
 [ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="3_5tiys"]
-[ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="4_8qp7o"]
+[ext_resource type="StyleBox" path="res://assets/button_style.tres" id="4_8qp7o"]
 [ext_resource type="Texture2D" uid="uid://n61hq6wp3c3t" path="res://assets/gradient.png" id="4_k30n6"]
 [ext_resource type="Texture2D" uid="uid://b850827dvlhkm" path="res://assets/backgrounds/default_bg.png" id="5_o5orc"]
 [ext_resource type="StyleBox" uid="uid://c6voixto0coym" path="res://assets/button_style_pressed.tres" id="5_txcna"]

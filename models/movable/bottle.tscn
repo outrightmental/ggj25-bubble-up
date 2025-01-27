@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1wyhkk5l13hv"]
+[gd_scene load_steps=3 format=3 uid="uid://ftusmtv00obr"]
 
 [ext_resource type="Script" path="res://models/movable/movable.gd" id="1_42esl"]
 [ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="1_va3wc"]
