@@ -2366,6 +2366,12 @@ visible = false
 position = Vector2(0.666662, 1.33335)
 scale = Vector2(5.73333, 5.13334)
 
+[node name="Lights" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4" index="3"]
+visible = false
+
+[node name="PointLight2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4/Lights" index="0"]
+visible = false
+
 [node name="Sprite2D" type="AnimatedSprite2D" parent="ParallaxForeground/foreground/Fish/ParallaxSchoolFishVisualOnly4"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_stnub")
