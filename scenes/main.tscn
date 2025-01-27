@@ -92,7 +92,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_5tiys")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 21
 theme_override_styles/focus = ExtResource("4_8qp7o")
 theme_override_styles/hover = ExtResource("5_txcna")
 theme_override_styles/pressed = ExtResource("5_txcna")
@@ -107,7 +107,7 @@ size_flags_vertical = 4
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_5tiys")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 61
 text = "Bubble Up!"
 horizontal_alignment = 1
 
@@ -117,7 +117,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_5tiys")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 31
 theme_override_styles/focus = ExtResource("4_8qp7o")
 theme_override_styles/hover = ExtResource("5_txcna")
 theme_override_styles/pressed = ExtResource("5_txcna")
@@ -129,6 +129,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("3_5tiys")
+theme_override_font_sizes/font_size = 21
 text = "outrightmental, fruitsdancer, ghostpastry"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
