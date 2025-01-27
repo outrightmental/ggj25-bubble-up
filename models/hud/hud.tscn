@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdyj503wctuof"]
+[gd_scene load_steps=11 format=3 uid="uid://bdyj503wctuof"]
 
 [ext_resource type="Script" path="res://models/hud/hud.gd" id="1_rlli4"]
 [ext_resource type="FontFile" uid="uid://b88lokxk2pw6x" path="res://assets/munro.ttf" id="2_4nhim"]
 [ext_resource type="StyleBox" uid="uid://dc21bnmilx8i0" path="res://assets/button_style.tres" id="2_nl07q"]
 [ext_resource type="StyleBox" uid="uid://dxmoc4iy5iqk" path="res://assets/button_style_pressed.tres" id="3_j6n3k"]
 [ext_resource type="Texture2D" uid="uid://cl81tgqtscm1p" path="res://assets/hamburger.png" id="5_yarks"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aw2ah"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0gm0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ewfly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d21wc"]
 
 [sub_resource type="Theme" id="Theme_yn7ku"]
 
@@ -75,6 +83,10 @@ layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_4nhim")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aw2ah")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t0gm0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ewfly")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d21wc")
 icon = ExtResource("5_yarks")
 metadata/_edit_use_anchors_ = true
 
@@ -106,6 +118,10 @@ theme_override_fonts/font = ExtResource("2_4nhim")
 theme_override_font_sizes/font_size = 60
 text = "Bubble Up!"
 horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MenuContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="MenuContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -178,6 +194,10 @@ theme_override_fonts/font = ExtResource("2_4nhim")
 theme_override_font_sizes/font_size = 60
 text = "<SCORE>"
 horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="GameOverContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="GameOverContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

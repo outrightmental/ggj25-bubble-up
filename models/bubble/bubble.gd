@@ -164,7 +164,6 @@ func _on_collision_with_bubble(other) -> void:
 
 # Function to handle collision with a movable object
 func _on_collision_with_movable(other) -> void:
-	prints('hit', other.name)
 	if min(age(), other.age()) < _collision_cooldown_millis:
 		return
 	var effective_force = other.bubble_split_factor * abs(acceleration().length())

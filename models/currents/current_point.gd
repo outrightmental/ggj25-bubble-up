@@ -30,7 +30,6 @@ func init_with(pos: Vector2, p_direction: Vector2, current: Current):
 
 func update_direction(p_direction: Vector2):
 	direction = p_direction
-	print(direction.length())
 	current_force_vector = direction * force_strength
 	# Update force against intersecting bodies
 	for body in force_emitter.get_overlapping_bodies():
