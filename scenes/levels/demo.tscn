@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://v435ih5v35so" path="res://assets/water_bottle.png" id="40_mw11k"]
 [ext_resource type="Texture2D" uid="uid://drslhkx0hc7o3" path="res://assets/moon_animation.png" id="41_58txr"]
 [ext_resource type="Texture2D" uid="uid://cw30u60ddt1qp" path="res://assets/pole.png" id="42_vnxps"]
-[ext_resource type="PackedScene" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
+[ext_resource type="PackedScene" uid="uid://b2pd0mlym6k58" path="res://models/visual_only_fish_school.tscn" id="43_geh4o"]
 [ext_resource type="Texture2D" uid="uid://b8fie1d6m844h" path="res://assets/moorish_idol_animation.png" id="44_ghr1b"]
 [ext_resource type="Texture2D" uid="uid://caxiuaggywtt6" path="res://assets/pufferfish_animation.png" id="45_b34nw"]
 [ext_resource type="Texture2D" uid="uid://c5wdrxjmuitsn" path="res://assets/particles/point_light.png" id="47_uku7r"]
