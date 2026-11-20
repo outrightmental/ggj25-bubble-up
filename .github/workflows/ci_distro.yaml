@@ -47,6 +47,23 @@ jobs:
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
 
+      - name: Inject Signal depth ladder
+        # Signal's depth ladder (cookieless, no script): a column of 1x1 images first in <body>.
+        # The ladder itself is .github/signal/ladder.html, made by Signal's sdk/web/ladder.mjs.
+        # No body{position:relative} on a Godot page: #status is absolute and fills the viewport while the game loads.
+        run: |
+          INDEX_FILE="build/web/index.html"
+          LADDER_FILE=".github/signal/ladder.html"
+          CSS=""
+          awk -v lf="$LADDER_FILE" -v css="$CSS" '
+            BEGIN { while ((getline line < lf) > 0) ladder = ladder line; close(lf) }
+            !b && match($0, /<body[^>]*>/) { $0 = substr($0, 1, RSTART + RLENGTH - 1) ladder substr($0, RSTART + RLENGTH); b = 1 }
+            css != "" && !h && (i = index($0, "</head>")) { $0 = substr($0, 1, i - 1) "<style>" css "</style>" substr($0, i); h = 1 }
+            { print }
+          ' "$INDEX_FILE" > "$INDEX_FILE.tmp" && mv "$INDEX_FILE.tmp" "$INDEX_FILE"
+          test "$(grep -o 'in.signal.outright.io/v1/d' "$INDEX_FILE" | wc -l)" -eq 49 || { echo "Error: Signal ladder not found in $INDEX_FILE"; exit 1; }
+          echo "Signal depth ladder injected"
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
